@@ -18,15 +18,8 @@ class Firebase {
       password
     )
 
+    console.log("new user,")
     console.log(newUser)
-
-    const createProfileCallable = this.functions.httpsCallable(
-      "createPublicProfile"
-    )
-
-    return createProfileCallable({
-      username,
-    })
   }
 
   async login({ email, password }) {

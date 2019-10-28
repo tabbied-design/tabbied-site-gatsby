@@ -17,6 +17,7 @@ function useAuth() {
 
       unsubscribe = firebaseInstance.auth.onAuthStateChanged(userResult => {
         if (userResult) {
+          /*
           publicProfileUnsubscribe = firebaseInstance.getUserProfile({
             userId: userResult.uid,
             onSnapshot: r => {
@@ -30,6 +31,11 @@ function useAuth() {
                   })
                 })
             },
+          })
+          */
+
+          setUser({
+            ...userResult,
           })
         } else {
           setUser(null)

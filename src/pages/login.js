@@ -32,7 +32,7 @@ const LoginPage = () => {
 
   return (
     <section>
-      <Form onSubmit={handleSubmit}>
+      <Form style={{ paddingTop: 200 }} onSubmit={handleSubmit}>
         <Input
           onChange={handleInputChange}
           value={formValues.email}

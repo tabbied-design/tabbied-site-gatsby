@@ -42,7 +42,7 @@ const Register = () => {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form style={{ paddingTop: 200 }} onSubmit={handleSubmit}>
       <Input
         name="username"
         type="text"
