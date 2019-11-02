@@ -11,6 +11,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import { FirebaseContext, useAuth } from "../firebase"
 
 import Header from "./header"
+import "reset-css"
+import "bootstrap/dist/css/bootstrap-grid.css"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -31,14 +33,7 @@ const Layout = ({ children }) => {
   return (
     <FirebaseContext.Provider value={{ user, firebase, loading }}>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
+      <div>
         <main>{children}</main>
       </div>
     </FirebaseContext.Provider>
