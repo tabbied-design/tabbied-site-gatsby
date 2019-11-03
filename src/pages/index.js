@@ -201,6 +201,71 @@ const ExampleUses = () => {
           </div>
         </div>
       </div>
+
+      <div id="uses-digital-images">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h4>
+                <span className="number">01</span>
+                Digital Images
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="uses-wall-art">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h4>
+                <span className="number">02</span>
+                Wall art
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="uses-stationery">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h4>
+                <span className="number">03</span>
+                Stationery
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="uses-packaging">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h4>
+                <span className="number">04</span>
+                Packaging
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="uses-textiles-and-apparel">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h4>
+                <span className="number">05</span>
+                Textiles and apparel
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
