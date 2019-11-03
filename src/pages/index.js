@@ -190,7 +190,7 @@ const BrowseArtworkSection = () => {
 const ExampleUses = () => {
   return (
     <div id="section-example-uses">
-      <div class="container">
+      <div className="container">
         <div className="row">
           <div className="col-md-12">
             <span className="subheading">Example uses</span>
