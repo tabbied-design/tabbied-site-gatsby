@@ -266,6 +266,22 @@ const ExampleUses = () => {
           </div>
         </div>
       </div>
+
+      <div id="uses-endless-possibilities">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h4>Endless possibilities</h4>
+              <p>
+                Wallpaper, digital images, packaging, posters, t-shirts,
+                fabrics…
+                <br />
+                What can you make with Tabbied?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

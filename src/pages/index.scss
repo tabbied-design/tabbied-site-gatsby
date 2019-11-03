@@ -157,7 +157,7 @@
 }
 
 #section-example-uses {
-  padding: 100px 0;
+  padding-top: 100px;
 
   h3,
   .subheading {
@@ -208,5 +208,22 @@
     background: no-repeat center bottom/1300px
       url("/images/uses_textiles_and_apparel.png");
     padding-bottom: 1360px;
+  }
+
+  #uses-endless-possibilities {
+    margin-top: 50px;
+    text-align: center;
+    background: no-repeat center bottom
+      url("/images/uses_endless_possibilities.png");
+    padding-bottom: 1130px;
+
+    h4 {
+      color: #666666;
+      font-size: 3rem;
+    }
+
+    p {
+      margin-top: 20px;
+    }
   }
 }
