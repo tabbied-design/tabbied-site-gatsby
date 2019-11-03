@@ -19,7 +19,13 @@
 body {
   font-family: Roboto, sans-serif;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #666666;
+}
+
+a {
+  color: #666666;
 }
 
 .align-center {
@@ -28,4 +34,8 @@ body {
 
 .align-right {
   text-align: right;
+}
+
+img {
+  max-width: 100%;
 }
