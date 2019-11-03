@@ -1,0 +1,41 @@
+#page-main {
+}
+
+#section-hero {
+  .hero-background {
+    background: url("/images/hero_image.png") no-repeat center right;
+    padding: 100px 0;
+  }
+
+  .hero-text {
+    font-size: 3rem;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    margin-top: 50px;
+
+    .btn-action,
+    .btn-watch-video {
+      font-size: 1rem;
+      display: inline-block;
+      padding: 10px 20px;
+    }
+
+    .btn-action {
+      color: white;
+      background-color: black;
+    }
+
+    .btn-watch-video {
+      color: #666666;
+    }
+  }
+}
+
+#section-how-it-works {
+  .gray-background {
+    background-color: #fafafa;
+    margin: 0 40px;
+  }
+}

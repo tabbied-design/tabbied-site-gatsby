@@ -1,0 +1,29 @@
+#header {
+  color: #666666;
+  font-size: 0.9rem;
+  padding: 16px 0;
+}
+
+ul#page-navigation {
+  display: inline-block;
+
+  li {
+    display: inline-block;
+    padding: 10px 20px;
+  }
+}
+
+#top-right-menu {
+  display: inline-block;
+
+  li {
+    display: inline-block;
+    padding: 10px 20px;
+
+    &.btn-action {
+      color: white;
+      background-color: black;
+      margin-left: 20px;
+    }
+  }
+}

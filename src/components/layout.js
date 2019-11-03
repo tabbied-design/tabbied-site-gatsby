@@ -13,12 +13,10 @@ import { FirebaseContext, useAuth } from "../firebase"
 import Header from "./header"
 import "reset-css"
 import "bootstrap/dist/css/bootstrap-grid.css"
-import "./layout.css"
+import "./layout.scss"
 
 const Layout = ({ children }) => {
   const { user, firebase, loading } = useAuth()
-
-  //console.log(user, firebase, loading)
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
