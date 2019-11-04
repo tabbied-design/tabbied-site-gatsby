@@ -187,7 +187,7 @@ const BrowseArtworkSection = () => {
   )
 }
 
-const ExampleUses = () => {
+const ExampleUsesSection = () => {
   return (
     <div id="section-example-uses">
       <div className="container">
@@ -286,13 +286,68 @@ const ExampleUses = () => {
   )
 }
 
+const BuiltBySection = () => {
+  return (
+    <div id="section-built-by">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-7">
+            <img
+              src="/images/built_by_01.png"
+              alt="Built by Sy Hong and Ye Joo Park"
+            />
+          </div>
+
+          <div className="col-md-5">
+            <h3>Built by design and dev geeks</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+              molestiae labore suscipit non, maxime praesentium rem tenetur
+              debitis vitae.
+            </p>
+
+            <div className="people">
+              <span className="names">Sy &amp; Ye Joo</span>
+              <br />
+              Founders
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-5 offset-3">
+            <h3>A special thanks to</h3>
+
+            <div className="people">
+              <span className="names">Chuan Yuan</span>
+              <br />
+              Creator of CSS-Doodle
+            </div>
+
+            <p>
+              Saepe beatae quis expedita praesentium est corporis ab distinctio,
+              odio debitis suscipit voluptate aperiam deleniti eius ducimus modi
+              rem accusantium aspernatur veritatis.
+            </p>
+          </div>
+
+          <div className="col-md-4">
+            <img src="/images/built_by_02.png" alt="Thanks to Chuan Yuan" />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const IndexPage = () => {
   return (
     <div id="page-main">
       <HeroSection />
       <HowItWorksSection />
       <BrowseArtworkSection />
-      <ExampleUses />
+      <ExampleUsesSection />
+      <BuiltBySection />
     </div>
   )
 }
