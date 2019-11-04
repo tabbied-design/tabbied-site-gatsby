@@ -10,7 +10,7 @@ const Header = ({ siteTitle }) => {
         <div className="row">
           <div className="col-md-3">
             <Link id="logo" to="/">
-              <img src="/images/logo_symbol.png" alt="Tabbied" />
+              <img src="/images/logo_symbol.png" alt={siteTitle} />
             </Link>
           </div>
 

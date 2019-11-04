@@ -340,6 +340,24 @@ const BuiltBySection = () => {
   )
 }
 
+const TryForFreeSection = () => {
+  return (
+    <div id="section-try-for-free">
+      <div className="black-background">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <p className="message">
+                Create your beautiful design in under a minute.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const IndexPage = () => {
   return (
     <div id="page-main">
@@ -348,6 +366,7 @@ const IndexPage = () => {
       <BrowseArtworkSection />
       <ExampleUsesSection />
       <BuiltBySection />
+      <TryForFreeSection />
     </div>
   )
 }
