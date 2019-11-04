@@ -1,6 +1,14 @@
 #header {
   font-size: 0.9rem;
   padding: 16px 0;
+
+  #logo {
+    img {
+      display: inline-block;
+      margin-top: 4px;
+      width: 40px;
+    }
+  }
 }
 
 ul#page-navigation {

@@ -28,6 +28,12 @@ const Layout = ({ children }) => {
     }
   `)
 
+  // Enable smooth scrolls on all internal anchor links
+  if (typeof window !== "undefined") {
+    // eslint-disable-next-line global-require
+    require("smooth-scroll")('a[href*="#"]')
+  }
+
   return (
     <FirebaseContext.Provider value={{ user, firebase, loading }}>
       <Header siteTitle={data.site.siteMetadata.title} />

@@ -24,6 +24,7 @@
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
     "reset-css": "^5.0.1",
+    "smooth-scroll": "^16.1.0",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {

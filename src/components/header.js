@@ -10,16 +10,22 @@ const Header = ({ siteTitle }) => {
         <div className="row">
           <div className="col-md-3">
             <Link id="logo" to="/">
-              {siteTitle}
+              <img src="/images/logo_symbol.png" alt="Tabbied" />
             </Link>
           </div>
 
           <div className="col-md-6">
             <div className="align-center">
               <ul id="page-navigation">
-                <li>How it works</li>
-                <li>Browse artwork</li>
-                <li>Example uses</li>
+                <li>
+                  <Link to="#section-how-it-works">How it works</Link>
+                </li>
+                <li>
+                  <Link to="#section-browse-artwork">Browse artwork</Link>
+                </li>
+                <li>
+                  <Link to="#section-example-uses">Example uses</Link>
+                </li>
               </ul>
             </div>
           </div>
