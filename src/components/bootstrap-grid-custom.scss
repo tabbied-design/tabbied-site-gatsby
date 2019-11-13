@@ -18,6 +18,30 @@ html {
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 992px,
+  lg: 1300px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 960px,
+  lg: 1200px,
+);
+
+.row {
+  background-color: skyblue;
+}
+
+[class^="col-"] {
+  background-color: seagreen;
+}
+
+$grid-columns: 12;
+$grid-gutter-width: 32px;
+
 @import "../../node_modules/bootstrap/scss/mixins/breakpoints";
 @import "../../node_modules/bootstrap/scss/mixins/grid-framework";
 @import "../../node_modules/bootstrap/scss/mixins/grid";
