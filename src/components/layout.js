@@ -12,7 +12,8 @@ import { FirebaseContext, useAuth } from "../firebase"
 
 import Header from "./header"
 import "reset-css"
-import "bootstrap/dist/css/bootstrap-grid.css"
+// import "bootstrap/dist/css/bootstrap-grid.css"
+import "./bootstrap-grid-custom.scss"
 import "./layout.scss"
 
 const Layout = ({ children }) => {
