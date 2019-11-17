@@ -86,7 +86,7 @@ const HowItWorksSection = () => {
             <div className="col-md-4 offset-1">
               <div id="demo-controls">
                 <h4>A quick demo</h4>
-                <p>
+                <div>
                   <img
                     src="/images/demo_arrow.png"
                     alt="Try changing these colors!"
@@ -102,7 +102,7 @@ const HowItWorksSection = () => {
                     <ColorPicker color="#FF256F" />
                   </div>
                   <a className="btn-redraw">Redraw</a>
-                </p>
+                </div>
               </div>
             </div>
           </div>

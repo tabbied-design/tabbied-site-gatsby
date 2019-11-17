@@ -14,27 +14,31 @@ const Header = ({ siteTitle }) => {
             </Link>
           </div>
 
-          <div className="col-md-6">
+          <div className="col-md-6 d-none d-md-block">
             <div className="align-center">
               <ul id="page-navigation">
                 <li>
-                  <Link to="#section-how-it-works">How it works</Link>
+                  <a href="#section-how-it-works">How it works</a>
                 </li>
                 <li>
-                  <Link to="#section-browse-artwork">Browse artwork</Link>
+                  <a href="#section-browse-artwork">Browse artwork</a>
                 </li>
                 <li>
-                  <Link to="#section-example-uses">Example uses</Link>
+                  <a href="#section-example-uses">Example uses</a>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="col-md-3">
+          <div className="col-md-3 d-none d-md-block">
             <div className="align-right">
               <ul id="top-right-menu">
-                <li>Sign in</li>
-                <li className="btn-action">Try for free</li>
+                <li>
+                  <Link to="/">Sign in</Link>
+                </li>
+                <li className="btn-action">
+                  <Link to="/">Try for free</Link>
+                </li>
               </ul>
             </div>
           </div>

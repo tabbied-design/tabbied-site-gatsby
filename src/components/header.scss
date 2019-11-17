@@ -1,3 +1,5 @@
+@import "./bootstrap-grid-custom.scss";
+
 #header {
   font-size: 0.9rem;
   padding: 16px 0;
@@ -34,3 +36,14 @@ ul#page-navigation {
     }
   }
 }
+/*
+@include media-breakpoint-down(sm) {
+  ul#page-navigation {
+    display: none;
+  }
+
+  #top-right-menu {
+    display: none;
+  }
+}
+*/

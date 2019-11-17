@@ -9,4 +9,7 @@ const AboutPage = () => {
   )
 }
 
+// Properties that aren't so easy
+// Testing recording with SnagIt
+
 export default AboutPage

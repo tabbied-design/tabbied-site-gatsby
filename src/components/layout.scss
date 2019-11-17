@@ -12,9 +12,9 @@
 		F. Journal
 		G. Journal Single
 */
-
 /*	1A. Reset CSS
-	----------------------------------------------------------------------------------  */
+  ----------------------------------------------------------------------------------  */
+@import "./bootstrap-grid-custom.scss";
 
 body {
   font-family: "Nunito Sans", sans-serif;
@@ -47,4 +47,10 @@ em {
 
 img {
   max-width: 100%;
+}
+
+@include media-breakpoint-down(sm) {
+  body {
+    background: springgreen;
+  }
 }
