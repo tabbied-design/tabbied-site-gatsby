@@ -8,7 +8,7 @@ const Header = ({ siteTitle }) => {
     <div id="header">
       <div className="container">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-3 col-6">
             <Link id="logo" to="/">
               <img src="/images/logo_symbol.png" alt={siteTitle} />
             </Link>
@@ -41,6 +41,10 @@ const Header = ({ siteTitle }) => {
                 </li>
               </ul>
             </div>
+          </div>
+
+          <div className="col-md-3 col-6 d-block d-md-none">
+            <div className="align-right">Burger</div>
           </div>
         </div>
       </div>

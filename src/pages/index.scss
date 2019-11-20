@@ -1,3 +1,5 @@
+@import "../components/bootstrap-grid-custom.scss";
+
 #page-main {
   .gray-background {
     background-color: #fafafa;
@@ -13,6 +15,19 @@
   h3 {
     font-size: 3rem;
     line-height: 1.3;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #page-main {
+    .gray-background {
+      margin: 0 20px;
+      padding: 60px 0;
+    }
+
+    h3 {
+      font-size: 2.4rem;
+    }
   }
 }
 
@@ -47,6 +62,48 @@
     .btn-watch-video {
       /* Nothing yet */
     }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  #section-hero {
+    .hero-background {
+      background: url("/images/hero_image.png") no-repeat center right;
+      background-size: 420px;
+      width: 100%;
+      padding: 260px 0;
+    }
+
+    .hero-text {
+      font-size: 2.4rem;
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #section-hero {
+    .hero-background {
+      background: url("/images/hero_image.png") no-repeat top center;
+      background-size: 60%;
+      width: 100%;
+      padding: 500px 0 80px 0;
+    }
+
+    .hero-text {
+      font-size: 1.9rem;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .hero-background {
+    background: url("/images/hero_image.png") no-repeat bottom center;
+    background-size: 380px;
+    padding: 60px 0 600px 0;
   }
 }
 
@@ -109,7 +166,9 @@
       background-color: #ffffff;
       box-shadow: 73px 75px 142px 0 rgba(8, 24, 34, 0.16);
       border-radius: 12px;
-      padding: 80px 45px;
+      padding: 60px 45px;
+      max-width: 300px;
+      margin: 0 auto;
     }
 
     #demo-controls {
@@ -144,6 +203,65 @@
         margin-top: 40px;
         padding: 12px 40px;
         border: 2px solid #979797;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #section-how-it-works {
+    h3 {
+      text-align: center;
+    }
+
+    #steps {
+      margin-top: 30px;
+    }
+
+    .step-box {
+      text-align: center;
+      padding: 20px 40px;
+    }
+
+    #demo {
+      margin-top: 60px;
+
+      #demo-artwork {
+      }
+
+      #demo-controls {
+        margin-top: 70px;
+
+        h4 {
+          font-size: 3rem;
+          text-align: left;
+        }
+
+        p {
+          position: relative;
+          margin-top: 24px;
+
+          img.demo-arrow {
+            position: absolute;
+            top: 16px;
+            left: -60px;
+          }
+        }
+
+        .color-palette {
+          margin-top: 40px;
+
+          .color-picker-box {
+            margin-right: 32px;
+          }
+        }
+
+        .btn-redraw {
+          display: inline-block;
+          margin-top: 40px;
+          padding: 12px 40px;
+          border: 2px solid #979797;
+        }
       }
     }
   }

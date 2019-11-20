@@ -36,7 +36,30 @@ ul#page-navigation {
     }
   }
 }
-/*
+
+@include media-breakpoint-down(md) {
+  ul#page-navigation {
+    li {
+      padding: 10px 14px;
+    }
+  }
+
+  #top-right-menu {
+    display: inline-block;
+
+    li {
+      display: inline-block;
+      padding: 10px 14px;
+
+      &.btn-action {
+        color: white;
+        background-color: black;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
 @include media-breakpoint-down(sm) {
   ul#page-navigation {
     display: none;
@@ -46,4 +69,3 @@ ul#page-navigation {
     display: none;
   }
 }
-*/

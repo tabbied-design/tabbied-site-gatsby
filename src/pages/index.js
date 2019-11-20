@@ -74,7 +74,7 @@ const HowItWorksSection = () => {
           </div>
 
           <div id="demo" className="row">
-            <div className="col-md-4 offset-1">
+            <div className="col-md-4 offset-md-1">
               <div id="demo-artwork">
                 <img
                   src="/images/demo_artwork_placeholder.png"
@@ -83,7 +83,7 @@ const HowItWorksSection = () => {
               </div>
             </div>
 
-            <div className="col-md-4 offset-1">
+            <div className="col-md-4 offset-md-1">
               <div id="demo-controls">
                 <h4>A quick demo</h4>
                 <div>

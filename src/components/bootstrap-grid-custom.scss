@@ -31,10 +31,6 @@ $container-max-widths: (
   lg: 1200px,
 );
 
-.row {
-  background-color: transparent;
-}
-
 [class^="col-"] {
   background-color: transparent;
   border-left: 1px solid skyblue;
