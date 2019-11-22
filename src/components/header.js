@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 import "./header.scss"
+import logoImage from "../images/logo_tabbied.png"
 
 const Header = ({ siteTitle }) => {
   return (
@@ -10,7 +11,7 @@ const Header = ({ siteTitle }) => {
         <div className="row">
           <div className="col-md-3 col-6">
             <Link id="logo" to="/">
-              <img src="/images/logo_symbol.png" alt={siteTitle} />
+              <img src={logoImage} alt={siteTitle} />
             </Link>
           </div>
 
@@ -30,21 +31,12 @@ const Header = ({ siteTitle }) => {
             </div>
           </div>
 
-          <div className="col-md-3 d-none d-md-block">
+          <div className="col-md-3 col-6">
             <div className="align-right">
-              <ul id="top-right-menu">
-                <li>
-                  <Link to="/">Sign in</Link>
-                </li>
-                <li className="btn-action">
-                  <Link to="/">Try for free</Link>
-                </li>
-              </ul>
+              <Link to="/" className="btn-action">
+                Make your art
+              </Link>
             </div>
-          </div>
-
-          <div className="col-md-3 col-6 d-block d-md-none">
-            <div className="align-right">Burger</div>
           </div>
         </div>
       </div>

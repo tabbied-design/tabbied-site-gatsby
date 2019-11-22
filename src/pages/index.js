@@ -1,9 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import ColorPicker from "../components/common/ColorPicker"
 
 import "./index.scss"
+import usesDigitalImages from "../images/uses_digital_images.jpg"
+import usesWallArt from "../images/uses_wall_art.jpg"
+import usesStationery from "../images/uses_stationery.jpg"
+import usesPackaging from "../images/uses_packaging.jpg"
+import usesTextileApparel from "../images/uses_textile_apparel.jpg"
 
 const HeroSection = () => {
   return (
@@ -19,8 +23,7 @@ const HeroSection = () => {
               </p>
 
               <div className="hero-actions">
-                <a className="btn-action">Try for free</a>
-                <a className="btn-watch-video">Watch the video</a>
+                <Link className="btn-action">Make your art</Link>
               </div>
             </div>
           </div>
@@ -85,13 +88,8 @@ const HowItWorksSection = () => {
 
             <div className="col-md-4 offset-md-1">
               <div id="demo-controls">
-                <h4>A quick demo</h4>
+                <h4>Try a quick demo</h4>
                 <div>
-                  <img
-                    src="/images/demo_arrow.png"
-                    alt="Try changing these colors!"
-                    className="demo-arrow"
-                  />
                   Try picking your own colors and/or tap redraw to create a
                   unique design.
                   <div className="color-palette">
@@ -202,69 +200,79 @@ const ExampleUsesSection = () => {
         </div>
       </div>
 
-      <div id="uses-digital-images">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h4>
-                <span className="number">01</span>
-                Digital Images
-              </h4>
-            </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <h4>
+              <span className="number">01</span>
+              Digital Images
+            </h4>
           </div>
         </div>
       </div>
 
-      <div id="uses-wall-art">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h4>
-                <span className="number">02</span>
-                Wall art
-              </h4>
-            </div>
+      <div className="example-use-image-wrapper">
+        <img src={usesDigitalImages} alt="Digital Images" />
+      </div>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <h4>
+              <span className="number">02</span>
+              Wall art
+            </h4>
           </div>
         </div>
       </div>
 
-      <div id="uses-stationery">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h4>
-                <span className="number">03</span>
-                Stationery
-              </h4>
-            </div>
+      <div className="example-use-image-wrapper">
+        <img src={usesWallArt} alt="Wall art image" />
+      </div>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <h4>
+              <span className="number">03</span>
+              Stationery
+            </h4>
           </div>
         </div>
       </div>
 
-      <div id="uses-packaging">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h4>
-                <span className="number">04</span>
-                Packaging
-              </h4>
-            </div>
+      <div className="example-use-image-wrapper">
+        <img src={usesStationery} alt="Stationery image" />
+      </div>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <h4>
+              <span className="number">04</span>
+              Packaging
+            </h4>
           </div>
         </div>
       </div>
 
-      <div id="uses-textiles-and-apparel">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h4>
-                <span className="number">05</span>
-                Textiles and apparel
-              </h4>
-            </div>
+      <div className="example-use-image-wrapper">
+        <img src={usesPackaging} alt="Packaging image" />
+      </div>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <h4>
+              <span className="number">05</span>
+              Textiles and apparel
+            </h4>
           </div>
         </div>
+      </div>
+
+      <div className="example-use-image-wrapper">
+        <img src={usesTextileApparel} alt="Textiles and apparel image" />
       </div>
 
       <div id="uses-endless-possibilities">
