@@ -70,7 +70,9 @@ const HowItWorksSection = () => {
                 </div>
                 <p>
                   Download your customized design{" "}
-                  <span className="highlight">for free</span>
+                  <span className="highlight">
+                    <span className="text">for free</span>
+                  </span>
                 </p>
               </div>
             </div>

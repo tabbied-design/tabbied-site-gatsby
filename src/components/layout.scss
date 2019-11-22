@@ -16,11 +16,18 @@
   ----------------------------------------------------------------------------------  */
 @import "./bootstrap-grid-custom.scss";
 
+@font-face {
+  font-family: "Avenir Light";
+  src: url("/fonts/avenir-light-webfont.woff2");
+}
+
+html {
+  font-size: 18px;
+}
+
 body {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  font-weight: 300;
+  font-family: "Avenir Light", "Nunito Sans", sans-serif;
+  line-height: 1.5;
   color: #646d7b;
 }
 
@@ -47,23 +54,6 @@ em {
 
 img {
   max-width: 100%;
-}
-
-.highlight {
-  position: relative;
-  display: inline-block;
-  white-space: nowrap;
-
-  &:before {
-    content: "";
-    width: 100%;
-    height: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    background-color: #9effd8;
-  }
 }
 
 @include media-breakpoint-down(sm) {
