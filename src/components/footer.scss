@@ -1,0 +1,48 @@
+#section-footer {
+  font-size: 0.9rem;
+  margin: 120px 0;
+
+  h5 {
+    color: #232529;
+  }
+
+  p {
+    margin-top: 26px;
+  }
+
+  ul.footer-menu {
+    margin-top: 13px;
+
+    li {
+      a {
+        color: #888888;
+        display: block;
+        padding: 13px 0;
+      }
+    }
+  }
+
+  .email-input-wrapper {
+    display: flex;
+    margin-top: 24px;
+
+    input[type="email"],
+    button {
+      font-size: 0.9rem;
+      padding: 17px 17px;
+      border: 1px solid #ced3d9;
+      border-right: none;
+    }
+
+    input[type="email"] {
+      flex-grow: 1;
+    }
+
+    button {
+      display: block;
+      color: white;
+      background-color: black;
+      border: none;
+    }
+  }
+}

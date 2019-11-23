@@ -9,12 +9,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { FirebaseContext, useAuth } from "../firebase"
-
-import Header from "./header"
 import "reset-css"
-// import "bootstrap/dist/css/bootstrap-grid.css"
 import "./bootstrap-grid-custom.scss"
 import "./layout.scss"
+
+import Header from "./header"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const { user, firebase, loading } = useAuth()
@@ -41,6 +41,7 @@ const Layout = ({ children }) => {
       <div>
         <main>{children}</main>
       </div>
+      <Footer />
     </FirebaseContext.Provider>
   )
 }
