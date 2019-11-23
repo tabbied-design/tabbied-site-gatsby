@@ -79,7 +79,7 @@ const HowItWorksSection = () => {
           </div>
 
           <div id="demo" className="row">
-            <div className="col-md-4 offset-md-1">
+            <div className="col-md-5">
               <div id="demo-artwork">
                 <img
                   src="/images/demo_artwork_placeholder.png"
@@ -118,10 +118,10 @@ const BrowseArtworkSection = () => {
       <div className="gray-background">
         <div className="container">
           <div className="row">
-            <div className="col-md-12">
+            <div className="col-md-9">
               <span className="subheading">Browse artwork</span>
               <h3>
-                Choose from our growing library of beautiful, minimalistic
+                Choose from our curated designs of beautiful, minimalistic
                 patterns and illustrations.
               </h3>
             </div>
@@ -309,7 +309,9 @@ const BuiltBySection = () => {
           </div>
 
           <div className="col-md-5">
-            <h3>Built by design and dev geeks</h3>
+            <h3>
+              Built by design and <span class="nowrap">dev geeks</span>
+            </h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
               molestiae labore suscipit non, maxime praesentium rem tenetur

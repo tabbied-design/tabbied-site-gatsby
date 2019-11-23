@@ -12,8 +12,9 @@
     margin-bottom: 20px;
   }
 
-  h3 {
-    font-size: 2.6rem;
+  h3,
+  h4 {
+    font-size: 2.33rem;
     line-height: 1.3;
   }
 }
@@ -26,7 +27,7 @@
     }
 
     h3 {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
   }
 }
@@ -40,7 +41,7 @@
   }
 
   .hero-text {
-    font-size: 3rem;
+    font-size: 2.67rem;
     line-height: 1.3;
     font-weight: 200;
     color: #646d7b;
@@ -192,11 +193,6 @@
     #demo-controls {
       margin-top: 70px;
 
-      h4 {
-        font-size: 2.6rem;
-        text-align: left;
-      }
-
       p {
         position: relative;
         margin-top: 24px;
@@ -217,10 +213,14 @@
       }
 
       .btn-redraw {
+        color: #232529;
         display: inline-block;
         margin-top: 40px;
-        padding: 12px 40px;
-        border: 2px solid #979797;
+        padding: 14px 50px;
+        background: #ffffff;
+        box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.15);
+        border-radius: 2px;
+        border-radius: 2px;
       }
     }
   }
@@ -249,11 +249,6 @@
 
       #demo-controls {
         margin-top: 70px;
-
-        h4 {
-          font-size: 3rem;
-          text-align: left;
-        }
 
         p {
           position: relative;
@@ -296,9 +291,6 @@
   }
 
   h4 {
-    color: #111111;
-    font-size: 1.1rem;
-    line-height: 1.3;
     margin-top: 120px;
 
     span.number {

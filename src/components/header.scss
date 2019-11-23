@@ -23,16 +23,15 @@ ul#page-navigation {
 
   li {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 20px;
   }
 }
 
 .btn-action {
-  font-size: 0.95rem;
   color: white;
   background-color: #232529;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 2px;
   border-radius: 2px;
 }
@@ -40,7 +39,7 @@ ul#page-navigation {
 @include media-breakpoint-down(md) {
   ul#page-navigation {
     li {
-      padding: 10px 14px;
+      padding: 12px 14px;
     }
   }
 }
