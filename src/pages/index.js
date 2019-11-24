@@ -410,6 +410,29 @@ const TryForFreeSection = () => {
   )
 }
 
+const SubmitArtworkSection = () => {
+  return (
+    <div id="section-submit-artwork">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-8 offset-md-2">
+            <h3>Want to submit an original artwork?</h3>
+
+            <p>
+              If you got some CSS skills, you can create and submit your own
+              customizable artwork that could be featured here on Tabbied.
+            </p>
+
+            <Link to="/" className="btn">
+              Learn more
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const IndexPage = () => {
   return (
     <div id="page-main">
@@ -420,6 +443,7 @@ const IndexPage = () => {
       <TestimonialsSection />
       <BuiltBySection />
       <TryForFreeSection />
+      <SubmitArtworkSection />
     </div>
   )
 }
