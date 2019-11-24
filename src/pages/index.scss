@@ -49,15 +49,6 @@
 
   .hero-actions {
     margin-top: 50px;
-
-    .btn-action {
-      font-size: 1rem;
-      display: inline-block;
-      color: white;
-      background-color: black;
-      padding: 15px 25px;
-      border-radius: 2px;
-    }
   }
 }
 
@@ -213,14 +204,16 @@
       }
 
       .btn-redraw {
+        font-size: 1rem;
         color: #232529;
         display: inline-block;
-        margin-top: 40px;
+        cursor: pointer;
         padding: 14px 50px;
+        margin-top: 40px;
         background: #ffffff;
+        border: none;
+        border-radius: 2px;
         box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.15);
-        border-radius: 2px;
-        border-radius: 2px;
       }
     }
   }
@@ -228,10 +221,6 @@
 
 @include media-breakpoint-down(sm) {
   #section-how-it-works {
-    h3 {
-      text-align: center;
-    }
-
     #steps {
       margin-top: 30px;
     }
@@ -243,9 +232,6 @@
 
     #demo {
       margin-top: 60px;
-
-      #demo-artwork {
-      }
 
       #demo-controls {
         margin-top: 70px;
@@ -264,10 +250,6 @@
         }
 
         .btn-redraw {
-          display: inline-block;
-          margin-top: 40px;
-          padding: 12px 40px;
-          border: 2px solid #979797;
         }
       }
     }
@@ -291,14 +273,14 @@
   }
 
   h4 {
+    font-size: 1.1rem;
     margin-top: 120px;
 
     span.number {
       color: #e1e1e1;
       display: block;
-      font-size: 4rem;
+      font-size: 3.3rem;
       font-weight: 300;
-      letter-spacing: -4px;
     }
   }
 
@@ -317,17 +299,27 @@
 
     h4 {
       color: #666666;
-      font-size: 3rem;
+      font-size: 2.33rem;
     }
 
     p {
       margin-top: 20px;
     }
+
+    .image-wrapper {
+      margin-top: 80px;
+    }
   }
 }
 
+#section-testimonials {
+  background-color: rgba(248, 249, 250, 0.6);
+  margin: 40px;
+  padding: 160px 0;
+}
+
 #section-built-by {
-  padding: 120px 0 80px 0;
+  padding: 80px 0;
 
   p {
     margin-top: 30px;
@@ -343,6 +335,20 @@
   }
 }
 
+@include media-breakpoint-down(sm) {
+  #section-built-by {
+    padding: 0 0 60px 0;
+
+    h3 {
+      margin-top: 60px;
+    }
+
+    .image-wrapper {
+      margin-top: 40px;
+    }
+  }
+}
+
 #section-try-for-free {
   text-align: center;
 
@@ -354,7 +360,30 @@
 
   p.message {
     padding: 0 240px;
-    font-size: 3rem;
+    font-size: 2.33rem;
     line-height: 1.4;
+  }
+
+  .btn {
+    margin-top: 48px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #section-try-for-free {
+    .black-background {
+      background-color: #111111;
+      margin: 0 20px;
+      padding: 100px 0;
+    }
+
+    p.message {
+      padding: 0 40px;
+      font-size: 1.6rem;
+    }
+
+    .btn {
+      margin-top: 30px;
+    }
   }
 }

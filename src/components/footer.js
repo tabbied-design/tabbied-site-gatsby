@@ -51,7 +51,7 @@ const Footer = () => {
             <h5>Subscribe</h5>
 
             <p>
-              Sign up to our email list to be notified of updates and new from
+              Sign up to our email list to be notified of updates and news from
               Tabbied.
             </p>
 

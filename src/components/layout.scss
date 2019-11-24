@@ -61,6 +61,25 @@ img {
   max-width: 100%;
 }
 
+/* Button */
+button {
+  font-family: "Avenir Light", "Nunito Sans", sans-serif;
+}
+
+.btn {
+  font-size: 1rem;
+  display: inline-block;
+  color: white;
+  background-color: black;
+  padding: 15px 25px;
+  border-radius: 2px;
+
+  &.white {
+    color: #232529;
+    background-color: white;
+  }
+}
+
 @include media-breakpoint-down(sm) {
   body {
   }

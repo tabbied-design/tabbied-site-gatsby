@@ -8,6 +8,8 @@ import usesWallArt from "../images/uses_wall_art.jpg"
 import usesStationery from "../images/uses_stationery.jpg"
 import usesPackaging from "../images/uses_packaging.jpg"
 import usesTextileApparel from "../images/uses_textile_apparel.jpg"
+import usesEndlessPossibilities from "../images/uses_endless_possibilities.jpg"
+import testimonialPerson from "../images/testimonial_person.png"
 
 const HeroSection = () => {
   return (
@@ -23,7 +25,7 @@ const HeroSection = () => {
               </p>
 
               <div className="hero-actions">
-                <Link className="btn-action">Make your art</Link>
+                <Link className="btn">Make your art</Link>
               </div>
             </div>
           </div>
@@ -92,8 +94,10 @@ const HowItWorksSection = () => {
               <div id="demo-controls">
                 <h4>Try a quick demo</h4>
                 <div>
-                  Try picking your own colors and/or tap redraw to create a
-                  unique design.
+                  <p>
+                    Try picking your own colors and/or tap redraw to create a
+                    unique design.
+                  </p>
                   <div className="color-palette">
                     <ColorPicker color="#043C64" />
                     <ColorPicker color="#63BFFE" />
@@ -101,7 +105,7 @@ const HowItWorksSection = () => {
                     <ColorPicker color="#FFC31B" />
                     <ColorPicker color="#FF256F" />
                   </div>
-                  <a className="btn-redraw">Redraw</a>
+                  <button className="btn-redraw">Redraw</button>
                 </div>
               </div>
             </div>
@@ -132,7 +136,7 @@ const BrowseArtworkSection = () => {
               <Link to="/">
                 <img
                   src="/images/artwork_the_city.png"
-                  alt="The City Artwork Image"
+                  alt="The City Artwork"
                 />
               </Link>
             </div>
@@ -141,17 +145,14 @@ const BrowseArtworkSection = () => {
               <Link to="/">
                 <img
                   src="/images/artwork_super_zario.png"
-                  alt="Super Zario Artwork Image"
+                  alt="Super Zario Artwork"
                 />
               </Link>
             </div>
 
             <div className="col-md-4">
               <Link to="/">
-                <img
-                  src="/images/artwork_disque.png"
-                  alt="Disque Artwork Image"
-                />
+                <img src="/images/artwork_disque.png" alt="Disque Artwork" />
               </Link>
             </div>
           </div>
@@ -161,14 +162,14 @@ const BrowseArtworkSection = () => {
               <Link to="/">
                 <img
                   src="/images/artwork_symmetry.png"
-                  alt="Symmetry Artwork Image"
+                  alt="Symmetry Artwork"
                 />
               </Link>
             </div>
 
             <div className="col-md-4">
               <Link to="/">
-                <img src="/images/artwork_veil.png" alt="Veil Artwork Image" />
+                <img src="/images/artwork_veil.png" alt="Veil Artwork" />
               </Link>
             </div>
 
@@ -176,7 +177,7 @@ const BrowseArtworkSection = () => {
               <Link to="/">
                 <img
                   src="/images/artwork_placeholder.png"
-                  alt="Artwork Placeholder Image"
+                  alt="Artwork Placeholder"
                 />
               </Link>
             </div>
@@ -214,7 +215,7 @@ const ExampleUsesSection = () => {
       </div>
 
       <div className="example-use-image-wrapper">
-        <img src={usesDigitalImages} alt="Digital Images" />
+        <img src={usesDigitalImages} alt="Digital" />
       </div>
 
       <div className="container">
@@ -229,7 +230,7 @@ const ExampleUsesSection = () => {
       </div>
 
       <div className="example-use-image-wrapper">
-        <img src={usesWallArt} alt="Wall art image" />
+        <img src={usesWallArt} alt="Wall art" />
       </div>
 
       <div className="container">
@@ -244,7 +245,7 @@ const ExampleUsesSection = () => {
       </div>
 
       <div className="example-use-image-wrapper">
-        <img src={usesStationery} alt="Stationery image" />
+        <img src={usesStationery} alt="Stationery" />
       </div>
 
       <div className="container">
@@ -259,7 +260,7 @@ const ExampleUsesSection = () => {
       </div>
 
       <div className="example-use-image-wrapper">
-        <img src={usesPackaging} alt="Packaging image" />
+        <img src={usesPackaging} alt="Packaging" />
       </div>
 
       <div className="container">
@@ -274,7 +275,7 @@ const ExampleUsesSection = () => {
       </div>
 
       <div className="example-use-image-wrapper">
-        <img src={usesTextileApparel} alt="Textiles and apparel image" />
+        <img src={usesTextileApparel} alt="Textiles and apparel" />
       </div>
 
       <div id="uses-endless-possibilities">
@@ -291,6 +292,37 @@ const ExampleUsesSection = () => {
             </div>
           </div>
         </div>
+
+        <div className="image-wrapper">
+          <img src={usesEndlessPossibilities} alt="Endless possibilities" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const TestimonialsSection = () => {
+  return (
+    <div id="section-testimonials">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-3 offset-md-1">
+            <img src={testimonialPerson} alt="Jane Doe" />
+          </div>
+
+          <div className="col-md-5 offset-md-1">
+            Testimonials
+            <p>
+              <blockquote>
+                "So simple but magical. My mind is blown."
+              </blockquote>
+
+              <author>Don Relyea</author>
+
+              <span className="role">Digital artist, inventor, speaker</span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -301,14 +333,16 @@ const BuiltBySection = () => {
     <div id="section-built-by">
       <div className="container">
         <div className="row">
-          <div className="col-md-7">
-            <img
-              src="/images/built_by_01.png"
-              alt="Built by Sy Hong and Ye Joo Park"
-            />
+          <div className="col-md-7 order-2 order-md-1">
+            <div className="image-wrapper">
+              <img
+                src="/images/built_by_01.png"
+                alt="Built by Sy Hong and Ye Joo Park"
+              />
+            </div>
           </div>
 
-          <div className="col-md-5">
+          <div className="col-md-5 order-1 order-md-2">
             <h3>
               Built by design and <span class="nowrap">dev geeks</span>
             </h3>
@@ -327,7 +361,7 @@ const BuiltBySection = () => {
         </div>
 
         <div className="row">
-          <div className="col-md-5 offset-3">
+          <div className="col-md-5 offset-md-3">
             <h3>A special thanks to</h3>
 
             <div className="people">
@@ -344,7 +378,9 @@ const BuiltBySection = () => {
           </div>
 
           <div className="col-md-4">
-            <img src="/images/built_by_02.png" alt="Thanks to Chuan Yuan" />
+            <div className="image-wrapper">
+              <img src="/images/built_by_02.png" alt="Thanks to Chuan Yuan" />
+            </div>
           </div>
         </div>
       </div>
@@ -362,6 +398,10 @@ const TryForFreeSection = () => {
               <p className="message">
                 Create your beautiful design in under a minute.
               </p>
+
+              <Link to="/" className="btn white">
+                Make your art
+              </Link>
             </div>
           </div>
         </div>
@@ -377,6 +417,7 @@ const IndexPage = () => {
       <HowItWorksSection />
       <BrowseArtworkSection />
       <ExampleUsesSection />
+      <TestimonialsSection />
       <BuiltBySection />
       <TryForFreeSection />
     </div>
