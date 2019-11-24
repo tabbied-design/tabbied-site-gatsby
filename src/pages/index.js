@@ -311,7 +311,7 @@ const TestimonialsSection = () => {
           </div>
 
           <div className="col-md-5 offset-md-1">
-            Testimonials
+            <h3>Testimonials</h3>
             <p>
               <blockquote>
                 "So simple but magical. My mind is blown."
