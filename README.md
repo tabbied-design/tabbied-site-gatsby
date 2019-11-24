@@ -1,5 +1,5 @@
 <p align="center"> 
-<img src="https://user-images.githubusercontent.com/1064036/68080361-9eef2680-fe2c-11e9-99e9-ed003e903079.png" alt="Tabbied" />
+<img src="https://user-images.githubusercontent.com/1064036/69498173-1c87ed00-0f28-11ea-8c23-f9fb9a4ab106.png" alt="Tabbied" width="80" />
 </p>
 
 # Tabbied Site
