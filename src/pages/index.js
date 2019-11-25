@@ -361,7 +361,7 @@ const ExampleUsesSection = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h4>Endless possibilities</h4>
+              <h3>Endless possibilities</h3>
               <p>
                 Wallpaper, digital images, packaging, posters, t-shirts,
                 fabrics…

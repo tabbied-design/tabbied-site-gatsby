@@ -1,23 +1,25 @@
+@import "../components/bootstrap-grid-custom.scss";
+
 #section-footer {
   font-size: 0.9rem;
-  margin: 120px 0;
+  padding: 80px 0 120px 0;
 
   h5 {
     color: #232529;
   }
 
   p {
-    margin-top: 26px;
+    margin-top: 24px;
   }
 
   ul.footer-menu {
-    margin-top: 13px;
+    margin-top: 12px;
 
     li {
       a {
         color: #888888;
         display: block;
-        padding: 13px 0;
+        padding: 12px 0;
       }
     }
   }
@@ -43,6 +45,33 @@
       color: white;
       background-color: black;
       border: none;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #section-footer {
+    padding: 16px 0;
+
+    h5 {
+      margin-top: 32px;
+    }
+
+    ul.footer-menu {
+      margin-top: 4px;
+
+      li {
+        a {
+          color: #888888;
+          display: block;
+          padding: 4px 0;
+        }
+      }
+    }
+
+    .email-input-wrapper {
+      display: flex;
+      margin-top: 24px;
     }
   }
 }
