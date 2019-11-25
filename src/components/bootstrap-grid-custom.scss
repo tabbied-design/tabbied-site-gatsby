@@ -33,8 +33,9 @@ $container-max-widths: (
 
 [class^="col-"] {
   background-color: transparent;
-  border-left: 1px solid skyblue;
-  border-right: 1px solid skyblue;
+  /* border: 1px solid skyblue; */
+  border-top: none;
+  border-bottom: none;
 }
 
 $grid-columns: 12;

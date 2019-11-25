@@ -51,10 +51,14 @@
 
 @include media-breakpoint-down(sm) {
   #section-footer {
-    padding: 16px 0;
+    padding: 16px 0 40px 0;
 
     h5 {
       margin-top: 32px;
+    }
+
+    p {
+      margin-top: 8px;
     }
 
     ul.footer-menu {
@@ -71,7 +75,7 @@
 
     .email-input-wrapper {
       display: flex;
-      margin-top: 24px;
+      margin: 24px 0;
     }
   }
 }

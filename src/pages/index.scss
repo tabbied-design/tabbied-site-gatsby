@@ -282,6 +282,7 @@
   }
 
   .example-use-image-wrapper {
+    line-height: 0;
     max-width: 1440px;
     margin: 56px auto 0 auto;
 
@@ -304,6 +305,7 @@
 
     .image-wrapper {
       margin-top: 80px;
+      line-height: 0;
     }
   }
 }
@@ -312,6 +314,58 @@
   background-color: rgba(248, 249, 250, 0.6);
   margin: 40px;
   padding: 160px 0;
+  text-align: center;
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  blockquote {
+    p {
+      font-size: 2.33rem;
+      margin-top: 24px;
+    }
+
+    .author {
+      color: #232529;
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ced3d9;
+      margin-top: 48px;
+    }
+
+    .role {
+      display: block;
+      margin-top: 24px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #section-testimonials {
+    margin: 0;
+    padding: 80px 24px;
+
+    h3 {
+      margin-top: 40px;
+    }
+
+    blockquote {
+      p {
+        font-size: 1.4rem;
+        margin-top: 16px;
+      }
+
+      .author {
+        margin-top: 32px;
+      }
+
+      .role {
+        display: block;
+        margin-top: 16px;
+      }
+    }
+  }
 }
 
 #section-built-by {
@@ -369,8 +423,8 @@
   #section-try-for-free {
     .black-background {
       background-color: #111111;
-      margin: 0 20px;
-      padding: 100px 0;
+      margin: 0;
+      padding: 80px 0;
     }
 
     p.message {
@@ -401,7 +455,7 @@
 
 @include media-breakpoint-down(sm) {
   #section-submit-artwork {
-    padding: 64px 0;
-    margin: 20px;
+    padding: 64px 24px;
+    margin: 0;
   }
 }

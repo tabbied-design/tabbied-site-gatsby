@@ -17,7 +17,7 @@ const HeroSection = () => {
     <div id="section-hero">
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-md-6 order-2 order-md-1">
+          <div className="col-sm-6 order-2 order-sm-1">
             <p className="hero-text">
               Customizable,
               <br /> CSS generated artwork
@@ -29,7 +29,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="col-md-5 offset-md-1 order-1 order-md-2">
+          <div className="col-md-5 offset-md-1 col-sm-6 offset-sm-0 order-1 order-sm-2">
             <style>
               {`
             css-doodle {
@@ -384,22 +384,21 @@ const TestimonialsSection = () => {
   return (
     <div id="section-testimonials">
       <div className="container">
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col-md-3 offset-md-1">
             <img src={testimonialPerson} alt="Jane Doe" />
           </div>
 
           <div className="col-md-5 offset-md-1">
             <h3>Testimonials</h3>
-            <p>
-              <blockquote>
-                "So simple but magical. My mind is blown."
-              </blockquote>
 
-              <author>Don Relyea</author>
+            <blockquote>
+              <p>"So simple but magical. My mind is blown."</p>
+
+              <span className="author">Don Relyea</span>
 
               <span className="role">Digital artist, inventor, speaker</span>
-            </p>
+            </blockquote>
           </div>
         </div>
       </div>
