@@ -33,13 +33,6 @@
 }
 
 #section-hero {
-  .hero-background {
-    background: url("/images/hero_image.png") no-repeat center right;
-    background-size: 450px;
-    width: 100%;
-    padding: 260px 0;
-  }
-
   .hero-text {
     font-size: 2.67rem;
     line-height: 1.3;
@@ -50,17 +43,15 @@
   .hero-actions {
     margin-top: 50px;
   }
+
+  #hero-doodle {
+    width: 466px;
+    height: 699px;
+  }
 }
 
 @include media-breakpoint-down(md) {
   #section-hero {
-    .hero-background {
-      background: url("/images/hero_image.png") no-repeat center right;
-      background-size: 420px;
-      width: 100%;
-      padding: 260px 0;
-    }
-
     .hero-text {
       font-size: 2.4rem;
     }
@@ -68,20 +59,23 @@
     .hero-actions {
       margin-top: 30px;
     }
+
+    #hero-doodle {
+      width: 366px;
+      height: 549px;
+    }
   }
 }
 
 @include media-breakpoint-down(sm) {
   #section-hero {
-    .hero-background {
-      background: url("/images/hero_image.png") no-repeat top center;
-      background-size: 60%;
-      width: 100%;
-      padding: 500px 0 80px 0;
-    }
-
     .hero-text {
       font-size: 1.9rem;
+    }
+
+    #hero-doodle {
+      width: 320px;
+      height: 480px;
     }
   }
 }
