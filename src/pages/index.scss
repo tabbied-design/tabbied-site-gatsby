@@ -26,7 +26,7 @@
 @include media-breakpoint-down(sm) {
   #page-main {
     .gray-background {
-      margin: 0 20px;
+      margin: 0;
       padding: 60px 0;
     }
 
@@ -259,10 +259,6 @@
 
 #section-browse-artwork {
   margin-top: 40px;
-
-  .artwork-images-row {
-    margin-top: 40px;
-  }
 }
 
 #section-example-uses {
@@ -677,5 +673,11 @@
   #section-submit-artwork {
     padding: 64px 24px;
     margin: 0;
+
+    .background {
+      .inner-background {
+        margin: 0;
+      }
+    }
   }
 }

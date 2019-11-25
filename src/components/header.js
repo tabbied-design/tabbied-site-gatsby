@@ -8,7 +8,7 @@ const Header = ({ siteTitle }) => {
   return (
     <div id="header">
       <div className="container">
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col-md-3 col-6">
             <Link id="logo" to="/">
               <img src={logoImage} alt={siteTitle} />

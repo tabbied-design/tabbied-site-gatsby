@@ -211,58 +211,6 @@ const BrowseArtworkSection = () => {
               </h3>
             </div>
           </div>
-
-          <div className="row artwork-images-row">
-            <div className="col-md-4">
-              <Link to="/">
-                <img
-                  src="/images/artwork_the_city.png"
-                  alt="The City Artwork"
-                />
-              </Link>
-            </div>
-
-            <div className="col-md-4">
-              <Link to="/">
-                <img
-                  src="/images/artwork_super_zario.png"
-                  alt="Super Zario Artwork"
-                />
-              </Link>
-            </div>
-
-            <div className="col-md-4">
-              <Link to="/">
-                <img src="/images/artwork_disque.png" alt="Disque Artwork" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="row artwork-images-row">
-            <div className="col-md-4">
-              <Link to="/">
-                <img
-                  src="/images/artwork_symmetry.png"
-                  alt="Symmetry Artwork"
-                />
-              </Link>
-            </div>
-
-            <div className="col-md-4">
-              <Link to="/">
-                <img src="/images/artwork_veil.png" alt="Veil Artwork" />
-              </Link>
-            </div>
-
-            <div className="col-md-4">
-              <Link to="/">
-                <img
-                  src="/images/artwork_placeholder.png"
-                  alt="Artwork Placeholder"
-                />
-              </Link>
-            </div>
-          </div>
         </div>
       </div>
     </div>
