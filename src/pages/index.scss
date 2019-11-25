@@ -17,6 +17,10 @@
     font-size: 2.33rem;
     line-height: 1.3;
   }
+
+  [class^="circle-"] {
+    border-radius: 50%;
+  }
 }
 
 @include media-breakpoint-down(sm) {
@@ -315,6 +319,121 @@
   margin: 40px;
   padding: 160px 0;
   text-align: center;
+  position: relative;
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    @-moz-keyframes rotate {
+      100% {
+        -moz-transform: rotate(360deg);
+      }
+    }
+    @-webkit-keyframes rotate {
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    @keyframes rotate {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    .rectangle-1 {
+      position: absolute;
+      top: 0;
+      left: -8%;
+      width: 640px;
+      height: 640px;
+      opacity: 0.5;
+      background-color: #97f4ff;
+      border-radius: 90px;
+      -webkit-animation: rotate 8s linear infinite;
+      -moz-animation: rotate 8s linear infinite;
+      animation: rotate 8s linear infinite;
+    }
+
+    .circle-1 {
+      position: absolute;
+      top: 10%;
+      right: 20%;
+      width: 40px;
+      height: 40px;
+      background-color: #ff513c;
+      animation: circle-1 8s linear infinite;
+    }
+
+    @keyframes circle-1 {
+      0% {
+        top: 10%;
+        right: 20%;
+      }
+      50% {
+        top: 20%;
+        right: 28%;
+      }
+      100% {
+        top: 10%;
+        right: 20%;
+      }
+    }
+
+    .circle-2 {
+      position: absolute;
+      bottom: 30%;
+      right: 10%;
+      width: 112px;
+      height: 112px;
+      background-color: #32cb8d;
+      animation: circle-2 4s linear infinite;
+    }
+
+    @keyframes circle-2 {
+      0% {
+        bottom: 30%;
+      }
+      50% {
+        bottom: 22%;
+      }
+      100% {
+        bottom: 30%;
+      }
+    }
+
+    .circle-3 {
+      position: absolute;
+      bottom: -24px;
+      right: 60%;
+      width: 144px;
+      height: 144px;
+      border: 40px solid #513dff;
+      animation: circle-3 12s linear infinite;
+    }
+
+    @keyframes circle-3 {
+      0% {
+        right: 60%;
+        bottom: -24px;
+      }
+
+      50% {
+        right: 44%;
+        bottom: -72px;
+      }
+
+      100% {
+        right: 60%;
+        bottom: -24px;
+      }
+    }
+  }
 
   h3 {
     font-size: 1rem;
@@ -401,9 +520,10 @@
 
 #section-try-for-free {
   text-align: center;
+  position: relative;
 
-  .black-background {
-    background-color: #111111;
+  .dark-background {
+    background-color: #232529;
     margin: 0 40px;
     padding: 100px 0;
   }
@@ -417,12 +537,47 @@
   .btn {
     margin-top: 48px;
   }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .circle-4 {
+      position: absolute;
+      right: 15%;
+      bottom: -160px;
+      width: 320px;
+      height: 320px;
+      background-color: #86f1f2;
+      animation: circle-4 8s linear infinite;
+    }
+
+    @keyframes circle-4 {
+      0% {
+        right: 15%;
+        bottom: -160px;
+      }
+
+      50% {
+        right: 10%;
+        bottom: -72px;
+      }
+
+      100% {
+        right: 15%;
+        bottom: -160px;
+      }
+    }
+  }
 }
 
 @include media-breakpoint-down(sm) {
   #section-try-for-free {
-    .black-background {
-      background-color: #111111;
+    .dark-background {
       margin: 0;
       padding: 80px 0;
     }
@@ -433,7 +588,7 @@
     }
 
     .btn {
-      margin-top: 30px;
+      margin-top: 32px;
     }
   }
 }
@@ -443,6 +598,7 @@
   margin: 40px;
   background-color: rgba(248, 249, 250, 0.6);
   text-align: center;
+  position: relative;
 
   p {
     margin-top: 32px;
@@ -450,6 +606,70 @@
 
   .btn {
     margin-top: 48px;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .inner-background {
+      width: calc(100% - 176px);
+      height: 100%;
+      margin: 0 88px;
+      position: relative;
+      overflow: hidden;
+
+      .circle-5 {
+        position: absolute;
+        bottom: 80px;
+        width: 160px;
+        height: 160px;
+        background-color: #c3b027;
+        animation: circle-5 6s linear infinite;
+      }
+
+      @keyframes circle-5 {
+        0% {
+          bottom: 80px;
+        }
+
+        50% {
+          bottom: 160px;
+        }
+
+        100% {
+          bottom: 80px;
+        }
+      }
+
+      .circle-6 {
+        position: absolute;
+        left: -160px;
+        bottom: -240px;
+        width: 320px;
+        height: 320px;
+        background-color: #1b4075;
+        animation: circle-6 6s linear infinite;
+      }
+
+      @keyframes circle-6 {
+        0% {
+          bottom: -240px;
+        }
+
+        50% {
+          bottom: -160px;
+        }
+
+        100% {
+          bottom: -240px;
+        }
+      }
+    }
   }
 }
 

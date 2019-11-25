@@ -25,7 +25,9 @@ const HeroSection = () => {
             </p>
 
             <div className="hero-actions">
-              <Link className="btn">Make your art</Link>
+              <Link to="/" className="btn">
+                Make your art
+              </Link>
             </div>
           </div>
 
@@ -383,6 +385,12 @@ const ExampleUsesSection = () => {
 const TestimonialsSection = () => {
   return (
     <div id="section-testimonials">
+      <div className="background">
+        <div className="rectangle-1"></div>
+        <div className="circle-1"></div>
+        <div className="circle-2"></div>
+        <div className="circle-3"></div>
+      </div>
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-3 offset-md-1">
@@ -422,7 +430,7 @@ const BuiltBySection = () => {
 
           <div className="col-md-5 order-1 order-md-2">
             <h3>
-              Built by design and <span class="nowrap">dev geeks</span>
+              Built by design and <span className="nowrap">dev geeks</span>
             </h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
@@ -469,7 +477,11 @@ const BuiltBySection = () => {
 const TryForFreeSection = () => {
   return (
     <div id="section-try-for-free">
-      <div className="black-background">
+      <div className="background">
+        <div className="circle-4" />
+      </div>
+
+      <div className="dark-background">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -491,6 +503,13 @@ const TryForFreeSection = () => {
 const SubmitArtworkSection = () => {
   return (
     <div id="section-submit-artwork">
+      <div className="background">
+        <div className="inner-background">
+          <div className="circle-5" />
+          <div className="circle-6" />
+        </div>
+      </div>
+
       <div className="container">
         <div className="row">
           <div className="col-md-8 offset-md-2">
