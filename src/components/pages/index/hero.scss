@@ -12,9 +12,17 @@
     margin-top: 50px;
   }
 
+  .doodle-wrapper {
+    position: relative;
+    height: 750px;
+  }
+
   #hero-doodle {
-    width: 466px;
-    height: 699px;
+    position: absolute;
+    top: -120px;
+    left: 0;
+    width: 660px;
+    height: 990px;
   }
 }
 
@@ -28,9 +36,14 @@
       margin-top: 30px;
     }
 
+    .doodle-wrapper {
+      height: 610px;
+    }
+
     #hero-doodle {
-      width: 366px;
-      height: 549px;
+      top: -100px;
+      width: 540px;
+      height: 810px;
     }
   }
 }
@@ -43,9 +56,16 @@
       font-size: 1.9rem;
     }
 
+    .doodle-wrapper {
+      height: 520px;
+    }
+
     #hero-doodle {
-      width: 320px;
-      height: 480px;
+      top: -100px;
+      left: -70px;
+      /* 375px */
+      width: 480px;
+      height: 720px;
     }
   }
 }

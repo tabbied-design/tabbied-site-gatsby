@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import "css-doodle"
 
 import HeroSection from "../components/pages/index/hero"
+import HowItWorksSection from "../components/pages/index/how-it-works"
 import ColorPicker from "../components/common/ColorPicker"
 import "./index.scss"
 import usesDigitalImages from "../images/uses_digital_images.jpg"
@@ -12,87 +13,6 @@ import usesPackaging from "../images/uses_packaging.jpg"
 import usesTextileApparel from "../images/uses_textile_apparel.jpg"
 import usesEndlessPossibilities from "../images/uses_endless_possibilities.jpg"
 import testimonialPerson from "../images/testimonial_person.png"
-
-const HowItWorksSection = () => {
-  return (
-    <div id="section-how-it-works">
-      <div className="gray-background">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h3>How it works</h3>
-            </div>
-          </div>
-
-          <div id="steps" className="row">
-            <div className="col-md-4">
-              <div className="step-box">
-                <div className="step-number one">
-                  <span>1</span>
-                </div>
-                <p>Pick a design from our growing collection of artwork</p>
-              </div>
-            </div>
-
-            <div className="col-md-4">
-              <div className="step-box">
-                <div className="step-number two">
-                  <span>2</span>
-                </div>
-                <p>Customize colors and choose settings for your design</p>
-              </div>
-            </div>
-
-            <div className="col-md-4">
-              <div className="step-box">
-                <div className="step-number three">
-                  <span>3</span>
-                </div>
-                <p>
-                  Download your customized design{" "}
-                  <span className="highlight">
-                    <span className="text">for free</span>
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="demo" className="row">
-            <div className="col-md-5">
-              <div id="demo-artwork">
-                <img
-                  src="/images/demo_artwork_placeholder.png"
-                  alt="Demo Artwork"
-                />
-              </div>
-            </div>
-
-            <div className="col-md-4 offset-md-1">
-              <div id="demo-controls">
-                <h4>Try a quick demo</h4>
-                <div>
-                  <p>
-                    Try picking your own colors and/or tap redraw to create a
-                    unique design.
-                  </p>
-                  <div className="color-palette">
-                    <ColorPicker color="#043C64" />
-                    <ColorPicker color="#63BFFE" />
-                    <ColorPicker color="#5AE4E1" />
-                    <ColorPicker color="#FFC31B" />
-                    <ColorPicker color="#FF256F" />
-                  </div>
-                  <button className="btn-redraw">Redraw</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 const BrowseArtworkSection = () => {
   return (

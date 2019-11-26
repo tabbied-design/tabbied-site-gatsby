@@ -1,0 +1,161 @@
+@import "../../bootstrap-grid-custom.scss";
+
+#section-how-it-works {
+  h3 {
+    text-align: center;
+  }
+
+  #steps {
+    margin-top: 40px;
+  }
+
+  .step-box {
+    text-align: center;
+    padding: 20px 60px;
+
+    .step-number {
+      color: #121212;
+      font-size: 1.3rem;
+      display: inline-flex;
+      width: 48px;
+      height: 48px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      &.one {
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+
+        &:before {
+          content: "";
+          width: 80px;
+          height: 80px;
+          background-color: #fca5b8;
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          position: absolute;
+          top: 12px;
+          left: -45px;
+          z-index: -1;
+        }
+      }
+
+      &.two {
+        background-color: #8beff1;
+      }
+
+      &.three {
+        border-radius: 24px;
+        background-color: #9effd8;
+      }
+    }
+
+    .highlight {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+
+      .text {
+        position: relative;
+        z-index: 1;
+      }
+
+      &:before {
+        content: "";
+        width: 100%;
+        height: 8px;
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        z-index: 0;
+        background-color: #9effd8;
+      }
+    }
+  }
+
+  #demo {
+    margin-top: 80px;
+
+    #demo-artwork {
+      box-shadow: 73px 75px 142px 0 rgba(8, 24, 34, 0.16);
+      border-radius: 12px;
+      margin: 0 auto;
+    }
+
+    #demo-controls {
+      margin-top: 70px;
+
+      p {
+        position: relative;
+        margin-top: 24px;
+
+        img.demo-arrow {
+          position: absolute;
+          top: 16px;
+          left: -60px;
+        }
+      }
+
+      .color-palette {
+        margin-top: 40px;
+
+        .color-picker-box {
+          margin-right: 32px;
+        }
+      }
+
+      .btn-redraw {
+        font-size: 1rem;
+        color: #232529;
+        display: inline-block;
+        cursor: pointer;
+        padding: 14px 50px;
+        margin-top: 40px;
+        background: #ffffff;
+        border: none;
+        border-radius: 2px;
+        box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.15);
+        outline: none;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #section-how-it-works {
+    #steps {
+      margin-top: 30px;
+    }
+
+    .step-box {
+      text-align: center;
+      padding: 20px 40px;
+    }
+
+    #demo {
+      margin-top: 60px;
+
+      #demo-controls {
+        margin-top: 70px;
+
+        p {
+          position: relative;
+          margin-top: 24px;
+        }
+
+        .color-palette {
+          margin-top: 40px;
+
+          .color-picker-box {
+            margin-right: 32px;
+          }
+        }
+
+        .btn-redraw {
+        }
+      }
+    }
+  }
+}
