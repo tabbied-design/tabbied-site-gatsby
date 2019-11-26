@@ -5,6 +5,18 @@ import "css-doodle"
 import "./hero.scss"
 
 class HeroSection extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.doodleRef = React.createRef()
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      this.doodleRef.current.update()
+    }, 2000)
+  }
+
   render() {
     return (
       <div id="section-hero">
@@ -87,7 +99,11 @@ class HeroSection extends React.Component {
               );
             }`}
               </style>
-              <css-doodle id="hero-doodle" use="var(--rule)">
+              <css-doodle
+                ref={this.doodleRef}
+                id="hero-doodle"
+                use="var(--rule)"
+              >
                 {`
             :doodle {
               @grid: 13x1/ 100%;
