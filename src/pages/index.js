@@ -4,7 +4,6 @@ import "css-doodle"
 
 import HeroSection from "../components/pages/index/hero"
 import HowItWorksSection from "../components/pages/index/how-it-works"
-import ColorPicker from "../components/common/ColorPicker"
 import "./index.scss"
 import usesDigitalImages from "../images/uses_digital_images.jpg"
 import usesWallArt from "../images/uses_wall_art.jpg"

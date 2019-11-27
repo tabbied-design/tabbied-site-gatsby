@@ -11,10 +11,6 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       module: {
         rules: [
           {
-            test: /two.js/,
-            use: loaders.null(),
-          },
-          {
             test: /css-doodle/,
             use: loaders.null(),
           },
