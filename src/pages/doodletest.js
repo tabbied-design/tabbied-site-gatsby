@@ -6,7 +6,10 @@ class DoodleTest extends React.Component {
     super(props)
 
     this.state = {
+      colors: ["gray", "#CED3D9"],
       grid: "6x4",
+      width: 320,
+      widthHeightRatio: 1.5,
     }
 
     this.doodleRef = React.createRef()
@@ -23,6 +26,9 @@ class DoodleTest extends React.Component {
   }
 
   render() {
+    const colors = this.state.colors
+    const state = this.state
+
     return (
       <div className="container">
         <div className="row">
@@ -30,8 +36,6 @@ class DoodleTest extends React.Component {
             <style>
               {`
               css-doodle#demo-doodle {
-                --color0: #ff6655;
-                --color1: #CED3D9;
               }
               `}
             </style>
@@ -41,18 +45,20 @@ class DoodleTest extends React.Component {
               grid={this.state.grid}
             >
               {`
-                --color0: #FFFFFF;
-                --color1: #CED3D9;
+                --color0: ${colors[0]};
+                --color1: ${colors[1]};
                 --color2: #FF3D8B;
                 --color3: #3FFFB2;
                 --color4: #275AA6;
                 --color5: #3EECFF;
 
                 --randomColor: @p(var(--color2), var(--color3), var(--color4), var(--color5));
+
+                background: var(--color0);
                 
                 :doodle {
-                  width: 320px; 
-                  height: 480px; 
+                  width: ${state.width}px; 
+                  height: ${state.width * state.widthHeightRatio}px; 
 						      box-shadow:0 0 5px #ddd;
                 }
 
@@ -63,11 +69,11 @@ class DoodleTest extends React.Component {
                   :after {
                     content: '';
                     background: var(--randomColor);
-                    @size: @rand(20px);
+                    @size: @rand(12px, 72px);
                     clip-path: @pick(polygon(50% 0%, 0% 100%, 100% 100%), circle(50% at 50% 50%), polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%));
                     transform:rotate(@pick(0deg, 360deg));
                     transition: transform ease @rand(200ms, 600ms);
-                    }
+                  }
                 }
 
                 /*Frequency options of 0.2, 0.4, 0.6, 0.8, 1.0 */
