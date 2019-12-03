@@ -8,6 +8,7 @@
     "Ye Joo Park <subwaymatch@gmail.com>"
   ],
   "dependencies": {
+    "@simonwep/pickr": "^1.4.7",
     "bootstrap": "^4.3.1",
     "css-doodle": "^0.7.4",
     "firebase": "^7.2.2",
@@ -23,6 +24,7 @@
     "gatsby-plugin-styled-components": "^3.1.11",
     "gatsby-source-filesystem": "^2.1.33",
     "gatsby-transformer-sharp": "^2.3.0",
+    "lodash": "^4.17.15",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
@@ -30,7 +32,8 @@
     "react-helmet": "^5.2.1",
     "reset-css": "^5.0.1",
     "smooth-scroll": "^16.1.0",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

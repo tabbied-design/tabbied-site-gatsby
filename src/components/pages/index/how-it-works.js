@@ -2,27 +2,52 @@ import React from "react"
 import ColorPicker from "../../common/ColorPicker"
 
 import "./how-it-works.scss"
+import Doodle from "../../common/Doodle"
+
+const _ = require("lodash/core")
+
+const uuidv4 = require("uuid/v4")
 
 class HowItWorksSection extends React.Component {
   constructor(props) {
     super(props)
 
-    this.doodleRef = React.createRef()
-  }
-
-  componentDidMount() {
-    /*
-    setInterval(() => {
-      this.doodleRef.current.update()
-    }, 2000)
-    */
+    this.state = {
+      demoDoodleUuid: uuidv4(),
+      colors: [
+        "#367DE7",
+        "#70A8FF",
+        "#FFA1C6",
+        "#1B4075",
+        "#3FFFB2",
+        "#3EECFF",
+      ],
+    }
   }
 
   redraw() {
-    this.doodleRef.current.update()
+    this.setState({
+      demoDoodleUuid: uuidv4(),
+    })
+  }
+
+  setColor(index, hex) {
+    // do nothing at the moment
+    console.log(`setColor(index=${index}, hex=${hex})`)
+
+    const clonedColors = _.clone(this.state.colors)
+    clonedColors[index] = hex
+
+    this.setState({
+      colors: clonedColors,
+    })
+
+    this.redraw()
   }
 
   render() {
+    const { demoDoodleUuid, colors } = this.state
+
     return (
       <div id="section-how-it-works">
         <div className="gray-background">
@@ -68,8 +93,18 @@ class HowItWorksSection extends React.Component {
             </div>
 
             <div id="demo" className="row">
-              <div className="col-md-5">
-                <div id="demo-artwork">Demo Artwork Here</div>
+              <div className="col-md-4">
+                <div
+                  id="demo-artwork"
+                  style={{
+                    backgroundColor: colors[0],
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "30px 0",
+                  }}
+                >
+                  <Doodle colors={colors} uuid={demoDoodleUuid} />
+                </div>
               </div>
 
               <div className="col-md-4 offset-md-1">
@@ -81,11 +116,30 @@ class HowItWorksSection extends React.Component {
                       unique design.
                     </p>
                     <div className="color-palette">
-                      <ColorPicker color="#043C64" />
-                      <ColorPicker color="#63BFFE" />
-                      <ColorPicker color="#5AE4E1" />
-                      <ColorPicker color="#FFC31B" />
-                      <ColorPicker color="#FF256F" />
+                      <ColorPicker
+                        handleColorChange={color => this.setColor(0, color)}
+                        color={colors[0]}
+                      />
+                      <ColorPicker
+                        handleColorChange={color => this.setColor(1, color)}
+                        color={colors[1]}
+                      />
+                      <ColorPicker
+                        handleColorChange={color => this.setColor(2, color)}
+                        color={colors[2]}
+                      />
+                      <ColorPicker
+                        handleColorChange={color => this.setColor(3, color)}
+                        color={colors[3]}
+                      />
+                      <ColorPicker
+                        handleColorChange={color => this.setColor(4, color)}
+                        color={colors[4]}
+                      />
+                      <ColorPicker
+                        handleColorChange={color => this.setColor(5, color)}
+                        color={colors[5]}
+                      />
                     </div>
                     <button
                       className="btn-redraw"
