@@ -61,8 +61,8 @@ class HeroSection extends React.Component {
                     overflow:hidden;
                     
                     /* 0.2 could be 0.2, 0.4, 0.6, 0.8, 1.0 */
-                    -webkit-transform: scaleX(@pick(@rand(-0.2, -1), @rand(0.2, 1)));
-                    transform: scaleX(@pick(@rand(-0.2, -1), @rand(0.2, 1)));
+                    -webkit-transform: scaleX(@pick(-1, 1));
+                    transform: scaleX(@pick(-1, 1));
                     
                     -webkit-transition: ease @rand(400ms, 1000ms);
                     transition: ease @rand(400ms, 1000ms);
@@ -80,8 +80,8 @@ class HeroSection extends React.Component {
                     overflow:hidden;
 
                     /* 0.2 could be 0.2, 0.4, 0.6, 0.8, 1.0 */
-                    -webkit-transform: scaleX(@pick(@rand(-0.2, -1), @rand(0.2, 1)));
-                    transform: scaleX(@pick(@rand(-0.2, -1), @rand(0.2, 1)));
+                    -webkit-transform: scaleX(@pick(-1, 1));
+                    transform: scaleX(@pick(-1, 1));
 
                     -webkit-transition: ease @rand(400ms, 1000ms);
                     transition: ease @rand(400ms, 1000ms);
@@ -112,7 +112,7 @@ class HeroSection extends React.Component {
                     box-sizing:border-box;
                   }
                   :container {
-                    transform: rotate(@p(0deg, -180deg, 180deg));
+                    transform: rotate(@p(-45deg, 135deg));
                     -webkit-transition: ease 1000ms;
                     transition: ease 1000ms;
                   }

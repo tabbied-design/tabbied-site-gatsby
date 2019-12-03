@@ -14,6 +14,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /css-doodle/,
             use: loaders.null(),
           },
+          {
+            test: /pickr/,
+            use: loaders.null(),
+          },
         ],
       },
     })
