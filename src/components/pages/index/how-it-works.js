@@ -5,8 +5,35 @@ import "./how-it-works.scss"
 import Doodle from "../../common/Doodle"
 
 const _ = require("lodash/core")
-
 const uuidv4 = require("uuid/v4")
+const demoDoodleCode = `
+--randomColor: @p(var(--color2), var(--color3), var(--color4), var(--color5));
+
+background: var(--color0);
+
+@random(0.6) {
+  :after {
+    content: '';
+    background: var(--randomColor);
+    @size: @rand(12px, 72px);
+    clip-path: @pick(polygon(50% 0%, 0% 100%, 100% 100%), circle(50% at 50% 50%), polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%));
+    transform:rotate(@pick(0deg, 360deg));
+    transition: transform ease @rand(200ms, 600ms);
+  }
+}
+
+/*Frequency options of 0.2, 0.4, 0.6, 0.8, 1.0 */
+@random(0.6) { 
+  -webkit-box-shadow:0 -1px 0 var(--color1); 
+  box-shadow:0 -1px 0 var(--color1); 
+}
+
+/*Frequency options of 0.2, 0.4, 0.6, 0.8, 1.0 */
+@random(0.6) { 
+  -webkit-box-shadow:-1px 0 0 var(--color1);  
+  box-shadow:-1px 0 0 var(--color1);  
+}
+`
 
 class HowItWorksSection extends React.Component {
   constructor(props) {
@@ -100,10 +127,17 @@ class HowItWorksSection extends React.Component {
                     backgroundColor: colors[0],
                     display: "flex",
                     justifyContent: "center",
-                    padding: "30px 0",
+                    padding: "40px 0",
                   }}
                 >
-                  <Doodle colors={colors} uuid={demoDoodleUuid} />
+                  <Doodle
+                    name="demo-doodle"
+                    colors={colors}
+                    width={280}
+                    height={420}
+                    uuid={demoDoodleUuid}
+                    doodleCode={demoDoodleCode}
+                  />
                 </div>
               </div>
 

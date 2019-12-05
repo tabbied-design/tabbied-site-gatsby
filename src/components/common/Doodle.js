@@ -15,59 +15,41 @@ class Doodle extends React.Component {
     }
   }
 
+  getColorsString(colors) {
+    let colorStyleVariables = ""
+
+    colors.forEach((color, idx) => {
+      colorStyleVariables += `--color${idx}: ${color};\n`
+    })
+
+    return colorStyleVariables
+  }
+
   redraw() {
     this.doodleRef.current.update()
   }
 
   render() {
-    const { colors, grid, width, widthHeightRatio } = this.props
+    const { name, colors, grid, width, height, doodleCode } = this.props
+    const colorsString = this.getColorsString(colors)
+
+    console.log(colorsString)
 
     return (
       <div className="doodle-wrapper">
-        <css-doodle id="demo-doodle" ref={this.doodleRef} grid={grid}>
+        <style>{`
+          css-doodle#${name} {
+            ${colorsString}
+
+            width: ${width}px; 
+            height: ${height}px; 
+          }
+        `}</style>
+
+        <css-doodle id={name} ref={this.doodleRef} grid={grid}>
           {`
-                --color0: ${colors[0]};
-                --color1: ${colors[1]};
-                --color2: ${colors[2]};
-                --color3: ${colors[3]};
-                --color4: ${colors[4]};
-                --color5: ${colors[5]};
-
-                --randomColor: @p(var(--color2), var(--color3), var(--color4), var(--color5));
-
-                background: var(--color0);
-                
-                :doodle {
-                  width: ${width}px; 
-                  height: ${width * widthHeightRatio}px; 
-                }
-
-                :container {
-                }
-
-                @random(0.6) {
-                  :after {
-                    content: '';
-                    background: var(--randomColor);
-                    @size: @rand(12px, 72px);
-                    clip-path: @pick(polygon(50% 0%, 0% 100%, 100% 100%), circle(50% at 50% 50%), polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%));
-                    transform:rotate(@pick(0deg, 360deg));
-                    transition: transform ease @rand(200ms, 600ms);
-                  }
-                }
-
-                /*Frequency options of 0.2, 0.4, 0.6, 0.8, 1.0 */
-                @random(0.6) { 
-                  -webkit-box-shadow:0 -1px 0 var(--color1); 
-                  box-shadow:0 -1px 0 var(--color1); 
-                }
-
-                /*Frequency options of 0.2, 0.4, 0.6, 0.8, 1.0 */
-                @random(0.6) { 
-                  -webkit-box-shadow:-1px 0 0 var(--color1);  
-                  box-shadow:-1px 0 0 var(--color1);  
-                }
-              `}
+            ${doodleCode}
+          `}
         </css-doodle>
       </div>
     )
