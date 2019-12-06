@@ -15,7 +15,7 @@ background: var(--color0);
   :after {
     content: '';
     background: var(--randomColor);
-    @size: @rand(12px, 72px);
+    @size: @rand(8px, 64px);
     clip-path: @pick(polygon(50% 0%, 0% 100%, 100% 100%), circle(50% at 50% 50%), polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%));
     transform:rotate(@pick(0deg, 360deg));
     transition: transform ease @rand(200ms, 600ms);
@@ -120,7 +120,7 @@ class HowItWorksSection extends React.Component {
             </div>
 
             <div id="demo" className="row">
-              <div className="col-md-4">
+              <div className="col-md-5 col-lg-4">
                 <div
                   id="demo-artwork"
                   style={{
@@ -141,7 +141,7 @@ class HowItWorksSection extends React.Component {
                 </div>
               </div>
 
-              <div className="col-md-4 offset-md-1">
+              <div className="col-md-6 offset-md-1 col-lg-4 offset-lg-1">
                 <div id="demo-controls">
                   <h4>Try a quick demo</h4>
                   <div>
