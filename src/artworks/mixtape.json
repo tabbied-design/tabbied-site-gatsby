@@ -1,0 +1,28 @@
+{
+  "name": "Mixtape",
+  "description": "Semi circle geometric pattern with striped accents.",
+  "pallete": ["#FFFFFF", "#232529", "#3E8BFF", "#3FFFB2", "#3EECFF", "#3FFFB2"],
+  "grid": {
+    "default": "6x4",
+    "options": ["3x2", "6x4", "9x6", "12x8", "15x10"]
+  },
+  "slider": {
+    "name": "Frequency of shapes",
+    "default": 1.0,
+    "values": [0.2, 0.4, 0.6, 0.8, 1.0],
+    "labels": ["20%", "40%", "60%", "80%", "100%"]
+  },
+  "toggle": [
+    {
+      "name": "Shadows",
+      "code": {
+        "on": "box-shadow:0 0 @pick(0, 40)px rgba(0,0,0,0.2);",
+        "off": ""
+      }
+    }
+  ],
+  "code": {
+    "style": "",
+    "doodle": ""
+  }
+}
