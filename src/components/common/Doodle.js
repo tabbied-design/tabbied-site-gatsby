@@ -30,7 +30,15 @@ class Doodle extends React.Component {
   }
 
   render() {
-    const { name, colors, grid, width, height, doodleCode } = this.props
+    const {
+      name,
+      colors,
+      grid,
+      width,
+      height,
+      styleCode,
+      doodleCode,
+    } = this.props
     const colorsString = this.getColorsString(colors)
 
     console.log(colorsString)
@@ -43,6 +51,8 @@ class Doodle extends React.Component {
 
             width: ${width}px; 
             height: ${height}px; 
+
+            ${styleCode}
           }
         `}</style>
 
@@ -70,6 +80,8 @@ Doodle.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   widthHeightRatio: PropTypes.number,
+  styleCode: PropTypes.string,
+  doodleCode: PropTypes.string,
 }
 
 export default Doodle

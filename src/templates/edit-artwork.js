@@ -144,24 +144,15 @@ class EditArtwork extends React.Component {
             </div>
 
             <div className="col-md-6">
-              <div
-                className="doodle-wrapper"
-                style={{
-                  backgroundColor: this.state.colors[0],
-                  display: "flex",
-                  justifyContent: "center",
-                  padding: "40px 0",
-                }}
-              >
-                <Doodle
-                  name="demo-doodle"
-                  colors={this.state.colors}
-                  width={280}
-                  height={420}
-                  uuid={this.state.doodleUuid}
-                  doodleCode={""}
-                />
-              </div>
+              <Doodle
+                name={artworkData.slug}
+                colors={this.state.colors}
+                width={280}
+                height={420}
+                uuid={this.state.doodleUuid}
+                styleCode={artworkData.code.style}
+                doodleCode={artworkData.code.doodle}
+              />
             </div>
           </div>
         </div>
@@ -174,6 +165,7 @@ export const query = graphql`
   query ArtworkById($id: String!) {
     artworksJson(id: { eq: $id }) {
       name
+      slug
       pallete
       grid {
         options
@@ -188,6 +180,10 @@ export const query = graphql`
       shadow {
         on
         off
+      }
+      code {
+        style
+        doodle
       }
     }
   }
