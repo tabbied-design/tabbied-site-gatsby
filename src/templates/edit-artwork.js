@@ -130,7 +130,17 @@ class EditArtwork extends React.Component {
 
               <h3>Shadows</h3>
 
-              <div></div>
+              <div>
+                <div className="btn white">Redraw</div>
+                <div
+                  style={{
+                    display: "inline-block",
+                    width: "40px",
+                    height: "8px",
+                  }}
+                />
+                <div className="btn">Export art</div>
+              </div>
             </div>
 
             <div className="col-md-6">
