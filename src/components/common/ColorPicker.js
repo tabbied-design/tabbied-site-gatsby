@@ -16,15 +16,10 @@ const ColorPickerBoxWrapper = styled.div`
 class ColorPicker extends React.Component {
   constructor(props) {
     super(props)
-
-    console.log(`ColorPicker.props.color=${props.color}`)
   }
 
   componentDidMount() {
     const { color, handleColorChange } = this.props
-
-    console.log(`handleColorChange`)
-    console.log(handleColorChange)
 
     // Simple example, see optional options for more configuration.
     const pickr = Pickr.create({
@@ -54,8 +49,6 @@ class ColorPicker extends React.Component {
 
     pickr.on("save", (color, instance) => {
       const hex = color.toHEXA().toString()
-
-      console.log(`saved color=${hex}`)
 
       handleColorChange(hex)
     })

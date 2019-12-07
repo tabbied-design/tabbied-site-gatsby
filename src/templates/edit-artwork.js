@@ -1,28 +1,71 @@
 import React from "react"
 import ColorPicker from "../components/common/ColorPicker"
+import Doodle from "../components/common/Doodle"
+import Tooltip from "rc-tooltip"
+import Slider from "rc-slider"
 import "./edit-artwork.scss"
+import "rc-slider/assets/index.css"
 
+const _ = require("lodash/core")
+const uuidv4 = require("uuid/v4")
 const classNames = require("classnames")
+const Handle = Slider.Handle
+
+const handle = props => {
+  const { value, dragging, index, ...restProps } = props
+  return (
+    <Tooltip
+      prefixCls="rc-slider-tooltip"
+      overlay={value}
+      visible={dragging}
+      placement="top"
+      key={index}
+    >
+      <Handle value={value} {...restProps} />
+    </Tooltip>
+  )
+}
 
 class EditArtwork extends React.Component {
   constructor(props) {
     super(props)
 
+    const artworkData = props.data.artworksJson
+
     this.state = {
-      colors: [],
-      grid: "6x4",
+      doodleUuid: uuidv4(),
+      colors: artworkData.pallete,
+      grid: artworkData.grid.default,
     }
+
+    console.log(`constructor.props`)
+    console.log(props)
+
+    console.log(`constructor.state`)
+    console.log(this.state)
   }
 
   setColor(index, hex) {
     console.log(`setColor(index=${index}, hex=${hex})`)
+
+    const clonedColors = _.clone(this.state.colors)
+    clonedColors[index] = hex
+
+    this.setState({
+      colors: clonedColors,
+    })
+
+    this.redraw()
+  }
+
+  redraw() {
+    this.setState({
+      doodleUuid: uuidv4(),
+    })
   }
 
   render() {
     const artworkData = this.props.data.artworksJson
-
-    console.log(this.props)
-    console.log(artworkData)
 
     return (
       <div id="section-edit-artwork">
@@ -35,8 +78,9 @@ class EditArtwork extends React.Component {
               {"pallete" in artworkData && (
                 <div>
                   <h3>Pallete</h3>
-                  {artworkData.pallete.map(hex => (
+                  {artworkData.pallete.map((hex, index) => (
                     <ColorPicker
+                      key={"color" + index}
                       handleColorChange={color => this.setColor(0, color)}
                       color={hex}
                     />
@@ -49,6 +93,7 @@ class EditArtwork extends React.Component {
                   <h3>Rows and columns</h3>
                   {artworkData.grid.options.map(grid => (
                     <div
+                      key={grid}
                       className={classNames("option", {
                         selected: this.state.grid === grid,
                       })}
@@ -66,9 +111,48 @@ class EditArtwork extends React.Component {
 
               {"sliders" in artworkData &&
                 artworkData.sliders.forEach(slider => <h3>{slider.name}</h3>)}
+
+              <h3>Frequency of shapes</h3>
+              <Slider
+                min={20}
+                max={100}
+                step={20}
+                marks={{
+                  20: 20,
+                  40: 40,
+                  60: 60,
+                  80: 80,
+                  100: 100,
+                }}
+                defaultValue={60}
+                handle={handle}
+              />
+
+              <h3>Shadows</h3>
+
+              <div></div>
             </div>
 
-            <div className="col-md-6">Doodle here</div>
+            <div className="col-md-6">
+              <div
+                className="doodle-wrapper"
+                style={{
+                  backgroundColor: this.state.colors[0],
+                  display: "flex",
+                  justifyContent: "center",
+                  padding: "40px 0",
+                }}
+              >
+                <Doodle
+                  name="demo-doodle"
+                  colors={this.state.colors}
+                  width={280}
+                  height={420}
+                  uuid={this.state.doodleUuid}
+                  doodleCode={""}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

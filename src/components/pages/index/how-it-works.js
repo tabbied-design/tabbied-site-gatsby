@@ -59,9 +59,6 @@ class HowItWorksSection extends React.Component {
   }
 
   setColor(index, hex) {
-    // do nothing at the moment
-    console.log(`setColor(index=${index}, hex=${hex})`)
-
     const clonedColors = _.clone(this.state.colors)
     clonedColors[index] = hex
 
