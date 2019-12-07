@@ -2,35 +2,27 @@ const path = require("path")
 const data = require("./src/artworks/mixtape.json")
 
 exports.createPages = async function({ actions, graphql }) {
-  const result = await graphql(`
+  const artworks = await graphql(`
     query {
       allArtworksJson {
         edges {
           node {
             id
-            name
+            slug
           }
         }
       }
     }
   `)
 
-  /*
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
-  */
+  const editPageTemplate = path.resolve("./src/templates/edit-artwork.js")
 
-  const editPageTemplate = path.resolve("./src/templates/EditArtwork.js")
-
-  result.data.allArtworksJson.edges.forEach(({ node }) => {
+  artworks.data.allArtworksJson.edges.forEach(({ node }) => {
     actions.createPage({
-      path: node.name,
+      path: `/artwork/${node.slug}`,
       component: editPageTemplate,
       context: {
         id: node.id,
-        name: node.name,
       },
     })
   })

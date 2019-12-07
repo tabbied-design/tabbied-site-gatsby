@@ -1,0 +1,36 @@
+#section-edit-artwork {
+  background-color: #f8f9fa;
+  padding: 64px 0;
+
+  h2 {
+    color: #111300;
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    margin-top: 48px;
+    margin-bottom: 24px;
+  }
+}
+
+.box-options-selector {
+  .option {
+    cursor: pointer;
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 12px 16px;
+    box-shadow: 0 1px 0 0 #d4d8de;
+    border-radius: 2px;
+    border-radius: 2px;
+    margin-right: 16px;
+
+    &:hover {
+      box-shadow: 0 1px 0 0 #646d7b;
+    }
+
+    &.selected {
+      color: white;
+      background-color: #646d7b;
+    }
+  }
+}
