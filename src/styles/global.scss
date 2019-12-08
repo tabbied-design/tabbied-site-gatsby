@@ -70,13 +70,22 @@ button {
   font-size: 1rem;
   display: inline-block;
   color: white;
-  background-color: black;
+  background-color: #232529;
   padding: 15px 25px;
   border-radius: 2px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #646d7b;
+  }
 
   &.white {
     color: #232529;
     background-color: white;
+
+    &:hover {
+      color: #646d7b;
+    }
   }
 }
 

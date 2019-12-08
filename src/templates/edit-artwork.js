@@ -40,17 +40,9 @@ class EditArtwork extends React.Component {
         "frequency" in artworkData ? artworkData.frequency.default : null,
       shadow: "shadow" in artworkData ? artworkData.shadow.default : null,
     }
-
-    console.log(`constructor.props`)
-    console.log(props)
-
-    console.log(`constructor.state`)
-    console.log(this.state)
   }
 
   setColor(index, hex) {
-    console.log(`setColor(index=${index}, hex=${hex})`)
-
     const clonedColors = _.clone(this.state.colors)
     clonedColors[index] = hex
 
@@ -61,15 +53,6 @@ class EditArtwork extends React.Component {
     this.redraw()
   }
 
-  async replaceCode(originalCode, replaceVar, replaceValue) {
-    let replacedCode = originalCode
-
-    console.log(replacedCode)
-    replacedCode = replacedCode.replace(replaceVar, replaceValue)
-
-    return replacedCode
-  }
-
   redraw() {
     this.setState({
       doodleUuid: uuidv4(),
@@ -78,6 +61,23 @@ class EditArtwork extends React.Component {
 
   render() {
     const artworkData = this.props.data.artworksJson
+
+    let styleCode = artworkData.code.style
+    let doodleCode = artworkData.code.doodle
+
+    if ("frequency" in artworkData) {
+      styleCode = styleCode.replace(
+        artworkData.frequency.replace,
+        this.state.frequency
+      )
+    }
+
+    if ("shadow" in artworkData) {
+      doodleCode = doodleCode.replace(
+        artworkData.shadow.replace,
+        this.state.shadow
+      )
+    }
 
     return (
       <div id="section-edit-artwork">
@@ -93,7 +93,7 @@ class EditArtwork extends React.Component {
                   {artworkData.pallete.map((hex, index) => (
                     <ColorPicker
                       key={"color" + index}
-                      handleColorChange={color => this.setColor(0, color)}
+                      handleColorChange={color => this.setColor(index, color)}
                       color={hex}
                     />
                   ))}
@@ -143,7 +143,9 @@ class EditArtwork extends React.Component {
               <h3>Shadows</h3>
 
               <div>
-                <div className="btn white">Redraw</div>
+                <div onClick={() => this.redraw()} className="btn white">
+                  Redraw
+                </div>
                 <div
                   style={{
                     display: "inline-block",
@@ -158,12 +160,13 @@ class EditArtwork extends React.Component {
             <div className="col-md-6">
               <Doodle
                 name={artworkData.slug}
+                grid={this.state.grid}
                 colors={this.state.colors}
                 width={280}
                 height={420}
                 uuid={this.state.doodleUuid}
-                styleCode={artworkData.code.style}
-                doodleCode={artworkData.code.doodle}
+                styleCode={styleCode}
+                doodleCode={doodleCode}
               />
             </div>
           </div>
