@@ -1,7 +1,7 @@
 import React from "react"
 import ColorPicker from "../components/common/ColorPicker"
 import Doodle from "../components/common/Doodle"
-import ArtworkOptionSlider from "../components/common/ArtworkOptionSlider"
+import OptionSlider from "../components/common/OptionSlider"
 import "./edit-artwork.scss"
 
 const _ = require("lodash/core")
@@ -22,17 +22,33 @@ class EditArtwork extends React.Component {
         "frequency" in artworkData ? artworkData.frequency.default : null,
       shadow: "shadow" in artworkData ? artworkData.shadow.default : null,
     }
+
+    this.setFrequency = this.setFrequency.bind(this)
   }
 
   setColor(index, hex) {
     const clonedColors = _.clone(this.state.colors)
     clonedColors[index] = hex
 
-    this.setState({
-      colors: clonedColors,
-    })
+    this.setState(
+      {
+        colors: clonedColors,
+      },
+      () => {
+        this.redraw()
+      }
+    )
+  }
 
-    this.redraw()
+  setFrequency(frequency) {
+    this.setState(
+      {
+        frequency,
+      },
+      () => {
+        this.redraw()
+      }
+    )
   }
 
   redraw() {
@@ -52,9 +68,19 @@ class EditArtwork extends React.Component {
         artworkData.frequency.replace,
         this.state.frequency
       )
+
+      doodleCode = doodleCode.replace(
+        artworkData.frequency.replace,
+        this.state.frequency
+      )
     }
 
     if ("shadow" in artworkData) {
+      styleCode = styleCode.replace(
+        artworkData.shadow.replace,
+        this.state.shadow
+      )
+
       doodleCode = doodleCode.replace(
         artworkData.shadow.replace,
         this.state.shadow
@@ -104,13 +130,17 @@ class EditArtwork extends React.Component {
               )}
 
               {"frequency" in artworkData && (
-                <div className="slider-wrapper">
-                  <h3>Frequency</h3>
-                </div>
+                <>
+                  <h3>Frequency of shapes</h3>
+                  <OptionSlider
+                    value={this.state.frequency}
+                    values={artworkData.frequency.values}
+                    step={artworkData.frequency.step}
+                    displayUnit={artworkData.frequency.displayUnit}
+                    onChange={this.setFrequency}
+                  />
+                </>
               )}
-
-              <h3>Frequency of shapes</h3>
-              <ArtworkOptionSlider />
 
               <h3>Shadows</h3>
 
@@ -163,7 +193,8 @@ export const query = graphql`
       frequency {
         default
         values
-        labels
+        step
+        displayUnit
         replace
       }
       shadow {

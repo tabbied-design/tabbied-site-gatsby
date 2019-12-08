@@ -1,4 +1,8 @@
 {
   "name": "Symmetry",
-  "slug": "symmetry"
+  "slug": "symmetry",
+  "grid": {
+    "default": "6x4",
+    "options": ["3x2", "6x4", "9x6", "12x8", "15x10"]
+  }
 }

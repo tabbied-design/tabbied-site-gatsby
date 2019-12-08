@@ -10,7 +10,8 @@
   "frequency": {
     "default": 1.0,
     "values": [0.2, 0.4, 0.6, 0.8, 1.0],
-    "labels": ["20%", "40%", "60%", "80%", "100%"],
+    "step": 0.2,
+    "displayUnit": "percentage",
     "replace": "${shapeFrequency}"
   },
   "shadow": {
