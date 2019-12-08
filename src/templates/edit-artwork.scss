@@ -1,3 +1,4 @@
+@import "../styles/bootstrap-grid-custom.scss";
 @import "../styles/colors.scss";
 
 #section-edit-artwork {
@@ -21,26 +22,77 @@
   .artwork-option-slider-wrapper {
     max-width: 320px;
   }
+
+  .box-options-selector {
+    .option {
+      cursor: pointer;
+      display: inline-block;
+      background-color: #ffffff;
+      padding: 12px 16px;
+      box-shadow: 0 1px 0 0 #d4d8de;
+      border-radius: 2px;
+      border-radius: 2px;
+      margin-right: 16px;
+
+      &:hover {
+        box-shadow: 0 1px 0 0 $gray-medium;
+      }
+
+      &.selected {
+        color: white;
+        background-color: $gray-medium;
+      }
+    }
+  }
+
+  .box-options-selector {
+    .option {
+      cursor: pointer;
+      display: inline-block;
+      background-color: #ffffff;
+      padding: 12px 16px;
+      box-shadow: 0 1px 0 0 #d4d8de;
+      border-radius: 2px;
+      border-radius: 2px;
+      margin-right: 16px;
+
+      &:hover {
+        box-shadow: 0 1px 0 0 $gray-medium;
+      }
+
+      &.selected {
+        color: white;
+        background-color: $gray-medium;
+      }
+    }
+  }
+
+  .buttons-wrapper {
+    margin-top: 48px;
+  }
+
+  .doodle-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .doodle-frame {
+    background: white;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+  }
 }
 
-.box-options-selector {
-  .option {
-    cursor: pointer;
-    display: inline-block;
-    background-color: #ffffff;
-    padding: 12px 16px;
-    box-shadow: 0 1px 0 0 #d4d8de;
-    border-radius: 2px;
-    border-radius: 2px;
-    margin-right: 16px;
-
-    &:hover {
-      box-shadow: 0 1px 0 0 $gray-medium;
+@include media-breakpoint-down(sm) {
+  #section-edit-artwork {
+    .doodle-wrapper {
+      margin-bottom: 64px;
+      justify-content: center;
     }
 
-    &.selected {
-      color: white;
-      background-color: $gray-medium;
+    .doodle-frame {
+      padding: 32px;
     }
   }
 }

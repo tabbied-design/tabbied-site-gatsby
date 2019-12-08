@@ -103,8 +103,8 @@ class EditArtwork extends React.Component {
     return (
       <div id="section-edit-artwork">
         <div className="container">
-          <div className="row">
-            <div className="col-md-6">
+          <div className="row align-items-center">
+            <div className="col-md-6 order-2 order-md-1">
               <span>Step 2 of 2</span>
               <h2>Customize artwork</h2>
 
@@ -165,7 +165,7 @@ class EditArtwork extends React.Component {
                 </>
               )}
 
-              <div>
+              <div className="buttons-wrapper">
                 <div onClick={() => this.redraw()} className="btn white">
                   Redraw
                 </div>
@@ -180,17 +180,21 @@ class EditArtwork extends React.Component {
               </div>
             </div>
 
-            <div className="col-md-6">
-              <Doodle
-                name={artworkData.slug}
-                grid={this.state.grid}
-                colors={this.state.colors}
-                width={280}
-                height={420}
-                uuid={this.state.doodleUuid}
-                styleCode={styleCode}
-                doodleCode={doodleCode}
-              />
+            <div className="col-md-6 order-1 order-md-2">
+              <div className="doodle-wrapper">
+                <div className="doodle-frame">
+                  <Doodle
+                    name={artworkData.slug}
+                    grid={this.state.grid}
+                    colors={this.state.colors}
+                    width={280}
+                    height={420}
+                    uuid={this.state.doodleUuid}
+                    styleCode={styleCode}
+                    doodleCode={doodleCode}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
