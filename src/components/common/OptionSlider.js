@@ -23,8 +23,18 @@ const handle = props => {
 }
 
 class OptionSlider extends React.Component {
+  formatTip(v) {
+    const { displayUnit } = this.props
+
+    if (displayUnit === "percentage") {
+      return v * 100 + "%"
+    }
+
+    return v
+  }
+
   render() {
-    const { value, values, step, displayUnit, onChange } = this.props
+    const { value, values, step, handleChange } = this.props
 
     return (
       <div className="artwork-option-slider-wrapper">
@@ -39,7 +49,8 @@ class OptionSlider extends React.Component {
             0.8: 80,
             1: 100,
           }}
-          onChange={onChange}
+          tipFormatter={this.formatTip}
+          onChange={handleChange}
           value={value}
           className="artwork-option-slider"
           handle={handle}

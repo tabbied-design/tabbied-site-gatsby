@@ -2,6 +2,7 @@ import React from "react"
 import ColorPicker from "../components/common/ColorPicker"
 import Doodle from "../components/common/Doodle"
 import OptionSlider from "../components/common/OptionSlider"
+import ToggleSwitch from "../components/common/ToggleSwitch"
 import "./edit-artwork.scss"
 
 const _ = require("lodash/core")
@@ -20,10 +21,11 @@ class EditArtwork extends React.Component {
       grid: artworkData.grid.default,
       frequency:
         "frequency" in artworkData ? artworkData.frequency.default : null,
-      shadow: "shadow" in artworkData ? artworkData.shadow.default : null,
+      shadow: "shadow" in artworkData ? false : null,
     }
 
     this.setFrequency = this.setFrequency.bind(this)
+    this.setShadow = this.setShadow.bind(this)
   }
 
   setColor(index, hex) {
@@ -44,6 +46,17 @@ class EditArtwork extends React.Component {
     this.setState(
       {
         frequency,
+      },
+      () => {
+        this.redraw()
+      }
+    )
+  }
+
+  setShadow(isActive) {
+    this.setState(
+      {
+        shadow: isActive,
       },
       () => {
         this.redraw()
@@ -75,15 +88,15 @@ class EditArtwork extends React.Component {
       )
     }
 
-    if ("shadow" in artworkData) {
+    if ("shadow" in artworkData && this.state.shadow) {
       styleCode = styleCode.replace(
         artworkData.shadow.replace,
-        this.state.shadow
+        artworkData.shadow.code
       )
 
       doodleCode = doodleCode.replace(
         artworkData.shadow.replace,
-        this.state.shadow
+        artworkData.shadow.code
       )
     }
 
@@ -137,12 +150,20 @@ class EditArtwork extends React.Component {
                     values={artworkData.frequency.values}
                     step={artworkData.frequency.step}
                     displayUnit={artworkData.frequency.displayUnit}
-                    onChange={this.setFrequency}
+                    handleChange={this.setFrequency}
                   />
                 </>
               )}
 
-              <h3>Shadows</h3>
+              {"shadow" in artworkData && (
+                <>
+                  <h3>Shadows</h3>
+                  <ToggleSwitch
+                    isActive={this.state.shadow}
+                    handleChange={this.setShadow}
+                  />
+                </>
+              )}
 
               <div>
                 <div onClick={() => this.redraw()} className="btn white">
@@ -199,7 +220,7 @@ export const query = graphql`
       }
       shadow {
         default
-        values
+        code
         replace
       }
       code {
