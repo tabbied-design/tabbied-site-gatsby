@@ -15,6 +15,7 @@
 /*	1A. Reset CSS
   ----------------------------------------------------------------------------------  */
 @import "./bootstrap-grid-custom.scss";
+@import "./colors.scss";
 
 /* TODO: purchase Avenir Light webfont license */
 @font-face {
@@ -29,12 +30,12 @@ html {
 body {
   font-family: "Avenir Light", "Nunito Sans", sans-serif;
   line-height: 1.5;
-  color: #646d7b;
+  color: $gray-medium;
 }
 
 a {
   text-decoration: none;
-  color: #646d7b;
+  color: $gray-medium;
 }
 
 strong {
@@ -70,21 +71,21 @@ button {
   font-size: 1rem;
   display: inline-block;
   color: white;
-  background-color: #232529;
+  background-color: $gray-dark;
   padding: 15px 25px;
   border-radius: 2px;
   cursor: pointer;
 
   &:hover {
-    background-color: #646d7b;
+    background-color: $gray-medium;
   }
 
   &.white {
-    color: #232529;
+    color: $gray-dark;
     background-color: white;
 
     &:hover {
-      color: #646d7b;
+      color: $gray-medium;
     }
   }
 }

@@ -1,5 +1,7 @@
+@import "../styles/colors.scss";
+
 #section-edit-artwork {
-  background-color: #f8f9fa;
+  background-color: $gray-ultra-light;
   padding: 64px 0;
 
   h2 {
@@ -13,7 +15,7 @@
   }
 
   .btn {
-    box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.1);
   }
 
   .artwork-option-slider-wrapper {
@@ -33,12 +35,12 @@
     margin-right: 16px;
 
     &:hover {
-      box-shadow: 0 1px 0 0 #646d7b;
+      box-shadow: 0 1px 0 0 $gray-medium;
     }
 
     &.selected {
       color: white;
-      background-color: #646d7b;
+      background-color: $gray-medium;
     }
   }
 }

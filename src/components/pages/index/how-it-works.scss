@@ -1,4 +1,5 @@
 @import "../../../styles/bootstrap-grid-custom.scss";
+@import "../../../styles/colors.scss";
 
 #section-how-it-works {
   h3 {
@@ -108,7 +109,7 @@
 
       .btn-redraw {
         font-size: 1rem;
-        color: #232529;
+        color: $gray-dark;
         display: inline-block;
         cursor: pointer;
         padding: 14px 50px;
