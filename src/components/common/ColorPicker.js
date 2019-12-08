@@ -14,10 +14,6 @@ const ColorPickerBoxWrapper = styled.div`
 `
 
 class ColorPicker extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount() {
     const { color, handleColorChange } = this.props
 

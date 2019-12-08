@@ -1,20 +1,38 @@
 import React from "react"
-import Doodle from "../components/common/Doodle"
 
 class Mixtape extends React.Component {
+  getColorsString(colors) {
+    let colorStyleVariables = ""
+
+    colors.forEach((color, idx) => {
+      colorStyleVariables += `--color${idx}: ${color};\n`
+    })
+
+    return colorStyleVariables
+  }
+
   render() {
+    const colorsString = this.getColorsString([
+      "#FFFFFF",
+      "#232529",
+      "#3E8BFF",
+      "#3FFFB2",
+      "#3EECFF",
+      "#3FFFB2",
+    ])
+
     return (
       <div>
         <h2>Mixtape</h2>
         <style>
           {`
 css-doodle {
-  --color0:#FFFFFF;
-  --color1:#232529;
-  --color2:#3E8BFF;
-  --color3:#3FFFB2;
-  --color4:#3EECFF;
-  --color5:#3FFFB2;
+  ${colorsString}
+
+  width: 320px; 
+  height: 480px; 
+  
+  
   
   /* set custom colors and inject z-index for the specific color to use for association */
   --randomColor: @p(var(--color1), var(--color2), var(--color3), var(--color4), var(--color5));
@@ -52,19 +70,10 @@ css-doodle {
 }
           `}
         </style>
-        <css-doodle use="var(--rule)">
+        <css-doodle grid="6x4" use="var(--rule)">
           {`
 :doodle {
-  @grid: 6x4 / 100%;
-  width:320px;
-  height:480px;
   overflow:hidden;
-  -webkit-box-shadow:0 0 5px #ddd;
-  box-shadow:0 0 5px #ddd;
-  position:absolute;
-  left:25%;
-  top:0;
-  margin-left:-160px;
   text-align:center;
   box-sizing:border-box
 }

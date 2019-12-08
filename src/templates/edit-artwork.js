@@ -36,6 +36,9 @@ class EditArtwork extends React.Component {
       doodleUuid: uuidv4(),
       colors: artworkData.pallete,
       grid: artworkData.grid.default,
+      frequency:
+        "frequency" in artworkData ? artworkData.frequency.default : null,
+      shadow: "shadow" in artworkData ? artworkData.shadow.default : null,
     }
 
     console.log(`constructor.props`)
@@ -56,6 +59,15 @@ class EditArtwork extends React.Component {
     })
 
     this.redraw()
+  }
+
+  async replaceCode(originalCode, replaceVar, replaceValue) {
+    let replacedCode = originalCode
+
+    console.log(replacedCode)
+    replacedCode = replacedCode.replace(replaceVar, replaceValue)
+
+    return replacedCode
   }
 
   redraw() {
@@ -164,22 +176,25 @@ class EditArtwork extends React.Component {
 export const query = graphql`
   query ArtworkById($id: String!) {
     artworksJson(id: { eq: $id }) {
+      id
       name
-      slug
-      pallete
+      description
       grid {
-        options
         default
+        options
       }
-      sliders {
-        name
+      pallete
+      slug
+      frequency {
         default
         values
         labels
+        replace
       }
       shadow {
-        on
-        off
+        default
+        values
+        replace
       }
       code {
         style
