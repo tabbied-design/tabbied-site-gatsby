@@ -2,7 +2,7 @@
   "name": "Mixtape",
   "slug": "mixtape",
   "description": "Semi circle geometric pattern with striped accents.",
-  "pallete": ["#FFFFFF", "#232529", "#3E8BFF", "#3FFFB2", "#3EECFF", "#3FFFB2"],
+  "palette": ["#FFFFFF", "#232529", "#3E8BFF", "#3FFFB2", "#3EECFF", "#3FFFB2"],
   "grid": {
     "default": "6x4",
     "options": ["3x2", "6x4", "9x6", "12x8", "15x10"]

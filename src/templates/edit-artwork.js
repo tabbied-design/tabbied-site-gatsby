@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import ColorPicker from "../components/common/ColorPicker"
 import Doodle from "../components/common/Doodle"
 import OptionSlider from "../components/common/OptionSlider"
@@ -15,13 +16,15 @@ class EditArtwork extends React.Component {
 
     const artworkData = props.data.artworksJson
 
+    console.log(artworkData)
+
     this.state = {
       doodleUuid: uuidv4(),
-      colors: artworkData.pallete,
+      colors: artworkData.palette !== null ? artworkData.palette : [],
       grid: artworkData.grid.default,
       frequency:
-        "frequency" in artworkData ? artworkData.frequency.default : null,
-      shadow: "shadow" in artworkData ? false : null,
+        artworkData.frequency !== null ? artworkData.frequency.default : null,
+      shadow: artworkData.shadow !== null ? false : null,
     }
 
     this.setFrequency = this.setFrequency.bind(this)
@@ -76,7 +79,7 @@ class EditArtwork extends React.Component {
     let styleCode = artworkData.code.style
     let doodleCode = artworkData.code.doodle
 
-    if ("frequency" in artworkData) {
+    if (artworkData.frequency !== null) {
       styleCode = styleCode.replace(
         artworkData.frequency.replace,
         this.state.frequency
@@ -88,7 +91,7 @@ class EditArtwork extends React.Component {
       )
     }
 
-    if ("shadow" in artworkData && this.state.shadow) {
+    if (artworkData.shadow !== null && this.state.shadow) {
       styleCode = styleCode.replace(
         artworkData.shadow.replace,
         artworkData.shadow.code
@@ -108,10 +111,10 @@ class EditArtwork extends React.Component {
               <span>Step 2 of 2</span>
               <h2>Customize artwork</h2>
 
-              {"pallete" in artworkData && (
+              {artworkData.palette !== null && (
                 <div>
-                  <h3>Pallete</h3>
-                  {artworkData.pallete.map((hex, index) => (
+                  <h3>Palette</h3>
+                  {artworkData.palette.map((hex, index) => (
                     <ColorPicker
                       key={"color" + index}
                       handleColorChange={color => this.setColor(index, color)}
@@ -121,7 +124,7 @@ class EditArtwork extends React.Component {
                 </div>
               )}
 
-              {"grid" in artworkData && (
+              {artworkData.grid !== null && (
                 <div className="box-options-selector">
                   <h3>Rows and columns</h3>
                   {artworkData.grid.options.map(grid => (
@@ -142,7 +145,7 @@ class EditArtwork extends React.Component {
                 </div>
               )}
 
-              {"frequency" in artworkData && (
+              {artworkData.frequency !== null && (
                 <>
                   <h3>Frequency of shapes</h3>
                   <OptionSlider
@@ -155,7 +158,7 @@ class EditArtwork extends React.Component {
                 </>
               )}
 
-              {"shadow" in artworkData && (
+              {artworkData.shadow !== null && (
                 <>
                   <h3>Shadows</h3>
                   <ToggleSwitch
@@ -172,7 +175,7 @@ class EditArtwork extends React.Component {
                 <div
                   style={{
                     display: "inline-block",
-                    width: "40px",
+                    width: "32px",
                     height: "8px",
                   }}
                 />
@@ -213,7 +216,7 @@ export const query = graphql`
         default
         options
       }
-      pallete
+      palette
       slug
       frequency {
         default
