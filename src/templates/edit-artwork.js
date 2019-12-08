@@ -1,30 +1,12 @@
 import React from "react"
 import ColorPicker from "../components/common/ColorPicker"
 import Doodle from "../components/common/Doodle"
-import Tooltip from "rc-tooltip"
-import Slider from "rc-slider"
+import ArtworkOptionSlider from "../components/common/ArtworkOptionSlider"
 import "./edit-artwork.scss"
-import "rc-slider/assets/index.css"
 
 const _ = require("lodash/core")
 const uuidv4 = require("uuid/v4")
 const classNames = require("classnames")
-const Handle = Slider.Handle
-
-const handle = props => {
-  const { value, dragging, index, ...restProps } = props
-  return (
-    <Tooltip
-      prefixCls="rc-slider-tooltip"
-      overlay={value}
-      visible={dragging}
-      placement="top"
-      key={index}
-    >
-      <Handle value={value} {...restProps} />
-    </Tooltip>
-  )
-}
 
 class EditArtwork extends React.Component {
   constructor(props) {
@@ -121,24 +103,14 @@ class EditArtwork extends React.Component {
                 </div>
               )}
 
-              {"sliders" in artworkData &&
-                artworkData.sliders.forEach(slider => <h3>{slider.name}</h3>)}
+              {"frequency" in artworkData && (
+                <div className="slider-wrapper">
+                  <h3>Frequency</h3>
+                </div>
+              )}
 
               <h3>Frequency of shapes</h3>
-              <Slider
-                min={20}
-                max={100}
-                step={20}
-                marks={{
-                  20: 20,
-                  40: 40,
-                  60: 60,
-                  80: 80,
-                  100: 100,
-                }}
-                defaultValue={60}
-                handle={handle}
-              />
+              <ArtworkOptionSlider />
 
               <h3>Shadows</h3>
 
