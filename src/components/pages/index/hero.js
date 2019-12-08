@@ -9,12 +9,20 @@ class HeroSection extends React.Component {
     super(props)
 
     this.doodleRef = React.createRef()
+
+    this.doodleAutoUpdateTimer = null
   }
 
   componentDidMount() {
-    setInterval(() => {
+    this.doodleAutoUpdateTimer = setInterval(() => {
       this.doodleRef.current.update()
     }, 2000)
+  }
+
+  componentWillUnmount() {
+    if (this.doodleAutoUpdateTimer) {
+      clearInterval(this.doodleAutoUpdateTimer)
+    }
   }
 
   render() {
