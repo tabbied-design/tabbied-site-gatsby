@@ -4,9 +4,11 @@
 #section-edit-artwork {
   background-color: $gray-ultra-light;
   padding: 64px 0;
+  font-size: 0.9rem;
 
   h2 {
     color: #111300;
+    font-weight: 700;
     margin-bottom: 40px;
   }
 
@@ -68,7 +70,7 @@
   }
 
   .buttons-wrapper {
-    margin-top: 48px;
+    margin-top: 80px;
   }
 
   .doodle-wrapper {
