@@ -1,9 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import "css-doodle"
 
 import HeroSection from "../components/pages/index/hero"
 import HowItWorksSection from "../components/pages/index/how-it-works"
+import BrowseArtworkSection from "../components/pages/index/browse-artwork"
 import "./index.scss"
 import usesDigitalImages from "../images/uses_digital_images.jpg"
 import usesWallArt from "../images/uses_wall_art.jpg"
@@ -12,26 +13,6 @@ import usesPackaging from "../images/uses_packaging.jpg"
 import usesTextileApparel from "../images/uses_textile_apparel.jpg"
 import usesEndlessPossibilities from "../images/uses_endless_possibilities.jpg"
 import testimonialPerson from "../images/testimonial_person.png"
-
-const BrowseArtworkSection = () => {
-  return (
-    <div id="section-browse-artwork">
-      <div className="gray-background">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-9">
-              <span className="subheading">Browse artwork</span>
-              <h3>
-                Choose from our curated designs of beautiful, minimalistic
-                patterns and illustrations.
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 const ExampleUsesSection = () => {
   return (

@@ -16,8 +16,6 @@ class EditArtwork extends React.Component {
 
     const artworkData = props.data.artworksJson
 
-    console.log(artworkData)
-
     this.state = {
       doodleUuid: uuidv4(),
       colors: artworkData.palette !== null ? artworkData.palette : [],

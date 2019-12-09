@@ -8,7 +8,30 @@ exports.createPages = async function({ actions, graphql }) {
         edges {
           node {
             id
+            name
+            description
+            grid {
+              default
+              options
+            }
+            palette
             slug
+            frequency {
+              default
+              values
+              step
+              displayUnit
+              replace
+            }
+            shadow {
+              default
+              code
+              replace
+            }
+            code {
+              style
+              doodle
+            }
           }
         }
       }
@@ -17,6 +40,9 @@ exports.createPages = async function({ actions, graphql }) {
 
   const editPageTemplate = path.resolve("./src/templates/edit-artwork.js")
 
+  // TODO: Create gallery page
+
+  // Create a page for each artwork
   artworks.data.allArtworksJson.edges.forEach(({ node }) => {
     actions.createPage({
       path: `/artwork/${node.slug}`,

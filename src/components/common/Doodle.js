@@ -41,8 +41,6 @@ class Doodle extends React.Component {
     } = this.props
     const colorsString = this.getColorsString(colors)
 
-    console.log(colorsString)
-
     return (
       <div className={`doodle-${name}-wrapper`}>
         <style>
