@@ -3,6 +3,20 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import Doodle from "../../common/Doodle"
 import "./browse-artwork.scss"
 
+import galleryBloks from "../../../images/gallery_bloks.png"
+import galleryBlossom from "../../../images/gallery_blossom.png"
+import galleryDisco from "../../../images/gallery_disco.png"
+import galleryFiesta from "../../../images/gallery_fiesta.png"
+import galleryMixtape from "../../../images/gallery_mixtape.png"
+import galleryOdessa from "../../../images/gallery_odessa.png"
+import galleryRadius from "../../../images/gallery_radius.png"
+import galleryRing from "../../../images/gallery_ring.png"
+import gallerySymmetry from "../../../images/gallery_symmetry.png"
+import galleryTerrain from "../../../images/gallery_terrain.png"
+import galleryTrigram from "../../../images/gallery_trigram.png"
+import galleryVeil from "../../../images/gallery_veil.png"
+import galleryZario from "../../../images/gallery_zario.png"
+
 const uuidv4 = require("uuid/v4")
 
 export const query = graphql`
@@ -49,36 +63,6 @@ class BrowseArtworkSection extends React.Component {
   render() {
     let artworks = this.props.data.allArtworksJson.nodes
 
-    artworks = artworks.map(artwork => {
-      console.log(artwork)
-
-      if (artwork.frequency !== null) {
-        artwork.code.style = artwork.code.style.replace(
-          artwork.frequency.replace,
-          artwork.frequency.default
-        )
-
-        artwork.code.doodle = artwork.code.doodle.replace(
-          artwork.frequency.replace,
-          artwork.frequency.default
-        )
-      }
-
-      if (artwork.shadow !== null) {
-        artwork.code.style = artwork.code.style.replace(
-          artwork.shadow.replace,
-          artwork.shadow.default ? artwork.shadow.value : ""
-        )
-
-        artwork.code.doodle = artwork.code.doodle.replace(
-          artwork.shadow.replace,
-          artwork.shadow.default ? artwork.shadow.value : ""
-        )
-      }
-
-      return artwork
-    })
-
     return (
       <div id="section-browse-artwork">
         <div className="gray-background">
@@ -94,26 +78,45 @@ class BrowseArtworkSection extends React.Component {
             </div>
 
             <div className="row">
-              {artworks.map(artwork => (
-                <div key={artwork.slug} className="col-md-4">
-                  <Link to={`/artwork/${artwork.slug}`}>
-                    <div className="doodle-wrapper">
-                      <div className="doodle-frame">
-                        <Doodle
-                          name={artwork.id}
-                          grid={artwork.grid.default}
-                          colors={artwork.palette}
-                          width={280}
-                          height={420}
-                          uuid={uuidv4()}
-                          styleCode={artwork.code.style}
-                          doodleCode={artwork.code.doodle}
-                        />
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              ))}
+              <div className="col-md-4">
+                <Link to={`/artwork/mixtape/`}>
+                  <div className="gallery-image-wrapper">
+                    <img src={galleryMixtape} alt="Mixtape" />
+                  </div>
+                </Link>
+              </div>
+
+              <div className="col-md-4">
+                <Link to={`/artwork/symmetry/`}>
+                  <div className="gallery-image-wrapper">
+                    <img src={gallerySymmetry} alt="Symmetry" />
+                  </div>
+                </Link>
+              </div>
+
+              <div className="col-md-4">
+                <Link to={`/artwork/zario/`}>
+                  <div className="gallery-image-wrapper">
+                    <img src={galleryZario} alt="Zario" />
+                  </div>
+                </Link>
+              </div>
+
+              <div className="col-md-4">
+                <Link to={`/artwork/odessa/`}>
+                  <div className="gallery-image-wrapper">
+                    <img src={galleryOdessa} alt="Odessa" />
+                  </div>
+                </Link>
+              </div>
+
+              <div className="col-md-4">
+                <Link to={`/artwork/terrain/`}>
+                  <div className="gallery-image-wrapper">
+                    <img src={galleryTerrain} alt="Terrain" />
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

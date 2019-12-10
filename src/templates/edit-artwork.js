@@ -105,7 +105,9 @@ class EditArtwork extends React.Component {
       <div id="section-edit-artwork">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-md-6 order-2 order-md-1">
+            <div className="col-md-2">Back</div>
+
+            <div className="col-md-5 order-2 order-md-1">
               <span>Step 2 of 2</span>
               <h2>Customize artwork</h2>
 
@@ -181,9 +183,19 @@ class EditArtwork extends React.Component {
               </div>
             </div>
 
-            <div className="col-md-6 order-1 order-md-2">
+            <div
+              className="col-md-5 order-1 order-md-2"
+              style={{
+                backgroundColor: "orange",
+              }}
+            >
               <div className="doodle-wrapper">
-                <div className="doodle-frame">
+                <div
+                  className="doodle-frame"
+                  style={{
+                    backgroundColor: this.state.colors[0],
+                  }}
+                >
                   <Doodle
                     name={artworkData.slug}
                     grid={this.state.grid}
