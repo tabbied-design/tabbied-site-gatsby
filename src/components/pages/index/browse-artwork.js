@@ -80,7 +80,14 @@ class BrowseArtworkSection extends React.Component {
             <div className="row">
               <div className="col-md-8">
                 <Link to={`/artwork/mixtape/`}>
-                  <div className="gallery-image-wrapper">
+                  <div
+                    className="gallery-card"
+                    style={{
+                      backgroundColor: "white",
+                      padding: "0 80px",
+                      maxHeight: "600px",
+                    }}
+                  >
                     <img src={galleryMixtape} alt="Mixtape" />
                   </div>
                 </Link>
@@ -88,7 +95,10 @@ class BrowseArtworkSection extends React.Component {
 
               <div className="col-md-4">
                 <Link to={`/artwork/symmetry/`}>
-                  <div className="gallery-image-wrapper">
+                  <div
+                    className="gallery-card full"
+                    style={{ backgroundColor: "#abf2fd" }}
+                  >
                     <img src={gallerySymmetry} alt="Symmetry" />
                   </div>
                 </Link>
@@ -96,7 +106,7 @@ class BrowseArtworkSection extends React.Component {
 
               <div className="col-md-4">
                 <Link to={`/artwork/zario/`}>
-                  <div className="gallery-image-wrapper">
+                  <div className="gallery-card full">
                     <img src={galleryZario} alt="Zario" />
                   </div>
                 </Link>
@@ -104,18 +114,19 @@ class BrowseArtworkSection extends React.Component {
 
               <div className="col-md-4">
                 <Link to={`/artwork/odessa/`}>
-                  <div className="gallery-image-wrapper">
+                  <div className="gallery-card">
                     <img src={galleryOdessa} alt="Odessa" />
                   </div>
                 </Link>
               </div>
 
               <div className="col-md-4">
-                <Link to={`/artwork/terrain/`}>
-                  <div className="gallery-image-wrapper">
-                    <img src={galleryTerrain} alt="Terrain" />
-                  </div>
-                </Link>
+                <div
+                  className="gallery-card"
+                  style={{ backgroundColor: "transparent" }}
+                >
+                  <Link to={`/select-artwork/`}>View all </Link>
+                </div>
               </div>
             </div>
           </div>

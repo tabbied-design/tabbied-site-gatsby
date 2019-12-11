@@ -36,6 +36,8 @@
 
 @include media-breakpoint-down(md) {
   #section-hero {
+    padding: 92px 0;
+
     .hero-text {
       font-size: 2.4rem;
     }
@@ -58,7 +60,9 @@
 
 @include media-breakpoint-down(sm) {
   #section-hero {
+    background-size: 620px;
     padding-bottom: 80px;
+    margin: 0;
 
     .hero-text {
       font-size: 1.9rem;
@@ -76,4 +80,8 @@
       height: 720px;
     }
   }
+}
+
+@include media-breakpoint-down(xs) {
+  background-size: 920px;
 }

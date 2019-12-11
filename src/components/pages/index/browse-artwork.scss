@@ -8,8 +8,18 @@
     padding: 40px;
   }
 
-  .gallery-image-wrapper {
+  .gallery-card {
+    margin-top: 32px;
     border-radius: 20px;
-    margin-top: 24px;
+    box-sizing: border-box;
+    background-color: white;
+    height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.full img {
+      border-radius: 20px;
+    }
   }
 }
