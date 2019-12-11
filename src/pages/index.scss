@@ -72,20 +72,13 @@
     }
   }
 
-  #uses-endless-possibilities {
-    margin-top: 50px;
-    text-align: center;
-
-    h3 {
-      margin-top: 120px;
-    }
-
-    p {
-      margin-top: 20px;
-    }
+  .example-images {
+    max-width: 1520px;
+    padding: 0 40px;
+    margin: 80px auto;
 
     .image-wrapper {
-      margin-top: 80px;
+      margin-top: 32px;
       line-height: 0;
     }
   }

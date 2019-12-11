@@ -78,7 +78,7 @@ class BrowseArtworkSection extends React.Component {
             </div>
 
             <div className="row">
-              <div className="col-md-4">
+              <div className="col-md-8">
                 <Link to={`/artwork/mixtape/`}>
                   <div className="gallery-image-wrapper">
                     <img src={galleryMixtape} alt="Mixtape" />

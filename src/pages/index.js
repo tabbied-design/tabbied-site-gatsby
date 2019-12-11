@@ -6,12 +6,6 @@ import HeroSection from "../components/pages/index/hero"
 import HowItWorksSection from "../components/pages/index/how-it-works"
 import BrowseArtworkSection from "../components/pages/index/browse-artwork"
 import "./index.scss"
-import usesDigitalImages from "../images/uses_digital_images.jpg"
-import usesWallArt from "../images/uses_wall_art.jpg"
-import usesStationery from "../images/uses_stationery.jpg"
-import usesPackaging from "../images/uses_packaging.jpg"
-import usesTextileApparel from "../images/uses_textile_apparel.jpg"
-import usesEndlessPossibilities from "../images/uses_endless_possibilities.jpg"
 import testimonialPerson from "../images/testimonial_person.png"
 
 const ExampleUsesSection = () => {
@@ -29,98 +23,54 @@ const ExampleUsesSection = () => {
         </div>
       </div>
 
-      <div className="container">
+      <div className="example-images">
         <div className="row">
           <div className="col-md-12">
-            <h4>
-              <span className="number">01</span>
-              Digital Images
-            </h4>
-          </div>
-        </div>
-      </div>
-
-      <div className="example-use-image-wrapper">
-        <img src={usesDigitalImages} alt="Digital" />
-      </div>
-
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <h4>
-              <span className="number">02</span>
-              Wall art
-            </h4>
-          </div>
-        </div>
-      </div>
-
-      <div className="example-use-image-wrapper">
-        <img src={usesWallArt} alt="Wall art" />
-      </div>
-
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <h4>
-              <span className="number">03</span>
-              Stationery
-            </h4>
-          </div>
-        </div>
-      </div>
-
-      <div className="example-use-image-wrapper">
-        <img src={usesStationery} alt="Stationery" />
-      </div>
-
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <h4>
-              <span className="number">04</span>
-              Packaging
-            </h4>
-          </div>
-        </div>
-      </div>
-
-      <div className="example-use-image-wrapper">
-        <img src={usesPackaging} alt="Packaging" />
-      </div>
-
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <h4>
-              <span className="number">05</span>
-              Textiles and apparel
-            </h4>
-          </div>
-        </div>
-      </div>
-
-      <div className="example-use-image-wrapper">
-        <img src={usesTextileApparel} alt="Textiles and apparel" />
-      </div>
-
-      <div id="uses-endless-possibilities">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h3>Endless possibilities</h3>
-              <p>
-                Wallpaper, digital images, packaging, posters, t-shirts,
-                fabrics…
-                <br />
-                What can you make with Tabbied?
-              </p>
+            <div className="image-wrapper">
+              <img
+                src="https://dummyimage.com/1520x850/d8d8d8/ffffff.jpg"
+                alt="Dummy Image"
+              />
             </div>
           </div>
         </div>
 
-        <div className="image-wrapper">
-          <img src={usesEndlessPossibilities} alt="Endless possibilities" />
+        <div className="row">
+          <div className="col-md-6">
+            <div className="image-wrapper">
+              <img
+                src="https://dummyimage.com/740x800/d8d8d8/ffffff.jpg"
+                alt="Dummy Image"
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="image-wrapper">
+              <img
+                src="https://dummyimage.com/740x800/d8d8d8/ffffff.jpg"
+                alt="Dummy Image"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-6">
+            <div className="image-wrapper">
+              <img
+                src="https://dummyimage.com/740x800/d8d8d8/ffffff.jpg"
+                alt="Dummy Image"
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="image-wrapper">
+              <img
+                src="https://dummyimage.com/740x800/d8d8d8/ffffff.jpg"
+                alt="Dummy Image"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
