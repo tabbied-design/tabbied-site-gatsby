@@ -7,6 +7,14 @@
   position: relative;
   z-index: 1;
 
+  h1 {
+    color: $gray-dark;
+  }
+
+  .btn-close {
+    color: $gray-medium;
+  }
+
   #logo {
     img {
       display: inline-block;

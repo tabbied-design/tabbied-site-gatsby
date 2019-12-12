@@ -16,7 +16,7 @@ import "../styles/global.scss"
 import Header from "./header"
 import Footer from "./footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const { user, firebase, loading } = useAuth()
 
   const data = useStaticQuery(graphql`
@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
 
   return (
     <FirebaseContext.Provider value={{ user, firebase, loading }}>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} location={location} />
       <div>
         <main>{children}</main>
       </div>
