@@ -7,8 +7,9 @@ import logoImage from "../images/logo_tabbied.png"
 const Header = ({ siteTitle, location }) => {
   console.log({ siteTitle, location })
   const isInCustomizeArtworkPage =
-    location.pathname === "/select-artwork/" ||
-    location.pathname.startsWith("/artwork/")
+    location &&
+    (location.pathname === "/select-artwork/" ||
+      location.pathname.startsWith("/artwork/"))
 
   return (
     <div id="header">
