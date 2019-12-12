@@ -33,7 +33,7 @@ const Header = ({ siteTitle }) => {
 
           <div className="col-md-3 col-6">
             <div className="align-right">
-              <Link to="/" className="btn-action">
+              <Link to="/select-artwork/" className="btn-action">
                 Make your art
               </Link>
             </div>

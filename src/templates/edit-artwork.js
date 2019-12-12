@@ -108,7 +108,7 @@ class EditArtwork extends React.Component {
             <div className="col-md-2">Back</div>
 
             <div className="col-md-5 order-2 order-md-1">
-              <span>Step 2 of 2</span>
+              <span className="subheading">Step 2 of 2</span>
               <h2>Customize artwork</h2>
 
               {artworkData.palette !== null && (

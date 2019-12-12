@@ -4,6 +4,8 @@
 #header {
   font-size: 0.9rem;
   padding: 16px 0;
+  position: relative;
+  z-index: 1;
 
   #logo {
     img {
@@ -14,7 +16,16 @@
   }
 
   .btn-action {
-    margin-top: 10px;
+    color: white;
+    background-color: $gray-dark;
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 2px;
+    border-radius: 2px;
+
+    &:hover {
+      background-color: $navy;
+    }
   }
 }
 
@@ -24,16 +35,13 @@ ul#page-navigation {
   li {
     display: inline-block;
     padding: 12px 20px;
-  }
-}
 
-.btn-action {
-  color: white;
-  background-color: $gray-dark;
-  display: inline-block;
-  padding: 12px 20px;
-  border-radius: 2px;
-  border-radius: 2px;
+    a {
+      &:hover {
+        color: $navy;
+      }
+    }
+  }
 }
 
 @include media-breakpoint-down(md) {

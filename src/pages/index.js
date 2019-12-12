@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import "css-doodle"
 
 import HeroSection from "../components/pages/index/hero"
@@ -29,7 +29,7 @@ const ExampleUsesSection = () => {
             <div className="image-wrapper">
               <img
                 src="https://dummyimage.com/1520x850/d8d8d8/ffffff.jpg"
-                alt="Dummy Image"
+                alt="Dummy Placeholder"
               />
             </div>
           </div>
@@ -40,7 +40,7 @@ const ExampleUsesSection = () => {
             <div className="image-wrapper">
               <img
                 src="https://dummyimage.com/740x800/d8d8d8/ffffff.jpg"
-                alt="Dummy Image"
+                alt="Dummy Placeholder"
               />
             </div>
           </div>
@@ -48,7 +48,7 @@ const ExampleUsesSection = () => {
             <div className="image-wrapper">
               <img
                 src="https://dummyimage.com/740x800/d8d8d8/ffffff.jpg"
-                alt="Dummy Image"
+                alt="Dummy Placeholder"
               />
             </div>
           </div>
@@ -59,7 +59,7 @@ const ExampleUsesSection = () => {
             <div className="image-wrapper">
               <img
                 src="https://dummyimage.com/740x800/d8d8d8/ffffff.jpg"
-                alt="Dummy Image"
+                alt="Dummy Placeholder"
               />
             </div>
           </div>
@@ -67,7 +67,7 @@ const ExampleUsesSection = () => {
             <div className="image-wrapper">
               <img
                 src="https://dummyimage.com/740x800/d8d8d8/ffffff.jpg"
-                alt="Dummy Image"
+                alt="Dummy Placeholder"
               />
             </div>
           </div>

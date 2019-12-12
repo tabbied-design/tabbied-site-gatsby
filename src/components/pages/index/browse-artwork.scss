@@ -1,13 +1,6 @@
+@import "../../../styles/colors.scss";
+
 #section-browse-artwork {
-  .doodle-wrapper {
-    margin-top: 40px;
-  }
-
-  .doodle-frame {
-    background-color: white;
-    padding: 40px;
-  }
-
   .gallery-card {
     margin-top: 32px;
     border-radius: 20px;
@@ -20,6 +13,31 @@
 
     &.full img {
       border-radius: 20px;
+    }
+
+    &.card-action {
+      &:hover {
+        color: $blue-medium;
+
+        span.icon-circle {
+          border-color: $blue-medium;
+        }
+      }
+
+      span {
+        display: inline-block;
+
+        &.icon-circle {
+          display: inline-flex;
+          width: 48px;
+          height: 48px;
+          border: 2px solid $gray-light;
+          border-radius: 24px;
+          align-items: center;
+          justify-content: center;
+          margin-left: 16px;
+        }
+      }
     }
   }
 }

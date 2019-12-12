@@ -1,68 +1,14 @@
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
-import Doodle from "../../common/Doodle"
+import { Link } from "gatsby"
 import "./browse-artwork.scss"
 
-import galleryBloks from "../../../images/gallery_bloks.png"
-import galleryBlossom from "../../../images/gallery_blossom.png"
-import galleryDisco from "../../../images/gallery_disco.png"
-import galleryFiesta from "../../../images/gallery_fiesta.png"
 import galleryMixtape from "../../../images/gallery_mixtape.png"
 import galleryOdessa from "../../../images/gallery_odessa.png"
-import galleryRadius from "../../../images/gallery_radius.png"
-import galleryRing from "../../../images/gallery_ring.png"
 import gallerySymmetry from "../../../images/gallery_symmetry.png"
-import galleryTerrain from "../../../images/gallery_terrain.png"
-import galleryTrigram from "../../../images/gallery_trigram.png"
-import galleryVeil from "../../../images/gallery_veil.png"
 import galleryZario from "../../../images/gallery_zario.png"
 
-const uuidv4 = require("uuid/v4")
-
-export const query = graphql`
-  query Artworks {
-    allArtworksJson {
-      nodes {
-        id
-        name
-        description
-        grid {
-          default
-          options
-        }
-        palette
-        slug
-        frequency {
-          default
-          values
-          step
-          displayUnit
-          replace
-        }
-        shadow {
-          default
-          code
-          replace
-        }
-        code {
-          style
-          doodle
-        }
-      }
-    }
-  }
-`
-
 class BrowseArtworkSection extends React.Component {
-  constructor(props) {
-    super(props)
-
-    console.log(this)
-  }
-
   render() {
-    let artworks = this.props.data.allArtworksJson.nodes
-
     return (
       <div id="section-browse-artwork">
         <div className="gray-background">
@@ -121,12 +67,18 @@ class BrowseArtworkSection extends React.Component {
               </div>
 
               <div className="col-md-4">
-                <div
-                  className="gallery-card"
-                  style={{ backgroundColor: "transparent" }}
-                >
-                  <Link to={`/select-artwork/`}>View all </Link>
-                </div>
+                <Link to={`/select-artwork/`}>
+                  <div
+                    className="gallery-card card-action"
+                    style={{ backgroundColor: "transparent" }}
+                  >
+                    <span>View all</span>
+
+                    <span className="icon-circle">
+                      <i class="material-icons">arrow_right_alt</i>
+                    </span>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -136,9 +88,4 @@ class BrowseArtworkSection extends React.Component {
   }
 }
 
-export default props => (
-  <StaticQuery
-    query={query}
-    render={data => <BrowseArtworkSection data={data} {...props} />}
-  />
-)
+export default BrowseArtworkSection

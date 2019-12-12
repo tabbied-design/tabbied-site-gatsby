@@ -38,7 +38,7 @@ class HeroSection extends React.Component {
               </p>
 
               <div className="hero-actions">
-                <Link to="/" className="btn">
+                <Link to="/select-artwork/" className="btn">
                   Make your art
                 </Link>
               </div>

@@ -1,0 +1,29 @@
+@import "../styles/colors.scss";
+
+#page-select-artwork {
+  .gray-background {
+    background: rgba(248, 249, 250, 0.6);
+    padding: 64px 0;
+  }
+
+  h2 {
+    font-size: 2.3rem;
+    margin-top: 8px;
+    margin-bottom: 64px;
+  }
+
+  .gallery-card {
+    margin-top: 32px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.full img {
+      border-radius: 20px;
+    }
+  }
+}
