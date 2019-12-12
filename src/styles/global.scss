@@ -36,6 +36,10 @@ body {
 a {
   text-decoration: none;
   color: $gray-medium;
+
+  &:hover {
+    color: $gray-dark;
+  }
 }
 
 strong {
@@ -77,7 +81,8 @@ button {
   cursor: pointer;
 
   &:hover {
-    background-color: $navy;
+    color: white;
+    background-color: $gray-medium;
   }
 
   &.white {
@@ -85,7 +90,7 @@ button {
     background-color: white;
 
     &:hover {
-      color: $navy;
+      color: $gray-medium;
     }
   }
 }
@@ -111,6 +116,7 @@ button {
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
+
   /* Support for Safari and Chrome. */
   text-rendering: optimizeLegibility;
 

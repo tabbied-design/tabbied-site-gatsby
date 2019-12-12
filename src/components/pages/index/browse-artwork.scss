@@ -1,3 +1,4 @@
+@import "../../../styles/bootstrap-grid-custom.scss";
 @import "../../../styles/colors.scss";
 
 #section-browse-artwork {
@@ -10,6 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
     &.full img {
       border-radius: 20px;
@@ -38,6 +40,22 @@
           margin-left: 16px;
         }
       }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  #section-browse-artwork {
+    .gallery-card {
+      height: 438px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #section-browse-artwork {
+    .gallery-card {
+      height: 438px;
     }
   }
 }

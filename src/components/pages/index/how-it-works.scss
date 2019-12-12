@@ -110,16 +110,12 @@
 
       .btn-redraw {
         font-size: 1rem;
-        color: $gray-dark;
-        display: inline-block;
-        cursor: pointer;
-        padding: 14px 50px;
         margin-top: 40px;
-        background: #ffffff;
-        border: none;
-        border-radius: 2px;
-        box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.15);
-        outline: none;
+        box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.1);
+
+        &:hover {
+          box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.2);
+        }
       }
     }
   }

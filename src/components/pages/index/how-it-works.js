@@ -172,12 +172,12 @@ class HowItWorksSection extends React.Component {
                         color={colors[5]}
                       />
                     </div>
-                    <button
-                      className="btn-redraw"
+                    <a
+                      className="btn white btn-redraw"
                       onClick={() => this.redraw()}
                     >
                       Redraw
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
