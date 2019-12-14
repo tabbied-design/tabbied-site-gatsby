@@ -1,0 +1,42 @@
+@import "../../styles/colors.scss";
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-switch {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 32px;
+  font-size: 0.7rem;
+  color: $gray-light;
+  background-color: $gray-light;
+  border-radius: 32px;
+
+  &::after {
+    content: "\2715";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s;
+  }
+}
+
+.toggle-checkbox:checked + .toggle-switch {
+  background-color: $gray-medium;
+}
+
+.toggle-checkbox:checked + .toggle-switch::after {
+  color: $gray-medium;
+  content: "\2713";
+  left: 26px;
+}

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import ColorPicker from "../components/common/ColorPicker"
 import Doodle from "../components/common/Doodle"
 import OptionSlider from "../components/common/OptionSlider"
@@ -104,10 +104,16 @@ class EditArtwork extends React.Component {
     return (
       <div id="section-edit-artwork">
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-md-2">Back</div>
+          <div className="row">
+            <div className="col-md-2">
+              <div className="sidebar">
+                <Link to="/select-artwork/" className="btn-back">
+                  <i class="material-icons">keyboard_backspace</i>
+                </Link>
+              </div>
+            </div>
 
-            <div className="col-md-5 order-2 order-md-1">
+            <div className="col-md-5 order-2 order-md-1 align-self-center">
               <span className="subheading">Step 2 of 2</span>
               <h2>Customize artwork</h2>
 
@@ -184,9 +190,9 @@ class EditArtwork extends React.Component {
             </div>
 
             <div
-              className="col-md-5 order-1 order-md-2"
+              className="col-md-5 order-1 order-md-2  align-self-center"
               style={{
-                backgroundColor: "orange",
+                backgroundColor: "transparent",
               }}
             >
               <div className="doodle-wrapper">

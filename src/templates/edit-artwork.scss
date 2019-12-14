@@ -6,6 +6,25 @@
   padding: 64px 0;
   font-size: 0.9rem;
 
+  .btn-back {
+    width: 48px;
+    height: 48px;
+    border: 2px solid $gray-light;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    i.material-icons {
+      font-size: 0.9rem;
+    }
+
+    &:hover {
+      background-color: $gray-light;
+    }
+  }
+
   h2 {
     color: #111300;
     margin-top: 8px;

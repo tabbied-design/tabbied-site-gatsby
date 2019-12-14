@@ -19,16 +19,18 @@ class ToggleSwitch extends React.Component {
 
   render() {
     const { isActive } = this.props
+    const checkboxId = uuidv4()
 
     return (
       <div>
         <input
-          id={uuidv4()}
+          id={checkboxId}
           type="checkbox"
           checked={isActive}
           onChange={this.handleInputChange}
+          className="toggle-checkbox"
         />
-        <label htmlFor={uuidv4()} className="tgl-btn" />
+        <label htmlFor={checkboxId} className="toggle-switch" />
       </div>
     )
   }
