@@ -7,6 +7,11 @@ import HowItWorksSection from "../components/pages/index/how-it-works"
 import BrowseArtworkSection from "../components/pages/index/browse-artwork"
 import "./index.scss"
 import testimonialPerson from "../images/testimonial_person.png"
+import devicesImage from "../images/devices-min.jpg"
+import notebookImage from "../images/notebook-min.jpg"
+import packagingImage from "../images/packaging-min.jpg"
+import tshirtImage from "../images/tshirt-min.jpg"
+import wallArtImage from "../images/wall_art-min.jpg"
 
 const ExampleUsesSection = () => {
   return (
@@ -27,10 +32,7 @@ const ExampleUsesSection = () => {
         <div className="row">
           <div className="col-md-12">
             <div className="image-wrapper">
-              <img
-                src="https://dummyimage.com/1520x850/d8d8d8/ffffff.jpg"
-                alt="Dummy Placeholder"
-              />
+              <img src={devicesImage} alt="Digital" />
             </div>
           </div>
         </div>
@@ -38,18 +40,12 @@ const ExampleUsesSection = () => {
         <div className="row">
           <div className="col-md-6">
             <div className="image-wrapper">
-              <img
-                src="https://dummyimage.com/740x800/d8d8d8/ffffff.jpg"
-                alt="Dummy Placeholder"
-              />
+              <img src={wallArtImage} alt="Wall Art" />
             </div>
           </div>
           <div className="col-md-6">
             <div className="image-wrapper">
-              <img
-                src="https://dummyimage.com/740x800/d8d8d8/ffffff.jpg"
-                alt="Dummy Placeholder"
-              />
+              <img src={notebookImage} alt="Stationery" />
             </div>
           </div>
         </div>
@@ -57,18 +53,12 @@ const ExampleUsesSection = () => {
         <div className="row">
           <div className="col-md-6">
             <div className="image-wrapper">
-              <img
-                src="https://dummyimage.com/740x800/d8d8d8/ffffff.jpg"
-                alt="Dummy Placeholder"
-              />
+              <img src={packagingImage} alt="Packaging" />
             </div>
           </div>
           <div className="col-md-6">
             <div className="image-wrapper">
-              <img
-                src="https://dummyimage.com/740x800/d8d8d8/ffffff.jpg"
-                alt="Dummy Placeholder"
-              />
+              <img src={tshirtImage} alt="T-Shirt" />
             </div>
           </div>
         </div>
