@@ -21,7 +21,9 @@
     }
 
     &:hover {
-      background-color: $gray-light;
+      color: white;
+      background-color: $gray-dark;
+      border-color: $gray-dark;
     }
   }
 

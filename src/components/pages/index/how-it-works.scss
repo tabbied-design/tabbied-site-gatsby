@@ -75,50 +75,6 @@
       }
     }
   }
-
-  #demo {
-    margin-top: 80px;
-
-    #demo-artwork {
-      max-width: 360px;
-      box-shadow: 73px 75px 142px 0 rgba(8, 24, 34, 0.16);
-      border-radius: 12px;
-      margin: 0 auto;
-    }
-
-    #demo-controls {
-      margin-top: 70px;
-
-      p {
-        position: relative;
-        margin-top: 24px;
-
-        img.demo-arrow {
-          position: absolute;
-          top: 16px;
-          left: -60px;
-        }
-      }
-
-      .color-palette {
-        margin-top: 40px;
-
-        .color-picker-box {
-          margin-right: 32px;
-        }
-      }
-
-      .btn-redraw {
-        font-size: 1rem;
-        margin-top: 40px;
-        box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.1);
-
-        &:hover {
-          box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.2);
-        }
-      }
-    }
-  }
 }
 
 @include media-breakpoint-down(sm) {
@@ -130,30 +86,6 @@
     .step-box {
       text-align: center;
       padding: 20px 40px;
-    }
-
-    #demo {
-      margin-top: 60px;
-
-      #demo-controls {
-        margin-top: 70px;
-
-        p {
-          position: relative;
-          margin-top: 24px;
-        }
-
-        .color-palette {
-          margin-top: 40px;
-
-          .color-picker-box {
-            margin-right: 32px;
-          }
-        }
-
-        .btn-redraw {
-        }
-      }
     }
   }
 }

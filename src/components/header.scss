@@ -13,6 +13,10 @@
 
   .btn-close {
     color: $gray-medium;
+
+    &:hover {
+      color: $gray-dark;
+    }
   }
 
   #logo {

@@ -13,19 +13,15 @@
     justify-content: center;
     overflow: hidden;
 
+    &:hover {
+      box-shadow: 8px 8px 24px 0 rgba(0, 0, 0, 0.08);
+    }
+
     &.full img {
       border-radius: 20px;
     }
 
     &.card-action {
-      &:hover {
-        color: $blue-medium;
-
-        span.icon-circle {
-          border-color: $blue-medium;
-        }
-      }
-
       span {
         display: inline-block;
 
@@ -38,6 +34,17 @@
           align-items: center;
           justify-content: center;
           margin-left: 16px;
+        }
+      }
+
+      &:hover {
+        color: $gray-dark;
+        box-shadow: none;
+
+        span.icon-circle {
+          color: white;
+          background-color: $gray-dark;
+          border-color: $gray-dark;
         }
       }
     }

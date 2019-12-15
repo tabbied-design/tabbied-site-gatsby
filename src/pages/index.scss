@@ -15,6 +15,7 @@
 
   h3,
   h4 {
+    color: $gray-dark;
     font-size: 2.33rem;
     line-height: 1.3;
   }
@@ -75,7 +76,7 @@
   .example-images {
     max-width: 1520px;
     padding: 0 40px;
-    margin: 80px auto;
+    margin: 48px auto 80px auto;
 
     .image-wrapper {
       margin-top: 32px;
@@ -99,35 +100,16 @@
     height: 100%;
     overflow: hidden;
 
-    @-moz-keyframes rotate {
-      100% {
-        -moz-transform: rotate(360deg);
-      }
-    }
-    @-webkit-keyframes rotate {
-      100% {
-        -webkit-transform: rotate(360deg);
-      }
-    }
-    @keyframes rotate {
-      100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-      }
-    }
-
     .rectangle-1 {
       position: absolute;
-      top: 0;
-      left: -8%;
+      top: -20%;
+      left: -4%;
       width: 640px;
       height: 640px;
       opacity: 0.5;
       background-color: #97f4ff;
       border-radius: 90px;
-      -webkit-animation: rotate 8s linear infinite;
-      -moz-animation: rotate 8s linear infinite;
-      animation: rotate 8s linear infinite;
+      transform: rotate(45deg);
     }
 
     .circle-1 {
@@ -364,6 +346,7 @@
 }
 
 #section-submit-artwork {
+  display: none;
   padding: 120px 0;
   margin: 40px;
   background-color: rgba(248, 249, 250, 0.6);
