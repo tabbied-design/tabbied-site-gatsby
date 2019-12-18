@@ -1,26 +1,9 @@
 @import "../../../styles/bootstrap-grid-custom.scss";
 @import "../../../styles/colors.scss";
+@import "../../../styles/gallery-card.scss";
 
 #section-browse-artwork {
   .gallery-card {
-    margin-top: 32px;
-    border-radius: 20px;
-    box-sizing: border-box;
-    background-color: white;
-    height: 560px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-
-    &:hover {
-      box-shadow: 8px 8px 24px 0 rgba(0, 0, 0, 0.08);
-    }
-
-    &.full img {
-      border-radius: 20px;
-    }
-
     &.card-action {
       span {
         display: inline-block;
@@ -47,22 +30,6 @@
           border-color: $gray-dark;
         }
       }
-    }
-  }
-}
-
-@include media-breakpoint-down(md) {
-  #section-browse-artwork {
-    .gallery-card {
-      height: 438px;
-    }
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  #section-browse-artwork {
-    .gallery-card {
-      height: 438px;
     }
   }
 }

@@ -1,17 +1,7 @@
 import React from "react"
-import styled from "styled-components"
 import Pickr from "@simonwep/pickr"
 import "@simonwep/pickr/dist/themes/monolith.min.css"
-
-const ColorPickerBoxWrapper = styled.div`
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  margin-right: 32px;
-  box-shadow: -3px 3px 6px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-  border-radius: 2px;
-`
+import "../../styles/pickr.scss"
 
 class ColorPicker extends React.Component {
   componentDidMount() {
@@ -54,9 +44,9 @@ class ColorPicker extends React.Component {
     const { color } = this.props
 
     return (
-      <ColorPickerBoxWrapper>
+      <div>
         <div className="color-picker" style={{ backgroundColor: color }} />
-      </ColorPickerBoxWrapper>
+      </div>
     )
   }
 }

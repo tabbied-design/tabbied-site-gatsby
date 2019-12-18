@@ -1,0 +1,33 @@
+@import "./bootstrap-grid-custom.scss";
+
+.gallery-card {
+  margin-top: 32px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: white;
+  height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 8px 8px 24px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  &.full img {
+    border-radius: 20px;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .gallery-card {
+    height: 438px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .gallery-card {
+    height: 438px;
+  }
+}

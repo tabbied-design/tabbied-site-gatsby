@@ -120,13 +120,15 @@ class EditArtwork extends React.Component {
               {artworkData.palette !== null && (
                 <div>
                   <h3>Palette</h3>
-                  {artworkData.palette.map((hex, index) => (
-                    <ColorPicker
-                      key={"color" + index}
-                      handleColorChange={color => this.setColor(index, color)}
-                      color={hex}
-                    />
-                  ))}
+                  <div className="colors">
+                    {artworkData.palette.map((hex, index) => (
+                      <ColorPicker
+                        key={"color" + index}
+                        handleColorChange={color => this.setColor(index, color)}
+                        color={hex}
+                      />
+                    ))}
+                  </div>
                 </div>
               )}
 
@@ -206,8 +208,8 @@ class EditArtwork extends React.Component {
                     name={artworkData.slug}
                     grid={this.state.grid}
                     colors={this.state.colors}
-                    width={280}
-                    height={420}
+                    width={360}
+                    height={540}
                     uuid={this.state.doodleUuid}
                     styleCode={styleCode}
                     doodleCode={doodleCode}
