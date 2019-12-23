@@ -79,7 +79,10 @@ class SelectArtwork extends React.Component {
 
               <div className="col-md-4">
                 <Link to={`/artwork/ring/`}>
-                  <div className="gallery-card">
+                  <div
+                    className="gallery-card"
+                    style={{ backgroundColor: "#9effd8" }}
+                  >
                     <img src={galleryRing} alt="Ring" />
                   </div>
                 </Link>
