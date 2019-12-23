@@ -49,7 +49,7 @@ const Header = ({ siteTitle, location }) => {
               )}
               {isInCustomizeArtworkPage && (
                 <Link to="/" className="btn-close">
-                  <i class="material-icons">close</i>
+                  <i className="material-icons">close</i>
                 </Link>
               )}
             </div>

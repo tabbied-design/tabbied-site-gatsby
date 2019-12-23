@@ -35,11 +35,13 @@ class Doodle extends React.Component {
       colors,
       grid,
       width,
-      height,
+      widthHeightRatio,
       styleCode,
       doodleCode,
     } = this.props
+
     const colorsString = this.getColorsString(colors)
+    const height = parseInt(width * widthHeightRatio)
 
     return (
       <div className={`doodle-${name}-wrapper`}>

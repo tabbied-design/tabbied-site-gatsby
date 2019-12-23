@@ -23,10 +23,63 @@ class EditArtwork extends React.Component {
       frequency:
         artworkData.frequency !== null ? artworkData.frequency.default : null,
       shadow: artworkData.shadow !== null ? false : null,
+      screenSize: null,
     }
+
+    this.matchMediaEventListeners = []
 
     this.setFrequency = this.setFrequency.bind(this)
     this.setShadow = this.setShadow.bind(this)
+  }
+
+  componentDidMount() {
+    let listener
+
+    /*
+    $grid-breakpoints: (
+      xs: 0,
+      sm: 748px,
+      md: 992px,
+      lg: 1300px,
+    );
+    */
+
+    const mediaQueries = {
+      xs: "(max-width: 747px)",
+      sm: "(min-width: 748px) and (max-width: 991px)",
+      md: "(min-width: 992px) and (max-width: 1299px)",
+      lg: "(min-width: 1300px)",
+    }
+
+    Object.entries(mediaQueries).forEach(([screenSize, mediaQuery]) => {
+      console.log(`${screenSize}: ${mediaQuery}`)
+
+      let matchMedia = window.matchMedia(mediaQuery)
+
+      if (matchMedia.matches) {
+        this.setState({
+          screenSize: screenSize,
+        })
+      }
+
+      let listener = matchMedia.addEventListener("change", e => {
+        if (e.matches) {
+          this.setState({
+            screenSize: screenSize,
+          })
+        }
+      })
+
+      this.matchMediaEventListeners.push(listener)
+    })
+
+    console.log(this.matchMediaEventListeners)
+  }
+
+  componentWillUnmount() {
+    this.matchMediaEventListeners.forEach(listener => {
+      window.removeEventListener(listener)
+    })
   }
 
   setColor(index, hex) {
@@ -106,9 +159,10 @@ class EditArtwork extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-2">
+              {this.state.screenSize}
               <div className="sidebar">
                 <Link to="/select-artwork/" className="btn-back">
-                  <i class="material-icons">keyboard_backspace</i>
+                  <i className="material-icons">keyboard_backspace</i>
                 </Link>
               </div>
             </div>
@@ -209,7 +263,8 @@ class EditArtwork extends React.Component {
                     grid={this.state.grid}
                     colors={this.state.colors}
                     width={360}
-                    height={540}
+                    mdWidth={320}
+                    widthHeightRatio={1.5}
                     uuid={this.state.doodleUuid}
                     styleCode={styleCode}
                     doodleCode={doodleCode}
