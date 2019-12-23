@@ -35,13 +35,19 @@ class EditArtwork extends React.Component {
       },
     }
 
+    console.log(artworkData)
+
     this.state = {
       doodleUuid: uuidv4(),
       colors: artworkData.palette !== null ? artworkData.palette : [],
       grid: artworkData.grid.default,
       frequency:
         artworkData.frequency !== null ? artworkData.frequency.default : null,
-      shadow: artworkData.shadow !== null ? false : null,
+      shadow: artworkData.shadow !== null ? artworkData.shadow.default : null,
+      roundedCorners:
+        artworkData.roundedCorners !== null
+          ? artworkData.roundedCorners.default
+          : null,
       screenSize: Object.keys(this.mediaQueries)[0],
     }
 
@@ -50,6 +56,7 @@ class EditArtwork extends React.Component {
 
     this.setFrequency = this.setFrequency.bind(this)
     this.setShadow = this.setShadow.bind(this)
+    this.setRoundedCorners = this.setRoundedCorners.bind(this)
   }
 
   componentDidMount() {
@@ -120,6 +127,17 @@ class EditArtwork extends React.Component {
     )
   }
 
+  setRoundedCorners(isActive) {
+    this.setState(
+      {
+        roundedCorners: isActive,
+      },
+      () => {
+        this.redraw()
+      }
+    )
+  }
+
   redraw() {
     this.setState({
       doodleUuid: uuidv4(),
@@ -145,17 +163,40 @@ class EditArtwork extends React.Component {
       )
     }
 
-    if (artworkData.shadow !== null && this.state.shadow) {
-      styleCode = styleCode.replace(
-        artworkData.shadow.replace,
-        artworkData.shadow.code
-      )
+    if (artworkData.shadow !== null) {
+      if (this.state.shadow === true) {
+        styleCode = styleCode
+          .split(artworkData.shadow.replace)
+          .join(artworkData.shadow.code)
 
-      doodleCode = doodleCode.replace(
-        artworkData.shadow.replace,
-        artworkData.shadow.code
-      )
+        doodleCode = doodleCode
+          .split(artworkData.shadow.replace)
+          .join(artworkData.shadow.code)
+      } else {
+        styleCode = styleCode.split(artworkData.shadow.replace).join("")
+        doodleCode = doodleCode.split(artworkData.shadow.replace).join("")
+      }
     }
+
+    if (artworkData.roundedCorners !== null) {
+      const re = new RegExp(artworkData.roundedCorners.replace, "g")
+
+      if (this.state.roundedCorners === true) {
+        styleCode = styleCode
+          .split(artworkData.roundedCorners.replace)
+          .join(artworkData.roundedCorners.code)
+        doodleCode = doodleCode
+          .split(artworkData.roundedCorners.replace)
+          .join(artworkData.roundedCorners.code)
+      } else {
+        styleCode = styleCode.split(artworkData.roundedCorners.replace).join("")
+        doodleCode = doodleCode
+          .split(artworkData.roundedCorners.replace)
+          .join("")
+      }
+    }
+
+    console.log(styleCode)
 
     return (
       <div id="section-edit-artwork">
@@ -232,6 +273,16 @@ class EditArtwork extends React.Component {
                 </>
               )}
 
+              {artworkData.roundedCorners !== null && (
+                <>
+                  <h3>Rounded Corners</h3>
+                  <ToggleSwitch
+                    isActive={this.state.roundedCorners}
+                    handleChange={this.setRoundedCorners}
+                  />
+                </>
+              )}
+
               <div className="buttons-wrapper">
                 <div onClick={() => this.redraw()} className="btn white">
                   Redraw
@@ -300,6 +351,11 @@ export const query = graphql`
         replace
       }
       shadow {
+        default
+        code
+        replace
+      }
+      roundedCorners {
         default
         code
         replace

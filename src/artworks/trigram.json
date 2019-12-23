@@ -1,0 +1,26 @@
+{
+  "name": "Trigram",
+  "slug": "trigram",
+  "description": "A top view of randomly generated lines and squares paints a simplistic view of cities.",
+  "palette": ["#FFFFFF", "#3E8BFF", "#FF3D8B", "#3FFF50", "#F5DD32"],
+  "grid": {
+    "default": "6x4",
+    "options": ["3x2", "6x4", "9x6", "12x8", "15x10"]
+  },
+  "frequency": {
+    "default": 1.0,
+    "values": [0.2, 0.4, 0.6, 0.8, 1.0],
+    "step": 0.2,
+    "displayUnit": "percentage",
+    "replace": "${shapeFrequency}"
+  },
+  "roundedCorners": {
+    "default": true,
+    "code": "border-radius: 320px;",
+    "replace": "${roundedCorners}"
+  },
+  "code": {
+    "style": "--randomColor: @p(var(--color1), var(--color2), var(--color3), var(--color4)); --rule: ( /*Frequency options of 0.2, 0.4, 0.6, 0.8, 1.0 */ @random(${shapeFrequency}) { -webkit-transform:rotate(@pick(45deg, 90deg, 135deg, 180deg, 0deg)); transform:rotate(@pick(45deg, 90deg, 135deg, 180deg, 0deg)); width:10%; height:50%; margin-left:45%; margin-top:25%; /* On or off option for rounding corners */ ${roundedCorners} background: var(--randomColor); overflow:none; :before { content: ''; position:absolute; background: var(--randomColor); width:100%; height:100%; left:200%; /* On or off option for rounding corners */ ${roundedCorners} } :after { content: ''; position:absolute; background: var(--randomColor); width:100%; height:100%; right:200%; /* On or off option for rounding corners */ ${roundedCorners} } } -webkit-transition: transform ease @rand(200ms, 600ms), height ease @rand(200ms, 600ms); transition: transform ease @rand(200ms, 600ms), height ease @rand(200ms, 600ms); );",
+    "doodle": ":doodle { text-align:center; box-sizing:border-box } :container { background:var(--color0); overflow:hidden; }"
+  }
+}

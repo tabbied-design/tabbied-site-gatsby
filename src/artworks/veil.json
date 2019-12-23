@@ -1,0 +1,21 @@
+{
+  "name": "Veil",
+  "slug": "veil",
+  "description": "Isosceles right triangles are randomly placed to balance stability with a bit of mystery and interest.",
+  "palette": ["#FFFFFF", "#FFA1C6", "#3FFFB2", "#3EECFF", "#1B4075", "#326DC9"],
+  "grid": {
+    "default": "12x8",
+    "options": ["3x2", "6x4", "9x6", "12x8", "15x10"]
+  },
+  "frequency": {
+    "default": 0.8,
+    "values": [0.2, 0.4, 0.6, 0.8, 1.0],
+    "step": 0.2,
+    "displayUnit": "percentage",
+    "replace": "${shapeFrequency}"
+  },
+  "code": {
+    "style": "/* Random color generator variable */ --randomColor: @p(var(--color1), var(--color2), var(--color3), var(--color4), var(--color5)); --rule: ( /*Frequency options of 0.2, 0.4, 0.6, 0.8, 1.0 */ @random (${shapeFrequency}) { background-color: var(--randomColor); -webkit-clip-path: polygon(@pick( '0 0, 101% 0, 101% 101%', '0 0, 101% 0, 0 101%', '0 0, 101% 101%, 0 101%', '101% 0, 101% 101%, 0 101%' )); clip-path: polygon(@pick( '0 0, 101% 0, 101% 101%', '0 0, 101% 0, 0 101%', '0 0, 101% 101%, 0 101%', '101% 0, 101% 101%, 0 101%' )); -webkit-transition: .2s ease @rand(200ms); transition: .2s ease @rand(200ms); -webkit-transform: clip-path; transform: clip-path; } );",
+    "doodle": ":doodle { text-align:center; box-sizing:border-box } :container { background:var(--color0); overflow:hidden; }"
+  }
+}

@@ -16,7 +16,7 @@
   },
   "shadow": {
     "default": false,
-    "code": "-webkit-box-shadow:0 0 @pick(0, 40)px rgba(0,0,0,0.2); box-shadow:0 0 @pick(0, 40)px rgba(0,0,0,0.2);",
+    "code": "-webkit-box-shadow: 0 0 @pick(0, 40)px rgba(0,0,0,0.2); box-shadow: 0 0 @pick(0, 40)px rgba(0,0,0,0.2);",
     "replace": "${shadow}"
   },
   "code": {
