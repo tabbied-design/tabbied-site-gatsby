@@ -75,7 +75,7 @@ class BrowseArtworkSection extends React.Component {
                     <span>View all</span>
 
                     <span className="icon-circle">
-                      <i class="material-icons">arrow_right_alt</i>
+                      <i className="material-icons">arrow_right_alt</i>
                     </span>
                   </div>
                 </Link>
