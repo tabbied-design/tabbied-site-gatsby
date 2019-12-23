@@ -5,7 +5,6 @@ import "./header.scss"
 import logoImage from "../images/logo_tabbied.png"
 
 const Header = ({ siteTitle, location }) => {
-  console.log({ siteTitle, location })
   const isInCustomizeArtworkPage =
     location &&
     (location.pathname === "/select-artwork/" ||

@@ -16,6 +16,25 @@ class EditArtwork extends React.Component {
 
     const artworkData = props.data.artworksJson
 
+    this.mediaQueries = {
+      xs: {
+        doodleWidth: 280,
+        query: "(max-width: 747px)",
+      },
+      sm: {
+        doodleWidth: 600,
+        query: "(min-width: 748px) and (max-width: 991px)",
+      },
+      md: {
+        doodleWidth: 280,
+        query: "(min-width: 992px) and (max-width: 1299px)",
+      },
+      lg: {
+        doodleWidth: 360,
+        query: "(min-width: 1300px)",
+      },
+    }
+
     this.state = {
       doodleUuid: uuidv4(),
       colors: artworkData.palette !== null ? artworkData.palette : [],
@@ -23,62 +42,45 @@ class EditArtwork extends React.Component {
       frequency:
         artworkData.frequency !== null ? artworkData.frequency.default : null,
       shadow: artworkData.shadow !== null ? false : null,
-      screenSize: null,
+      screenSize: Object.keys(this.mediaQueries)[0],
     }
 
-    this.matchMediaEventListeners = []
+    this.mediaQueryLists = []
+    this.matchMediaEventHandlers = []
 
     this.setFrequency = this.setFrequency.bind(this)
     this.setShadow = this.setShadow.bind(this)
   }
 
   componentDidMount() {
-    let listener
+    Object.entries(this.mediaQueries).forEach(([screenSize, queryInfo]) => {
+      let mediaQueryList = window.matchMedia(queryInfo.query)
 
-    /*
-    $grid-breakpoints: (
-      xs: 0,
-      sm: 748px,
-      md: 992px,
-      lg: 1300px,
-    );
-    */
-
-    const mediaQueries = {
-      xs: "(max-width: 747px)",
-      sm: "(min-width: 748px) and (max-width: 991px)",
-      md: "(min-width: 992px) and (max-width: 1299px)",
-      lg: "(min-width: 1300px)",
-    }
-
-    Object.entries(mediaQueries).forEach(([screenSize, mediaQuery]) => {
-      console.log(`${screenSize}: ${mediaQuery}`)
-
-      let matchMedia = window.matchMedia(mediaQuery)
-
-      if (matchMedia.matches) {
+      // Initialize
+      if (mediaQueryList.matches) {
         this.setState({
           screenSize: screenSize,
         })
       }
 
-      let listener = matchMedia.addEventListener("change", e => {
+      let eventHandler = e => {
         if (e.matches) {
           this.setState({
             screenSize: screenSize,
           })
         }
-      })
+      }
 
-      this.matchMediaEventListeners.push(listener)
+      mediaQueryList.addListener(eventHandler)
+
+      this.mediaQueryLists.push(mediaQueryList)
+      this.matchMediaEventHandlers.push(eventHandler)
     })
-
-    console.log(this.matchMediaEventListeners)
   }
 
   componentWillUnmount() {
-    this.matchMediaEventListeners.forEach(listener => {
-      window.removeEventListener(listener)
+    this.mediaQueryLists.forEach((mql, index) => {
+      mql.removeListener(this.matchMediaEventHandlers[index])
     })
   }
 
@@ -129,6 +131,7 @@ class EditArtwork extends React.Component {
 
     let styleCode = artworkData.code.style
     let doodleCode = artworkData.code.doodle
+    const doodleWidth = this.mediaQueries[this.state.screenSize].doodleWidth
 
     if (artworkData.frequency !== null) {
       styleCode = styleCode.replace(
@@ -159,7 +162,6 @@ class EditArtwork extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-2">
-              {this.state.screenSize}
               <div className="sidebar">
                 <Link to="/select-artwork/" className="btn-back">
                   <i className="material-icons">keyboard_backspace</i>
@@ -262,8 +264,7 @@ class EditArtwork extends React.Component {
                     name={artworkData.slug}
                     grid={this.state.grid}
                     colors={this.state.colors}
-                    width={360}
-                    mdWidth={320}
+                    width={doodleWidth}
                     widthHeightRatio={1.5}
                     uuid={this.state.doodleUuid}
                     styleCode={styleCode}

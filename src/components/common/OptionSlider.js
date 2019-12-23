@@ -9,10 +9,13 @@ const Handle = Slider.Handle
 
 const handle = props => {
   const { value, dragging, index, ...restProps } = props
+
+  const displayValue = parseInt(value * 100) + "%"
+
   return (
     <Tooltip
       prefixCls="rc-slider-tooltip"
-      overlay={value}
+      overlay={displayValue}
       visible={dragging}
       placement="top"
       key={index}
@@ -24,6 +27,7 @@ const handle = props => {
 
 class OptionSlider extends React.Component {
   formatTip(v) {
+    console.log(`formatTip(v=${v})`)
     const { displayUnit } = this.props
 
     if (displayUnit === "percentage") {
@@ -49,7 +53,6 @@ class OptionSlider extends React.Component {
             0.8: 80,
             1: 100,
           }}
-          tipFormatter={this.formatTip}
           onChange={handleChange}
           value={value}
           className="artwork-option-slider"
