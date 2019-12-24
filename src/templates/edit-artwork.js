@@ -165,22 +165,24 @@ class EditArtwork extends React.Component {
     let doodleCode = artworkData.code.doodle
     const doodleWidth = this.mediaQueries[this.state.screenSize].doodleWidth
 
+    console.log(artworkData)
+
     if (artworkData.frequency !== null) {
       styleCode = styleCode
         .split(artworkData.frequency.replace)
-        .join(artworkData.frequency.code)
+        .join(this.state.frequency)
       doodleCode = doodleCode
         .split(artworkData.frequency.replace)
-        .join(artworkData.frequency.code)
+        .join(this.state.frequency)
     }
 
     if (artworkData.circularity !== null) {
       styleCode = styleCode
         .split(artworkData.circularity.replace)
-        .join(artworkData.circularity.code)
+        .join(this.state.circularity)
       doodleCode = doodleCode
         .split(artworkData.circularity.replace)
-        .join(artworkData.circularity.code)
+        .join(this.state.circularity)
     }
 
     if (artworkData.shadow !== null) {
@@ -213,6 +215,9 @@ class EditArtwork extends React.Component {
           .join("")
       }
     }
+
+    console.log(styleCode)
+    console.log(this.state.frequency)
 
     return (
       <div id="section-edit-artwork">

@@ -8,29 +8,7 @@ exports.createPages = async function({ actions, graphql }) {
         edges {
           node {
             id
-            name
-            description
-            grid {
-              default
-              options
-            }
-            palette
             slug
-            frequency {
-              default
-              values
-              step
-              replace
-            }
-            shadow {
-              default
-              code
-              replace
-            }
-            code {
-              style
-              doodle
-            }
           }
         }
       }
