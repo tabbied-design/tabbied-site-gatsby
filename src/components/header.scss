@@ -28,8 +28,13 @@
   }
 
   .btn-action {
-    padding: 12px 20px;
-    border-radius: 2px;
+    color: $gray-dark;
+    padding: 8px 0;
+    border-bottom: 4px solid #34ca8d;
+
+    &:hover {
+      color: #34ca8d;
+    }
   }
 }
 

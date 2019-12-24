@@ -20,7 +20,6 @@ exports.createPages = async function({ actions, graphql }) {
               default
               values
               step
-              displayUnit
               replace
             }
             shadow {
@@ -39,8 +38,6 @@ exports.createPages = async function({ actions, graphql }) {
   `)
 
   const editPageTemplate = path.resolve("./src/templates/edit-artwork.js")
-
-  // TODO: Create gallery page
 
   // Create a page for each artwork
   artworks.data.allArtworksJson.edges.forEach(({ node }) => {

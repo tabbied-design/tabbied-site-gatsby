@@ -42,7 +42,7 @@ const Header = ({ siteTitle, location }) => {
           <div className="col-md-3 col-6">
             <div className="align-right">
               {!isInCustomizeArtworkPage && (
-                <Link to="/select-artwork/" className="btn btn-action">
+                <Link to="/select-artwork/" className="btn-action">
                   Make your art
                 </Link>
               )}

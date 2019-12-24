@@ -20,10 +20,7 @@ const ExampleUsesSection = () => {
         <div className="row">
           <div className="col-md-12">
             <span className="subheading">Example uses</span>
-            <h3>
-              Timeless art perfect
-              <br /> for all your needs
-            </h3>
+            <h3>Timeless art perfect for all your needs</h3>
           </div>
         </div>
       </div>
@@ -174,7 +171,7 @@ const TryForFreeSection = () => {
                 Create your beautiful design in under a minute.
               </p>
 
-              <Link to="/" className="btn white">
+              <Link to="/" className="btn green">
                 Make your art
               </Link>
             </div>

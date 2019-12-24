@@ -2,86 +2,70 @@
 @import "../../../styles/colors.scss";
 
 #section-hero {
-  background-image: url("/images/intro_bg.png");
-  background-size: 720px;
-  background-repeat: no-repeat;
-  background-position: right 50%;
-  padding: 20px 0;
-  margin: 0 40px;
+  background-color: #3d80d1;
+  height: 800px;
+  position: relative;
+  text-align: center;
+
+  .doodle-background {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+
+    .doodle-wrapper {
+      width: 1600px;
+      height: 800px;
+    }
+  }
+
+  .hero-content {
+    margin-top: 296px;
+  }
 
   .hero-text {
     font-size: 2.67rem;
     line-height: 1.3;
     font-weight: 200;
-    color: $gray-medium;
+    color: white;
   }
 
   .hero-actions {
     margin-top: 50px;
   }
-
-  .doodle-wrapper {
-    position: relative;
-    height: 750px;
-  }
-
-  #hero-doodle {
-    position: absolute;
-    top: -120px;
-    left: 0;
-    width: 660px;
-    height: 990px;
-  }
 }
 
 @include media-breakpoint-down(md) {
   #section-hero {
-    padding: 92px 0;
+    background-color: #3d80d1;
+    height: 600px;
+    position: relative;
+    text-align: center;
+
+    .doodle-background {
+      width: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+
+      .doodle-wrapper {
+        width: 11200px;
+        height: 600px;
+      }
+    }
+
+    .hero-content {
+      margin-top: 216px;
+    }
 
     .hero-text {
       font-size: 2.4rem;
-    }
-
-    .hero-actions {
-      margin-top: 30px;
-    }
-
-    .doodle-wrapper {
-      height: 610px;
-    }
-
-    #hero-doodle {
-      top: -100px;
-      width: 540px;
-      height: 810px;
     }
   }
 }
 
 @include media-breakpoint-down(sm) {
-  #section-hero {
-    background-size: 620px;
-    padding-bottom: 80px;
-    margin: 0;
-
-    .hero-text {
-      font-size: 1.9rem;
-    }
-
-    .doodle-wrapper {
-      height: 520px;
-    }
-
-    #hero-doodle {
-      top: -100px;
-      left: -70px;
-      /* 375px */
-      width: 480px;
-      height: 720px;
-    }
-  }
 }
 
 @include media-breakpoint-down(xs) {
-  background-size: 920px;
 }
