@@ -35,14 +35,16 @@ class EditArtwork extends React.Component {
       },
     }
 
-    console.log(artworkData)
-
     this.state = {
       doodleUuid: uuidv4(),
       colors: artworkData.palette !== null ? artworkData.palette : [],
       grid: artworkData.grid.default,
       frequency:
         artworkData.frequency !== null ? artworkData.frequency.default : null,
+      circularity:
+        artworkData.circularity !== null
+          ? artworkData.circularity.default
+          : null,
       shadow: artworkData.shadow !== null ? artworkData.shadow.default : null,
       roundedCorners:
         artworkData.roundedCorners !== null
@@ -55,6 +57,7 @@ class EditArtwork extends React.Component {
     this.matchMediaEventHandlers = []
 
     this.setFrequency = this.setFrequency.bind(this)
+    this.setCircularity = this.setCircularity.bind(this)
     this.setShadow = this.setShadow.bind(this)
     this.setRoundedCorners = this.setRoundedCorners.bind(this)
   }
@@ -116,6 +119,17 @@ class EditArtwork extends React.Component {
     )
   }
 
+  setCircularity(circularity) {
+    this.setState(
+      {
+        circularity,
+      },
+      () => {
+        this.redraw()
+      }
+    )
+  }
+
   setShadow(isActive) {
     this.setState(
       {
@@ -152,15 +166,21 @@ class EditArtwork extends React.Component {
     const doodleWidth = this.mediaQueries[this.state.screenSize].doodleWidth
 
     if (artworkData.frequency !== null) {
-      styleCode = styleCode.replace(
-        artworkData.frequency.replace,
-        this.state.frequency
-      )
+      styleCode = styleCode
+        .split(artworkData.frequency.replace)
+        .join(artworkData.frequency.code)
+      doodleCode = doodleCode
+        .split(artworkData.frequency.replace)
+        .join(artworkData.frequency.code)
+    }
 
-      doodleCode = doodleCode.replace(
-        artworkData.frequency.replace,
-        this.state.frequency
-      )
+    if (artworkData.circularity !== null) {
+      styleCode = styleCode
+        .split(artworkData.circularity.replace)
+        .join(artworkData.circularity.code)
+      doodleCode = doodleCode
+        .split(artworkData.circularity.replace)
+        .join(artworkData.circularity.code)
     }
 
     if (artworkData.shadow !== null) {
@@ -179,8 +199,6 @@ class EditArtwork extends React.Component {
     }
 
     if (artworkData.roundedCorners !== null) {
-      const re = new RegExp(artworkData.roundedCorners.replace, "g")
-
       if (this.state.roundedCorners === true) {
         styleCode = styleCode
           .split(artworkData.roundedCorners.replace)
@@ -195,8 +213,6 @@ class EditArtwork extends React.Component {
           .join("")
       }
     }
-
-    console.log(styleCode)
 
     return (
       <div id="section-edit-artwork">
@@ -229,7 +245,7 @@ class EditArtwork extends React.Component {
                 </div>
               )}
 
-              {artworkData.grid !== null && (
+              {artworkData.grid !== null && artworkData.grid.options !== null && (
                 <div className="box-options-selector">
                   <h3>Rows and columns</h3>
                   {artworkData.grid.options.map(grid => (
@@ -257,8 +273,21 @@ class EditArtwork extends React.Component {
                     value={this.state.frequency}
                     values={artworkData.frequency.values}
                     step={artworkData.frequency.step}
-                    displayUnit={artworkData.frequency.displayUnit}
+                    displayUnit="percentage"
                     handleChange={this.setFrequency}
+                  />
+                </>
+              )}
+
+              {artworkData.circularity !== null && (
+                <>
+                  <h3>Circularity</h3>
+                  <OptionSlider
+                    value={this.state.circularity}
+                    values={artworkData.circularity.values}
+                    step={artworkData.circularity.step}
+                    displayUnit="percentage"
+                    handleChange={this.setCircularity}
                   />
                 </>
               )}
@@ -347,7 +376,12 @@ export const query = graphql`
         default
         values
         step
-        displayUnit
+        replace
+      }
+      circularity {
+        default
+        values
+        step
         replace
       }
       shadow {
