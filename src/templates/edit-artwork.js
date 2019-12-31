@@ -50,6 +50,8 @@ class EditArtwork extends React.Component {
         artworkData.roundedCorners !== null
           ? artworkData.roundedCorners.default
           : null,
+      customText:
+        artworkData.customText !== null ? artworkData.customText.default : null,
       screenSize: Object.keys(this.mediaQueries)[0],
     }
 
@@ -216,6 +218,15 @@ class EditArtwork extends React.Component {
       }
     }
 
+    if (artworkData.customText !== null) {
+      styleCode = styleCode
+        .split(artworkData.customText.replace)
+        .join(this.state.customText)
+      doodleCode = doodleCode
+        .split(artworkData.customText.replace)
+        .join(this.state.customText)
+    }
+
     console.log(styleCode)
     console.log(this.state.frequency)
 
@@ -317,6 +328,21 @@ class EditArtwork extends React.Component {
                 </>
               )}
 
+              {artworkData.customText !== null && (
+                <>
+                  <h3>Custom Text</h3>
+                  <input
+                    type="text"
+                    value={this.state.customText}
+                    maxLength={artworkData.customText.maxLength}
+                    onChange={e => {
+                      this.setState({ customText: e.target.value })
+                      this.redraw()
+                    }}
+                  />
+                </>
+              )}
+
               <div className="buttons-wrapper">
                 <div onClick={() => this.redraw()} className="btn white">
                   Redraw
@@ -397,6 +423,11 @@ export const query = graphql`
       roundedCorners {
         default
         code
+        replace
+      }
+      customText {
+        default
+        minLength
         replace
       }
       code {
