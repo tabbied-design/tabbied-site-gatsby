@@ -1,19 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
 import "./select-artwork.scss"
-import galleryBloks from "../images/gallery_bloks.png"
-import galleryBlossom from "../images/gallery_blossom.png"
-import galleryDisco from "../images/gallery_disco.png"
-import galleryFiesta from "../images/gallery_fiesta.png"
-import galleryMixtape from "../images/gallery_mixtape.png"
-import galleryOdessa from "../images/gallery_odessa.png"
-import galleryRadius from "../images/gallery_radius.png"
-import galleryRing from "../images/gallery_ring.png"
-import gallerySymmetry from "../images/gallery_symmetry.png"
-import galleryTerrain from "../images/gallery_terrain.png"
-import galleryTrigram from "../images/gallery_trigram.png"
-import galleryVeil from "../images/gallery_veil.png"
-import galleryZario from "../images/gallery_zario.png"
+import thumbBloks from "../images/thumb_bloks.png"
+import thumbBlossom from "../images/thumb_blossom.png"
+import thumbDisque from "../images/thumb_disque.png"
+import thumbFiesta from "../images/thumb_fiesta.png"
+import thumbMixtape from "../images/thumb_mixtape.png"
+import thumbOdessa from "../images/thumb_odessa.png"
+import thumbRadius from "../images/thumb_radius.png"
+import thumbRing from "../images/thumb_ring.png"
+import thumbSymmetry from "../images/thumb_symmetry.png"
+import thumbTerrain from "../images/thumb_terrain.png"
+import thumbTrigram from "../images/thumb_trigram.png"
+import thumbVeil from "../images/thumb_veil.png"
+import thumbZario from "../images/thumb_super_zario.png"
 
 class SelectArtwork extends React.Component {
   render() {
@@ -37,7 +37,7 @@ class SelectArtwork extends React.Component {
                       padding: "0 80px",
                     }}
                   >
-                    <img src={galleryMixtape} alt="Mixtape" />
+                    <img src={thumbMixtape} alt="Mixtape" />
                   </div>
                 </Link>
               </div>
@@ -48,7 +48,7 @@ class SelectArtwork extends React.Component {
                     className="gallery-card full"
                     style={{ backgroundColor: "#abf2fd" }}
                   >
-                    <img src={gallerySymmetry} alt="Symmetry" />
+                    <img src={thumbSymmetry} alt="Symmetry" />
                   </div>
                 </Link>
               </div>
@@ -56,7 +56,7 @@ class SelectArtwork extends React.Component {
               <div className="col-md-4">
                 <Link to={`/artwork/zario/`}>
                   <div className="gallery-card full">
-                    <img src={galleryZario} alt="Zario" />
+                    <img src={thumbZario} alt="Zario" />
                   </div>
                 </Link>
               </div>
@@ -64,7 +64,7 @@ class SelectArtwork extends React.Component {
               <div className="col-md-4">
                 <Link to={`/artwork/odessa/`}>
                   <div className="gallery-card">
-                    <img src={galleryOdessa} alt="Odessa" />
+                    <img src={thumbOdessa} alt="Odessa" />
                   </div>
                 </Link>
               </div>
@@ -72,7 +72,7 @@ class SelectArtwork extends React.Component {
               <div className="col-md-4">
                 <Link to={`/artwork/disco/`}>
                   <div className="gallery-card">
-                    <img src={galleryDisco} alt="Disco" />
+                    <img src={thumbDisque} alt="Disco" />
                   </div>
                 </Link>
               </div>
@@ -83,7 +83,7 @@ class SelectArtwork extends React.Component {
                     className="gallery-card"
                     style={{ backgroundColor: "#9effd8" }}
                   >
-                    <img src={galleryRing} alt="Ring" />
+                    <img src={thumbRing} alt="Ring" />
                   </div>
                 </Link>
               </div>
@@ -96,7 +96,7 @@ class SelectArtwork extends React.Component {
                       padding: "0 80px",
                     }}
                   >
-                    <img src={galleryFiesta} alt="Fiesta" />
+                    <img src={thumbFiesta} alt="Fiesta" />
                   </div>
                 </Link>
               </div>
@@ -109,7 +109,7 @@ class SelectArtwork extends React.Component {
                       padding: "0 64px",
                     }}
                   >
-                    <img src={galleryBlossom} alt="Blossom" />
+                    <img src={thumbBlossom} alt="Blossom" />
                   </div>
                 </Link>
               </div>
@@ -122,7 +122,7 @@ class SelectArtwork extends React.Component {
                       padding: "0 64px",
                     }}
                   >
-                    <img src={galleryTerrain} alt="Terrain" />
+                    <img src={thumbTerrain} alt="Terrain" />
                   </div>
                 </Link>
               </div>
@@ -135,7 +135,7 @@ class SelectArtwork extends React.Component {
                       padding: "0 64px",
                     }}
                   >
-                    <img src={galleryRadius} alt="Radius" />
+                    <img src={thumbRadius} alt="Radius" />
                   </div>
                 </Link>
               </div>
@@ -148,7 +148,7 @@ class SelectArtwork extends React.Component {
                       padding: "0 64px",
                     }}
                   >
-                    <img src={galleryVeil} alt="Veil" />
+                    <img src={thumbVeil} alt="Veil" />
                   </div>
                 </Link>
               </div>
@@ -161,7 +161,7 @@ class SelectArtwork extends React.Component {
                       padding: "0 64px",
                     }}
                   >
-                    <img src={galleryTrigram} alt="Trigram" />
+                    <img src={thumbTrigram} alt="Trigram" />
                   </div>
                 </Link>
               </div>
@@ -174,7 +174,7 @@ class SelectArtwork extends React.Component {
                       padding: "0 64px",
                     }}
                   >
-                    <img src={galleryBloks} alt="Bloks" />
+                    <img src={thumbBloks} alt="Bloks" />
                   </div>
                 </Link>
               </div>

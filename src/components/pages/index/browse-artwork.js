@@ -2,10 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 import "./browse-artwork.scss"
 
-import galleryMixtape from "../../../images/gallery_mixtape.png"
-import galleryOdessa from "../../../images/gallery_odessa.png"
-import gallerySymmetry from "../../../images/gallery_symmetry.png"
-import galleryZario from "../../../images/gallery_zario.png"
+import galleryMixtape from "../../../images/thumb_mixtape.png"
+import galleryOdessa from "../../../images/thumb_odessa.png"
+import gallerySymmetry from "../../../images/thumb_symmetry.png"
+import gallerySuperZario from "../../../images/thumb_super_zario.png"
 
 class BrowseArtworkSection extends React.Component {
   render() {
@@ -16,61 +16,41 @@ class BrowseArtworkSection extends React.Component {
             <div className="col-md-12">
               <span className="subheading">Browse artwork</span>
               <h3>
-                Choose from our curated designs of beautiful, <br />
-                minimalistic patterns and illustrations.
+                Start designing with our curated artwork of
+                <br />
+                timeless patterns and illustrations.
               </h3>
             </div>
           </div>
 
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-md-12">
               <Link to={`/artwork/mixtape/`}>
-                <div
-                  className="gallery-card"
-                  style={{
-                    backgroundColor: "white",
-                    padding: "0 80px",
-                    maxHeight: "600px",
-                  }}
-                >
+                <div className="gallery-card">
                   <img src={galleryMixtape} alt="Mixtape" />
                 </div>
               </Link>
-            </div>
 
-            <div className="col-md-4">
               <Link to={`/artwork/symmetry/`}>
-                <div
-                  className="gallery-card full"
-                  style={{ backgroundColor: "#abf2fd" }}
-                >
+                <div className="gallery-card">
                   <img src={gallerySymmetry} alt="Symmetry" />
                 </div>
               </Link>
-            </div>
 
-            <div className="col-md-4">
               <Link to={`/artwork/zario/`}>
-                <div className="gallery-card full">
-                  <img src={galleryZario} alt="Zario" />
+                <div className="gallery-card">
+                  <img src={gallerySuperZario} alt="Zario" />
                 </div>
               </Link>
-            </div>
 
-            <div className="col-md-4">
               <Link to={`/artwork/odessa/`}>
                 <div className="gallery-card">
                   <img src={galleryOdessa} alt="Odessa" />
                 </div>
               </Link>
-            </div>
 
-            <div className="col-md-4">
               <Link to={`/select-artwork/`}>
-                <div
-                  className="gallery-card card-action"
-                  style={{ backgroundColor: "transparent" }}
-                >
+                <div className="gallery-card card-action">
                   <span>View all</span>
 
                   <span className="icon-circle">
