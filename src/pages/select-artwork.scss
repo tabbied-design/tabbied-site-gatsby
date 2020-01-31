@@ -7,9 +7,44 @@
   }
 
   h2 {
-    color: $gray-dark;
-    font-size: 2.3rem;
+    text-align: left;
+    color: $gray-medium;
+    font-size: 1.2rem;
     margin-top: 8px;
     margin-bottom: 64px;
+  }
+
+  .gallery-card {
+    position: relative;
+    line-height: 0;
+
+    .text {
+      line-height: 1.4;
+    }
+
+    .center {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h4 {
+      color: $gray-dark;
+      position: absolute;
+      top: 24px;
+      left: 32px;
+      font-size: 1rem;
+      line-height: 1.4;
+
+      &.white {
+        color: white;
+      }
+    }
   }
 }

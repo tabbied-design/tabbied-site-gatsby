@@ -78,7 +78,7 @@ class BrowseArtworkSection extends React.Component {
             </div>
 
             <div className="col-md-3 col-sm-6">
-              <Link to={`/artwork/symmetry/`}>
+              <Link to={`/artwork/blossom/`}>
                 <div className="gallery-card">
                   <h4 className="white">Blossom</h4>
                   <img src={thumbBlossom} alt="Blossom" />
@@ -86,7 +86,7 @@ class BrowseArtworkSection extends React.Component {
               </Link>
             </div>
             <div className="col-md-3 col-sm-6">
-              <Link to={`/artwork/zario/`}>
+              <Link to={`/artwork/veil/`}>
                 <div className="gallery-card">
                   <h4>Veil</h4>
                   <img src={thumbVeil} alt="Veil" />

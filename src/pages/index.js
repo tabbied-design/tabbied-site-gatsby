@@ -154,7 +154,7 @@ const TryForFreeSection = () => {
                 Create your beautiful design in under a minute.
               </p>
 
-              <Link to="/" className="btn green">
+              <Link to="/select-artwork" className="btn green">
                 Make your art
               </Link>
             </div>
