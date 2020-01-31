@@ -7,11 +7,11 @@ import HowItWorksSection from "../components/pages/index/how-it-works"
 import BrowseArtworkSection from "../components/pages/index/browse-artwork"
 import "./index.scss"
 import testimonialPerson from "../images/testimonial_person.png"
-import devicesImage from "../images/devices-min.jpg"
-import notebookImage from "../images/notebook-min.jpg"
-import packagingImage from "../images/packaging-min.jpg"
-import tshirtImage from "../images/tshirt-min.jpg"
-import wallArtImage from "../images/wall_art-min.jpg"
+import wallArtImage from "../images/uses_wall_art.jpg"
+import notebookImage from "../images/uses_notebook.jpg"
+import tshirtImage from "../images/uses_tshirt.jpg"
+import packagingImage from "../images/uses_packaging.jpg"
+import devicesImage from "../images/uses_devices.jpg"
 
 const ExampleUsesSection = () => {
   return (
@@ -20,42 +20,41 @@ const ExampleUsesSection = () => {
         <div className="row">
           <div className="col-md-12">
             <span className="subheading">Example uses</span>
-            <h3>Timeless art perfect for all your needs</h3>
+            <h3>Use your design for just about anything</h3>
           </div>
         </div>
       </div>
 
-      <div className="example-images">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="image-wrapper">
-              <img src={devicesImage} alt="Digital" />
-            </div>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-md-6">
+      <div className="container">
+        <div className="row no-gutters">
+          <div className="col-md-4">
             <div className="image-wrapper">
               <img src={wallArtImage} alt="Wall Art" />
             </div>
           </div>
-          <div className="col-md-6">
+
+          <div className="col-md-4">
             <div className="image-wrapper">
               <img src={notebookImage} alt="Stationery" />
             </div>
           </div>
+
+          <div className="col-md-4">
+            <div className="image-wrapper">
+              <img src={tshirtImage} alt="Tshirt" />
+            </div>
+          </div>
         </div>
 
-        <div className="row">
-          <div className="col-md-6">
+        <div className="row no-gutters">
+          <div className="col-md-4">
             <div className="image-wrapper">
               <img src={packagingImage} alt="Packaging" />
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-8">
             <div className="image-wrapper">
-              <img src={tshirtImage} alt="T-Shirt" />
+              <img src={devicesImage} alt="Devices" />
             </div>
           </div>
         </div>
@@ -111,43 +110,31 @@ const BuiltBySection = () => {
           </div>
 
           <div className="col-md-5 order-1 order-md-2">
-            <h3>
-              Built by design and <span className="nowrap">dev geeks</span>
-            </h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-              molestiae labore suscipit non, maxime praesentium rem tenetur
-              debitis vitae.
-            </p>
+            <div className="text-content">
+              <span className="subheading">Creators of Tabbied</span>
+              <h3>
+                Built by design and <span className="nowrap">dev geeks</span>
+              </h3>
+              <p>
+                We aim to build simple design tools that energize your
+                creativity. Tabbied was initially developed as a tool for making
+                wall art, but we quickly realized that it could be used for many
+                other purposes. We're very excited to see what you can make
+                using our platform.
+              </p>
 
-            <div className="people">
-              <span className="names">Sy &amp; Ye Joo</span>
-              <br />
-              Founders
-            </div>
-          </div>
-        </div>
+              <p>
+                We also like to give a special thanks to{" "}
+                <Link className="link-underline">Chuan Yuan</Link> from China.
+                Chuan is the developer of{" "}
+                <Link className="link-underline">CSS-Doodle</Link>, which made
+                Tabbied possible. Thanks to all the supporters of both
+                CSS-Doodle and Tabbied. You are inspiring us to keep on making.
+              </p>
 
-        <div className="row">
-          <div className="col-md-5 offset-md-3">
-            <h3>A special thanks to</h3>
-
-            <div className="people">
-              <span className="names">Chuan Yuan</span>
-              <br />
-              Creator of CSS-Doodle
-            </div>
-
-            <p>
-              Saepe beatae quis expedita praesentium est corporis ab distinctio,
-              odio debitis suscipit voluptate aperiam deleniti eius ducimus modi
-              rem accusantium aspernatur veritatis.
-            </p>
-          </div>
-
-          <div className="col-md-4">
-            <div className="image-wrapper">
-              <img src="/images/built_by_02.png" alt="Thanks to Chuan Yuan" />
+              <div className="people">
+                <span className="names">Sy &amp; Ye Joo</span>
+              </div>
             </div>
           </div>
         </div>
@@ -159,14 +146,10 @@ const BuiltBySection = () => {
 const TryForFreeSection = () => {
   return (
     <div id="section-try-for-free">
-      <div className="background">
-        <div className="circle-4" />
-      </div>
-
-      <div className="dark-background">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="center">
               <p className="message">
                 Create your beautiful design in under a minute.
               </p>

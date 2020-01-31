@@ -45,47 +45,29 @@
 
 #section-example-uses {
   padding-top: 100px;
+  background-color: $gray-dark;
 
   h3,
   .subheading {
     text-align: center;
   }
 
-  h4 {
-    font-size: 1.1rem;
-    margin-top: 120px;
-
-    span.number {
-      color: #e1e1e1;
-      display: block;
-      font-size: 3.3rem;
-      font-weight: 300;
-    }
+  .subheading {
+    color: $gray;
   }
 
-  .example-use-image-wrapper {
+  h3 {
+    color: $gray-light;
+    margin-bottom: 80px;
+  }
+
+  .image-wrapper {
     line-height: 0;
-    max-width: 1440px;
-    margin: 56px auto 0 auto;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .example-images {
-    max-width: 1520px;
-    padding: 0 40px;
-    margin: 48px auto 80px auto;
-
-    .image-wrapper {
-      margin-top: 32px;
-      line-height: 0;
-    }
   }
 }
 
 #section-testimonials {
+  display: none;
   background-color: rgba(248, 249, 250, 0.6);
   margin: 40px;
   padding: 160px 0;
@@ -240,9 +222,19 @@
 }
 
 #section-built-by {
-  padding: 80px 0;
+  padding: 120px 0;
+  background-color: $gray-dark;
+
+  .subheading {
+    color: $gray;
+  }
+
+  h3 {
+    color: $gray-light;
+  }
 
   p {
+    color: $gray;
     margin-top: 30px;
   }
 
@@ -250,7 +242,6 @@
     margin-top: 30px;
 
     .names {
-      color: #111111;
       font-weight: bold;
     }
   }
@@ -258,10 +249,8 @@
 
 @include media-breakpoint-down(sm) {
   #section-built-by {
-    padding: 0 0 60px 0;
-
-    h3 {
-      margin-top: 60px;
+    .text-content {
+      margin-top: 40px;
     }
 
     .image-wrapper {
@@ -273,57 +262,19 @@
 #section-try-for-free {
   text-align: center;
   position: relative;
-
-  .dark-background {
-    background-color: $gray-dark;
-    margin: 0 40px;
-    padding: 100px 0;
-  }
+  background: $gray-dark;
+  padding-bottom: 120px;
 
   p.message {
-    padding: 0 240px;
+    border-top: 1px solid $gray-medium;
+    color: $gray-light;
+    padding: 120px 240px 0 240px;
     font-size: 2.33rem;
     line-height: 1.4;
   }
 
   .btn {
     margin-top: 48px;
-  }
-
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-
-    .circle-4 {
-      position: absolute;
-      right: 15%;
-      bottom: -160px;
-      width: 320px;
-      height: 320px;
-      background-color: #86f1f2;
-      animation: circle-4 8s linear infinite;
-    }
-
-    @keyframes circle-4 {
-      0% {
-        right: 15%;
-        bottom: -160px;
-      }
-
-      50% {
-        right: 10%;
-        bottom: -72px;
-      }
-
-      100% {
-        right: 15%;
-        bottom: -160px;
-      }
-    }
   }
 }
 

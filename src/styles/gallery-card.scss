@@ -1,18 +1,14 @@
 @import "./bootstrap-grid-custom.scss";
 
 .gallery-card {
-  display: inline-block;
-  width: 25%;
 }
 
 @include media-breakpoint-down(md) {
   .gallery-card {
-    width: 33.3333333%;
   }
 }
 
 @include media-breakpoint-down(sm) {
   .gallery-card {
-    width: 50%;
   }
 }

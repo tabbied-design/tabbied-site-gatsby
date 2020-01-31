@@ -4,19 +4,41 @@
 
 #section-browse-artwork {
   text-align: center;
+  margin-bottom: 120px;
+
+  h3 {
+    margin-bottom: 64px;
+  }
 
   .gallery-card {
-    &.card-action {
+    position: relative;
+    line-height: 0;
+
+    .text {
+      line-height: 1.4;
+    }
+
+    .center {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
       display: flex;
       align-items: center;
       justify-content: center;
+    }
 
-      span {
-        &.icon-circle {
-        }
-      }
+    h4 {
+      color: $gray-dark;
+      position: absolute;
+      top: 24px;
+      left: 32px;
+      font-size: 1.1rem;
 
-      &:hover {
+      &.white {
+        color: white;
       }
     }
   }
