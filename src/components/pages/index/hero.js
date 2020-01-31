@@ -57,7 +57,7 @@ class HeroSection extends React.Component {
                     -webkit-transition: ease @rand(200ms, 600ms);
                     transition: ease @rand(200ms, 600ms);
                   }
-                  @random(0.2) {
+                  @random(0.05) {
                     width:100%;
                     height:100%;
                     overflow:hidden;
