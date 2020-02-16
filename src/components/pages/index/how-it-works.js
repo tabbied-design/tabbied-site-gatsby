@@ -46,9 +46,10 @@ class HowItWorksSection extends React.Component {
               </div>
             </div>
           </div>
-
+        </div>
+        <div className="container container-fluid-on-mobile">
           <div className="row">
-            <div className="col-sm-12">
+            <div className="col-12">
               <div style={{ marginTop: "40px" }}>
                 <img src={demoVideoPlaceholder} alt="Demo Video Placeholder" />
               </div>

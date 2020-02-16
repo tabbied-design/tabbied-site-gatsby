@@ -25,29 +25,27 @@ const ExampleUsesSection = () => {
         </div>
       </div>
 
-      <div className="container">
+      <div className="container container-fluid-on-mobile">
         <div className="row no-gutters">
-          <div className="col-md-4">
+          <div className="col-md-4 col-6">
             <div className="image-wrapper">
               <img src={wallArtImage} alt="Wall Art" />
             </div>
           </div>
 
-          <div className="col-md-4">
+          <div className="col-md-4 col-6">
             <div className="image-wrapper">
               <img src={notebookImage} alt="Stationery" />
             </div>
           </div>
 
-          <div className="col-md-4">
+          <div className="col-md-4 col-6">
             <div className="image-wrapper">
               <img src={tshirtImage} alt="Tshirt" />
             </div>
           </div>
-        </div>
 
-        <div className="row no-gutters">
-          <div className="col-md-4">
+          <div className="col-md-4 col-6">
             <div className="image-wrapper">
               <img src={packagingImage} alt="Packaging" />
             </div>

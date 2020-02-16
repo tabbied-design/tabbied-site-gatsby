@@ -27,9 +27,11 @@ class SelectArtwork extends React.Component {
                 <h2>First, pick a design from our artwork gallery.</h2>
               </div>
             </div>
+          </div>
 
+          <div className="container container-fluid-on-mobile">
             <div className="row no-gutters">
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/zario/`}>
                   <div className="gallery-card">
                     <h4 className="white">Super Zario</h4>
@@ -38,7 +40,7 @@ class SelectArtwork extends React.Component {
                 </Link>
               </div>
 
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/odessa/`}>
                   <div className="gallery-card">
                     <h4 className="white">Odessa</h4>
@@ -47,7 +49,7 @@ class SelectArtwork extends React.Component {
                 </Link>
               </div>
 
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/symmetry/`}>
                   <div className="gallery-card">
                     <h4>Symmetry</h4>
@@ -56,7 +58,7 @@ class SelectArtwork extends React.Component {
                 </Link>
               </div>
 
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/radius/`}>
                   <div className="gallery-card">
                     <h4 className="white">Radius</h4>
@@ -67,7 +69,7 @@ class SelectArtwork extends React.Component {
             </div>
 
             <div className="row no-gutters">
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/mixtape/`}>
                   <div className="gallery-card">
                     <h4>Mixtape</h4>
@@ -76,7 +78,7 @@ class SelectArtwork extends React.Component {
                 </Link>
               </div>
 
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/blossom/`}>
                   <div className="gallery-card">
                     <h4 className="white">Blossom</h4>
@@ -84,7 +86,7 @@ class SelectArtwork extends React.Component {
                   </div>
                 </Link>
               </div>
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/veil/`}>
                   <div className="gallery-card">
                     <h4>Veil</h4>
@@ -93,7 +95,7 @@ class SelectArtwork extends React.Component {
                 </Link>
               </div>
 
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/fiesta/`}>
                   <div className="gallery-card">
                     <h4 className="white">Fiesta</h4>
@@ -104,7 +106,7 @@ class SelectArtwork extends React.Component {
             </div>
 
             <div className="row no-gutters">
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/disque/`}>
                   <div className="gallery-card">
                     <h4>Disque</h4>
@@ -113,7 +115,7 @@ class SelectArtwork extends React.Component {
                 </Link>
               </div>
 
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/ring/`}>
                   <div className="gallery-card">
                     <h4 className="white">Ring</h4>
@@ -121,7 +123,7 @@ class SelectArtwork extends React.Component {
                   </div>
                 </Link>
               </div>
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/trigram/`}>
                   <div className="gallery-card">
                     <h4 className="white">Trigram</h4>
@@ -130,7 +132,7 @@ class SelectArtwork extends React.Component {
                 </Link>
               </div>
 
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/bloks/`}>
                   <div className="gallery-card">
                     <h4>Bloks</h4>
@@ -141,7 +143,7 @@ class SelectArtwork extends React.Component {
             </div>
 
             <div className="row no-gutters">
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-6">
                 <Link to={`/artwork/terrain/`}>
                   <div className="gallery-card">
                     <h4 className="white">Terrain</h4>

@@ -48,6 +48,10 @@
       border: none;
     }
   }
+
+  .color-pink {
+    color: $pink;
+  }
 }
 
 @include media-breakpoint-down(sm) {

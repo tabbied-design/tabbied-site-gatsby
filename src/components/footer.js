@@ -63,7 +63,8 @@ const Footer = () => {
             <p>
               © 2019 Tabbied.
               <br />
-              Built with ❤ from Dallas and Seoul.
+              Built with <span className="color-pink">❤</span> from Dallas and
+              Seoul.
             </p>
           </div>
         </div>
