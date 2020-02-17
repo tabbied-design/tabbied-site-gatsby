@@ -5,6 +5,7 @@
   font-size: 0.9rem;
   padding: 16px 0;
   position: relative;
+  overflow: visible;
   z-index: 1;
 
   h1 {
@@ -27,6 +28,31 @@
     }
   }
 
+  ul#page-navigation {
+    display: inline-block;
+
+    li {
+      display: inline-block;
+      padding: 12px 20px;
+    }
+  }
+
+  #mobile-menu-wrapper {
+    background: white;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+  }
+
+  ul#mobile-menu {
+    text-align: center;
+
+    li {
+      padding: 24px 16px;
+    }
+  }
+
   .btn-action {
     color: $gray-dark;
     padding: 8px 0;
@@ -38,25 +64,28 @@
   }
 }
 
-ul#page-navigation {
-  display: inline-block;
-
-  li {
-    display: inline-block;
-    padding: 12px 20px;
-  }
-}
-
 @include media-breakpoint-down(md) {
-  ul#page-navigation {
-    li {
-      padding: 12px 14px;
+  #header {
+    ul#page-navigation {
+      li {
+        padding: 12px 14px;
+      }
     }
   }
 }
 
 @include media-breakpoint-down(sm) {
-  ul#page-navigation {
-    display: none;
+  #header {
+    #logo {
+      img {
+        display: inline-block;
+        margin-top: 4px;
+        width: 40px;
+      }
+    }
+
+    ul#page-navigation {
+      display: none;
+    }
   }
 }

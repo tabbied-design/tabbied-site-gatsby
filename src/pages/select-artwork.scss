@@ -1,3 +1,4 @@
+@import "../styles/bootstrap-grid-custom.scss";
 @import "../styles/colors.scss";
 
 #page-select-artwork {
@@ -45,6 +46,21 @@
       &.white {
         color: white;
       }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #page-select-artwork {
+    .gray-background {
+      background: transparent;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-top: 16px;
+      margin-bottom: 24px;
     }
   }
 }

@@ -39,12 +39,8 @@
   }
 }
 
-#section-browse-artwork {
-  margin-top: 40px;
-}
-
 #section-example-uses {
-  padding-top: 100px;
+  padding-top: 64px;
   background-color: $gray-dark;
 
   h3,
@@ -58,7 +54,7 @@
 
   h3 {
     color: $gray-light;
-    margin-bottom: 80px;
+    margin-bottom: 48px;
   }
 
   .image-wrapper {
@@ -245,10 +241,23 @@
       font-weight: bold;
     }
   }
+
+  .link-underline {
+    display: inline-block;
+    padding-bottom: 2px;
+    border-bottom: 2px solid $lime-medium;
+    color: $gray-ultra-light;
+
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 @include media-breakpoint-down(sm) {
   #section-built-by {
+    padding: 40px 0;
+
     .text-content {
       margin-top: 40px;
     }
@@ -265,33 +274,40 @@
   background: $gray-dark;
   padding-bottom: 120px;
 
-  p.message {
+  .message-wrapper {
     border-top: 1px solid $gray-medium;
-    color: $gray-light;
-    padding: 120px 240px 0 240px;
-    font-size: 2.33rem;
-    line-height: 1.4;
-  }
+    padding: 120px 0 48px 0;
+    display: flex;
+    justify-content: center;
 
-  .btn {
-    margin-top: 48px;
+    p.message {
+      color: $gray-light;
+      font-size: 2.33rem;
+      line-height: 1.4;
+      max-width: 640px;
+    }
   }
 }
 
 @include media-breakpoint-down(sm) {
   #section-try-for-free {
+    padding-bottom: 64px;
+
     .dark-background {
       margin: 0;
-      padding: 80px 0;
     }
 
-    p.message {
-      padding: 0 40px;
-      font-size: 1.4rem;
-    }
+    .message-wrapper {
+      border-top: 1px solid $gray-medium;
+      padding: 48px 24px 40px 24px;
+      display: flex;
+      justify-content: center;
 
-    .btn {
-      margin-top: 32px;
+      p.message {
+        color: $gray-light;
+        font-size: 1.4rem;
+        max-width: 640px;
+      }
     }
   }
 }

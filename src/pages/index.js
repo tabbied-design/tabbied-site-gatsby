@@ -12,6 +12,7 @@ import notebookImage from "../images/uses_notebook.jpg"
 import tshirtImage from "../images/uses_tshirt.jpg"
 import packagingImage from "../images/uses_packaging.jpg"
 import devicesImage from "../images/uses_devices.jpg"
+import builtByPeopleImage from "../images/built_by_people.png"
 
 const ExampleUsesSection = () => {
   return (
@@ -101,18 +102,20 @@ const BuiltBySection = () => {
           <div className="col-md-7 order-2 order-md-1">
             <div className="image-wrapper">
               <img
-                src="/images/built_by_01.png"
+                src={builtByPeopleImage}
                 alt="Built by Sy Hong and Ye Joo Park"
               />
             </div>
           </div>
 
           <div className="col-md-5 order-1 order-md-2">
-            <div className="text-content">
+            <div className="text-header">
               <span className="subheading">Creators of Tabbied</span>
               <h3>
                 Built by design and <span className="nowrap">dev geeks</span>
               </h3>
+            </div>
+            <div className="text-content">
               <p>
                 We aim to build simple design tools that energize your
                 creativity. Tabbied was initially developed as a tool for making
@@ -148,9 +151,11 @@ const TryForFreeSection = () => {
         <div className="row">
           <div className="col-md-12">
             <div className="center">
-              <p className="message">
-                Create your beautiful design in under a minute.
-              </p>
+              <div className="message-wrapper">
+                <p className="message">
+                  Create your beautiful design in under a minute.
+                </p>
+              </div>
 
               <Link to="/select-artwork" className="btn green">
                 Make your art

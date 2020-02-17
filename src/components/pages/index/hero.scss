@@ -3,13 +3,17 @@
 
 #section-hero {
   background-color: #3d80d1;
-  height: 800px;
   position: relative;
   text-align: center;
+  width: 100%;
+  overflow: hidden;
 
   .doodle-background {
-    width: 100%;
+    width: 1600px;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
 
@@ -19,15 +23,15 @@
     }
   }
 
-  .hero-content {
-    margin-top: 296px;
-  }
-
   .hero-text {
     font-size: 2.67rem;
     line-height: 1.3;
     font-weight: 200;
     color: white;
+  }
+
+  .hero-content {
+    padding: 240px;
   }
 
   .hero-actions {
@@ -37,35 +41,50 @@
 
 @include media-breakpoint-down(md) {
   #section-hero {
-    background-color: #3d80d1;
-    height: 600px;
-    position: relative;
-    text-align: center;
-
     .doodle-background {
-      width: 100%;
-      position: absolute;
-      display: flex;
-      justify-content: center;
+      width: 1200px;
 
       .doodle-wrapper {
-        width: 11200px;
+        width: 1200px;
         height: 600px;
       }
     }
 
     .hero-content {
-      margin-top: 216px;
+      padding: 160px;
     }
 
     .hero-text {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
     }
   }
 }
 
 @include media-breakpoint-down(sm) {
+  #section-hero {
+    .doodle-background {
+      width: 800px;
+
+      .doodle-wrapper {
+        width: 800px;
+        height: 400px;
+      }
+    }
+
+    .hero-content {
+      padding: 120px;
+    }
+
+    .hero-text {
+      font-size: 1.4rem;
+    }
+  }
 }
 
 @include media-breakpoint-down(xs) {
+  #section-hero {
+    .hero-content {
+      padding: 64px;
+    }
+  }
 }

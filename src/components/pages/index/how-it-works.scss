@@ -81,6 +81,8 @@
 
 @include media-breakpoint-down(sm) {
   #section-how-it-works {
+    padding: 48px 0;
+
     #steps {
       margin-top: 30px;
     }
