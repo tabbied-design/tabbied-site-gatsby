@@ -5,32 +5,23 @@
   background-color: $gray-ultra-light;
   padding: 64px 0;
   font-size: 0.9rem;
+  position: relative;
 
-  .btn-back {
-    width: 48px;
-    height: 48px;
-    border: 2px solid $gray-light;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-
-    i.material-icons {
-      font-size: 0.9rem;
-    }
-
-    &:hover {
-      color: white;
-      background-color: $gray-dark;
-      border-color: $gray-dark;
-    }
+  .doodle-background {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
   }
 
-  h2 {
-    color: #111300;
-    margin-top: 8px;
-    margin-bottom: 40px;
+  .doodle-frame {
+    display: inline-block;
+    box-shadow: 16px 16px 32px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .artwork-options-wrapper {
+    margin-bottom: 32px;
   }
 
   h3 {
@@ -93,30 +84,9 @@
   .buttons-wrapper {
     margin-top: 80px;
   }
-
-  .doodle-wrapper {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .doodle-frame {
-    background: white;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    border-radius: 20px;
-  }
 }
 
 @include media-breakpoint-down(sm) {
   #section-edit-artwork {
-    .doodle-wrapper {
-      margin-bottom: 64px;
-      justify-content: center;
-    }
-
-    .doodle-frame {
-      padding: 32px;
-    }
   }
 }

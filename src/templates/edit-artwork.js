@@ -227,161 +227,132 @@ class EditArtwork extends React.Component {
         .join(this.state.customText)
     }
 
-    console.log(styleCode)
-    console.log(this.state.frequency)
-
     return (
       <div id="section-edit-artwork">
-        <div className="container">
+        <div
+          className="doodle-background"
+          style={{
+            backgroundColor: this.state.colors[0],
+          }}
+        />
+        <div className="container container-fluid-on-mobile">
           <div className="row">
-            <div className="col-md-2">
-              <div className="sidebar">
-                <Link to="/select-artwork/" className="btn-back">
-                  <i className="material-icons">keyboard_backspace</i>
-                </Link>
-              </div>
-            </div>
-
-            <div className="col-md-5 order-2 order-md-1 align-self-center">
-              <span className="subheading">Step 2 of 2</span>
-              <h2>Customize artwork</h2>
-
-              {artworkData.palette !== null && (
-                <div>
-                  <h3>Palette</h3>
-                  <div className="colors">
-                    {artworkData.palette.map((hex, index) => (
-                      <ColorPicker
-                        key={"color" + index}
-                        handleColorChange={color => this.setColor(index, color)}
-                        color={hex}
-                      />
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {artworkData.grid !== null && artworkData.grid.options !== null && (
-                <div className="box-options-selector">
-                  <h3>Rows and columns</h3>
-                  {artworkData.grid.options.map(grid => (
-                    <div
-                      key={grid}
-                      className={classNames("option", {
-                        selected: this.state.grid === grid,
-                      })}
-                      onClick={() => {
-                        this.setState({
-                          grid,
-                        })
-                      }}
-                    >
-                      {grid}
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {artworkData.frequency !== null && (
-                <>
-                  <h3>Frequency of shapes</h3>
-                  <OptionSlider
-                    value={this.state.frequency}
-                    values={artworkData.frequency.values}
-                    step={artworkData.frequency.step}
-                    displayUnit="percentage"
-                    handleChange={this.setFrequency}
-                  />
-                </>
-              )}
-
-              {artworkData.circularity !== null && (
-                <>
-                  <h3>Circularity</h3>
-                  <OptionSlider
-                    value={this.state.circularity}
-                    values={artworkData.circularity.values}
-                    step={artworkData.circularity.step}
-                    displayUnit="percentage"
-                    handleChange={this.setCircularity}
-                  />
-                </>
-              )}
-
-              {artworkData.shadow !== null && (
-                <>
-                  <h3>Shadows</h3>
-                  <ToggleSwitch
-                    isActive={this.state.shadow}
-                    handleChange={this.setShadow}
-                  />
-                </>
-              )}
-
-              {artworkData.roundedCorners !== null && (
-                <>
-                  <h3>Rounded Corners</h3>
-                  <ToggleSwitch
-                    isActive={this.state.roundedCorners}
-                    handleChange={this.setRoundedCorners}
-                  />
-                </>
-              )}
-
-              {artworkData.customText !== null && (
-                <>
-                  <h3>Custom Text</h3>
-                  <input
-                    type="text"
-                    value={this.state.customText}
-                    maxLength={artworkData.customText.maxLength}
-                    onChange={e => {
-                      this.setState({ customText: e.target.value })
-                      this.redraw()
-                    }}
-                  />
-                </>
-              )}
-
-              <div className="buttons-wrapper">
-                <div onClick={() => this.redraw()} className="btn white">
-                  Redraw
-                </div>
-                <div
-                  style={{
-                    display: "inline-block",
-                    width: "32px",
-                    height: "8px",
-                  }}
+            <div className="col-md-5 offset-md-1 align-self-center">
+              <div className="doodle-frame">
+                <Doodle
+                  name={artworkData.slug}
+                  grid={this.state.grid}
+                  colors={this.state.colors}
+                  width={doodleWidth}
+                  widthHeightRatio={1.5}
+                  uuid={this.state.doodleUuid}
+                  styleCode={styleCode}
+                  doodleCode={doodleCode}
                 />
-                <div className="btn">Export art</div>
               </div>
             </div>
 
-            <div
-              className="col-md-5 order-1 order-md-2  align-self-center"
-              style={{
-                backgroundColor: "transparent",
-              }}
-            >
-              <div className="doodle-wrapper">
-                <div
-                  className="doodle-frame"
-                  style={{
-                    backgroundColor: this.state.colors[0],
-                  }}
-                >
-                  <Doodle
-                    name={artworkData.slug}
-                    grid={this.state.grid}
-                    colors={this.state.colors}
-                    width={doodleWidth}
-                    widthHeightRatio={1.5}
-                    uuid={this.state.doodleUuid}
-                    styleCode={styleCode}
-                    doodleCode={doodleCode}
-                  />
-                </div>
+            <div className="col-md-5 offset-md-1 align-self-center">
+              <div className="artwork-options-wrapper">
+                {artworkData.palette !== null && (
+                  <div>
+                    <h3>Palette</h3>
+                    <div className="colors">
+                      {artworkData.palette.map((hex, index) => (
+                        <ColorPicker
+                          key={"color" + index}
+                          handleColorChange={color =>
+                            this.setColor(index, color)
+                          }
+                          color={hex}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {artworkData.grid !== null &&
+                  artworkData.grid.options !== null && (
+                    <div className="box-options-selector">
+                      <h3>Rows and columns</h3>
+                      {artworkData.grid.options.map(grid => (
+                        <div
+                          key={grid}
+                          className={classNames("option", {
+                            selected: this.state.grid === grid,
+                          })}
+                          onClick={() => {
+                            this.setState({
+                              grid,
+                            })
+                          }}
+                        >
+                          {grid}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                {artworkData.frequency !== null && (
+                  <>
+                    <h3>Frequency of shapes</h3>
+                    <OptionSlider
+                      value={this.state.frequency}
+                      values={artworkData.frequency.values}
+                      step={artworkData.frequency.step}
+                      displayUnit="percentage"
+                      handleChange={this.setFrequency}
+                    />
+                  </>
+                )}
+
+                {artworkData.circularity !== null && (
+                  <>
+                    <h3>Circularity</h3>
+                    <OptionSlider
+                      value={this.state.circularity}
+                      values={artworkData.circularity.values}
+                      step={artworkData.circularity.step}
+                      displayUnit="percentage"
+                      handleChange={this.setCircularity}
+                    />
+                  </>
+                )}
+
+                {artworkData.shadow !== null && (
+                  <>
+                    <h3>Shadows</h3>
+                    <ToggleSwitch
+                      isActive={this.state.shadow}
+                      handleChange={this.setShadow}
+                    />
+                  </>
+                )}
+
+                {artworkData.roundedCorners !== null && (
+                  <>
+                    <h3>Rounded Corners</h3>
+                    <ToggleSwitch
+                      isActive={this.state.roundedCorners}
+                      handleChange={this.setRoundedCorners}
+                    />
+                  </>
+                )}
+
+                {artworkData.customText !== null && (
+                  <>
+                    <h3>Custom Text</h3>
+                    <input
+                      type="text"
+                      value={this.state.customText}
+                      maxLength={artworkData.customText.maxLength}
+                      onChange={e => {
+                        this.setState({ customText: e.target.value })
+                        this.redraw()
+                      }}
+                    />
+                  </>
+                )}
               </div>
             </div>
           </div>
