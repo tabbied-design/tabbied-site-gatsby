@@ -97,6 +97,26 @@
         padding: 12px 14px;
       }
     }
+
+    .edit-artwork-actions-wrapper {
+      #btn-redraw {
+        margin-right: 8px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 8px;
+        border-radius: 3px;
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.8rem;
+
+        i.material-icons {
+          font-size: 0.8rem;
+          padding-right: 8px;
+        }
+      }
+    }
   }
 }
 
