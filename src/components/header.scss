@@ -38,6 +38,7 @@
   }
 
   #mobile-menu-wrapper {
+    display: none;
     background: white;
     position: absolute;
     top: 72px;
@@ -60,6 +61,31 @@
 
     &:hover {
       color: #34ca8d;
+    }
+  }
+
+  .edit-artwork-actions-wrapper {
+    #btn-redraw {
+      background-color: $gray-medium;
+      margin-right: 16px;
+    }
+
+    #btn-export {
+      background: $gray-dark;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.9rem;
+
+      i.material-icons {
+        font-size: 0.9rem;
+        padding-right: 8px;
+      }
     }
   }
 }
@@ -86,6 +112,29 @@
 
     ul#page-navigation {
       display: none;
+    }
+
+    #mobile-menu-wrapper {
+      display: block;
+    }
+
+    .edit-artwork-actions-wrapper {
+      #btn-redraw {
+        margin-right: 8px;
+      }
+
+      .btn {
+        padding: 8px;
+
+        i.material-icons {
+          font-size: 1rem;
+          padding-right: 0;
+        }
+
+        span.text {
+          display: none;
+        }
+      }
     }
   }
 }

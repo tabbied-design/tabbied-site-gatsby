@@ -22,7 +22,7 @@ class EditArtwork extends React.Component {
         query: "(max-width: 747px)",
       },
       sm: {
-        doodleWidth: 600,
+        doodleWidth: 360,
         query: "(min-width: 748px) and (max-width: 991px)",
       },
       md: {
@@ -237,22 +237,24 @@ class EditArtwork extends React.Component {
         />
         <div className="container container-fluid-on-mobile">
           <div className="row">
-            <div className="col-md-5 offset-md-1 align-self-center">
-              <div className="doodle-frame">
-                <Doodle
-                  name={artworkData.slug}
-                  grid={this.state.grid}
-                  colors={this.state.colors}
-                  width={doodleWidth}
-                  widthHeightRatio={1.5}
-                  uuid={this.state.doodleUuid}
-                  styleCode={styleCode}
-                  doodleCode={doodleCode}
-                />
+            <div className="col-md-5 offset-md-1 col-sm-12 offset-sm-0 align-self-center">
+              <div className="doodle-wrapper">
+                <div className="doodle-frame">
+                  <Doodle
+                    name={artworkData.slug}
+                    grid={this.state.grid}
+                    colors={this.state.colors}
+                    width={doodleWidth}
+                    widthHeightRatio={1.5}
+                    uuid={this.state.doodleUuid}
+                    styleCode={styleCode}
+                    doodleCode={doodleCode}
+                  />
+                </div>
               </div>
             </div>
 
-            <div className="col-md-5 offset-md-1 align-self-center">
+            <div className="col-md-5 offset-md-1  col-sm-12 offset-sm-0 align-self-center">
               <div className="artwork-options-wrapper">
                 {artworkData.palette !== null && (
                   <div>

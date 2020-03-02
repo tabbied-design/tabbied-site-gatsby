@@ -86,7 +86,42 @@
   }
 }
 
+@include media-breakpoint-down(md) {
+  #section-edit-artwork {
+    .doodle-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .doodle-frame {
+      display: inline-block;
+      box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .box-options-selector {
+      .option {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
 @include media-breakpoint-down(sm) {
   #section-edit-artwork {
+    .doodle-background {
+      display: none;
+    }
+
+    .doodle-frame {
+      box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  #section-edit-artwork {
+    .artwork-options-wrapper {
+      margin: 0 24px;
+    }
   }
 }

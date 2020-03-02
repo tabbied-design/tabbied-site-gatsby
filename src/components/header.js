@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import "./header.scss"
 import logoImage from "../images/logo_tabbied.png"
 
@@ -13,7 +13,7 @@ class Header extends React.Component {
     }
 
     this.openMobileMenu = this.openMobileMenu.bind(this)
-    this.handleCloseIconClick = this.handleCloseIconClick.bind(this)
+    this.closeMobileMenu = this.closeMobileMenu.bind(this)
   }
 
   openMobileMenu() {
@@ -27,7 +27,7 @@ class Header extends React.Component {
     )
   }
 
-  handleCloseIconClick() {
+  closeMobileMenu() {
     this.setState(
       {
         isMobileMenuOpen: false,
@@ -42,10 +42,13 @@ class Header extends React.Component {
     const { siteTitle, location } = this.props
     const { isMobileMenuOpen } = this.state
 
-    const isInCustomizeArtworkPage =
-      location &&
-      (location.pathname === "/select-artwork/" ||
-        location.pathname.startsWith("/artwork/"))
+    const isInHomePage = location && location.pathname === "/"
+
+    const isInSelectArtworkPage =
+      location && location.pathname === "/select-artwork/"
+
+    const isInEditArtworkPage =
+      location && location.pathname.startsWith("/artwork/")
 
     const isBurgerMenuOpen = false
 
@@ -61,7 +64,7 @@ class Header extends React.Component {
 
             <div className="col-md-6 d-none d-md-block">
               <div className="align-center">
-                {!isBurgerMenuOpen && !isInCustomizeArtworkPage && (
+                {isInHomePage && !isBurgerMenuOpen && (
                   <ul id="page-navigation">
                     <li>
                       <a href="#section-how-it-works">How it works</a>
@@ -75,42 +78,72 @@ class Header extends React.Component {
                   </ul>
                 )}
 
-                {isInCustomizeArtworkPage && <h1>Make your art</h1>}
+                {(isInSelectArtworkPage || isInEditArtworkPage) && (
+                  <h1>Make your art</h1>
+                )}
               </div>
             </div>
 
             <div className="col-md-3 col-6">
               <div className="align-right">
                 <div className="d-md-none">
-                  {!isMobileMenuOpen && (
-                    <div onClick={this.openMobileMenu}>
+                  {isInHomePage && !isMobileMenuOpen && (
+                    <div className="btn-icon" onClick={this.openMobileMenu}>
                       <i className="material-icons">menu</i>
                     </div>
                   )}
 
-                  {isMobileMenuOpen && (
-                    <div onClick={this.handleCloseIconClick}>
+                  {isInHomePage && isMobileMenuOpen && (
+                    <div className="btn-icon" onClick={this.closeMobileMenu}>
                       <i className="material-icons">close</i>
                     </div>
                   )}
                 </div>
 
-                <div className="d-none d-md-block">
-                  <Link to="/select-artwork/" className="btn-action">
-                    Make your art
-                  </Link>
-                </div>
+                {isInSelectArtworkPage && (
+                  <div
+                    className="btn-icon"
+                    onClick={() => {
+                      navigate("/")
+                    }}
+                  >
+                    <i className="material-icons">close</i>
+                  </div>
+                )}
+
+                {isInHomePage && (
+                  <div className="d-none d-md-block">
+                    <Link to="/select-artwork/" className="btn-action">
+                      Make your art
+                    </Link>
+                  </div>
+                )}
+
+                {isInEditArtworkPage && (
+                  <div className="edit-artwork-actions-wrapper">
+                    <div id="btn-redraw" className="btn">
+                      <i className="material-icons">replay</i>
+                      <span className="text">Redraw</span>
+                    </div>
+
+                    <div id="btn-export" className="btn">
+                      <i className="material-icons">arrow_downward</i>
+                      <span className="text">Export</span>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
 
-        {isMobileMenuOpen && (
+        {isInHomePage && isMobileMenuOpen && (
           <div id="mobile-menu-wrapper">
             <ul id="mobile-menu">
               <li>
                 <a href="#section-how-it-works">How it works</a>
               </li>
+
               <li>
                 <a href="#section-browse-artwork">Make your art</a>
               </li>
