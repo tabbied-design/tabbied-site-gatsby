@@ -27,7 +27,7 @@
     "gatsby-transformer-json": "^2.2.20",
     "gatsby-transformer-sharp": "^2.3.0",
     "lodash": "^4.17.15",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "rc-slider": "^8.7.1",
     "react": "^16.11.0",
